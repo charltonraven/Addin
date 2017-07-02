@@ -1,0 +1,17 @@
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\ApprovalAddIn.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\ApprovalAddIn.pdb
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\ApprovalAddIn.dll.manifest
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\ApprovalAddIn.vsto
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Common.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Outlook.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.v4.0.Framework.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\Microsoft.VisualStudio.Tools.Applications.Runtime.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.csprojResolveAssemblyReference.cache
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Approval_Initial.resources
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Properties.Resources.resources
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.GenerateResource.Cache
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.dll
+c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.pdb
