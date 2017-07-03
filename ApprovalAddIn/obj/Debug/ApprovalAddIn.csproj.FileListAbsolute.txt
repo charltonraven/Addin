@@ -15,3 +15,21 @@ c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn
 c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.GenerateResource.Cache
 c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.dll
 c:\users\63530\documents\visual studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.pdb
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\ApprovalAddIn.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\ApprovalAddIn.pdb
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\ApprovalAddIn.dll.manifest
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\ApprovalAddIn.vsto
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Common.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Outlook.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.Office.Tools.v4.0.Framework.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.VisualStudio.Tools.Applications.Runtime.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.csprojResolveAssemblyReference.cache
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.Approval_Initial.resources
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.Properties.Resources.resources
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.GenerateResource.Cache
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.pdb
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.toApproval.resources
