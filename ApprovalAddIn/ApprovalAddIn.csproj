@@ -155,17 +155,20 @@
     <Compile Include="Approval_Initial.Designer.cs">
       <DependentUpon>Approval_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Open Approval.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Open Approval.Designer.cs">
+      <DependentUpon>Open Approval.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="toApproval.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="toApproval.Designer.cs">
-      <DependentUpon>toApproval.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Approval_Initial.resx">
       <DependentUpon>Approval_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Open Approval.resx">
+      <DependentUpon>Open Approval.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -176,9 +179,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="toApproval.resx">
-      <DependentUpon>toApproval.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="ApprovalAddIn_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

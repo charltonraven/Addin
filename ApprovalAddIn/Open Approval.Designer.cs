@@ -1,9 +1,9 @@
 ﻿namespace ApprovalAddIn
 {
     [System.ComponentModel.ToolboxItemAttribute(false)]
-    partial class Approval_Initial : Microsoft.Office.Tools.Outlook.FormRegionBase
+    partial class Open_Approval : Microsoft.Office.Tools.Outlook.FormRegionBase
     {
-        public Approval_Initial(Microsoft.Office.Interop.Outlook.FormRegion formRegion)
+        public Open_Approval(Microsoft.Office.Interop.Outlook.FormRegion formRegion)
             : base(Globals.Factory, formRegion)
         {
             this.InitializeComponent();
@@ -34,8 +34,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pdTestDoc = new System.Drawing.Printing.PrintDocument();
-            this.tabReview = new System.Windows.Forms.TabPage();
+            this.tabcApprovals = new System.Windows.Forms.TabControl();
             this.tabApprovals = new System.Windows.Forms.TabPage();
             this.lbStatus = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -100,21 +99,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabcApprovals = new System.Windows.Forms.TabControl();
+            this.tabReview = new System.Windows.Forms.TabPage();
+            this.tabcApprovals.SuspendLayout();
             this.tabApprovals.SuspendLayout();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
-            this.tabcApprovals.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabReview
+            // tabcApprovals
             // 
-            this.tabReview.BackColor = System.Drawing.Color.SlateGray;
-            this.tabReview.Location = new System.Drawing.Point(4, 22);
-            this.tabReview.Name = "tabReview";
-            this.tabReview.Size = new System.Drawing.Size(1127, 804);
-            this.tabReview.TabIndex = 2;
-            this.tabReview.Text = "Review";
+            this.tabcApprovals.Controls.Add(this.tabApprovals);
+            this.tabcApprovals.Controls.Add(this.tabReview);
+            this.tabcApprovals.Location = new System.Drawing.Point(22, 20);
+            this.tabcApprovals.Name = "tabcApprovals";
+            this.tabcApprovals.SelectedIndex = 0;
+            this.tabcApprovals.Size = new System.Drawing.Size(1135, 830);
+            this.tabcApprovals.TabIndex = 1;
             // 
             // tabApprovals
             // 
@@ -488,7 +488,6 @@
             this.btnPrint.TabIndex = 44;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label31
             // 
@@ -808,32 +807,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "User:";
             // 
-            // tabcApprovals
+            // tabReview
             // 
-            this.tabcApprovals.Controls.Add(this.tabApprovals);
-            this.tabcApprovals.Controls.Add(this.tabReview);
-            this.tabcApprovals.Location = new System.Drawing.Point(25, 3);
-            this.tabcApprovals.Name = "tabcApprovals";
-            this.tabcApprovals.SelectedIndex = 0;
-            this.tabcApprovals.Size = new System.Drawing.Size(1135, 830);
-            this.tabcApprovals.TabIndex = 0;
+            this.tabReview.BackColor = System.Drawing.Color.SlateGray;
+            this.tabReview.Location = new System.Drawing.Point(4, 22);
+            this.tabReview.Name = "tabReview";
+            this.tabReview.Size = new System.Drawing.Size(1127, 804);
+            this.tabReview.TabIndex = 2;
+            this.tabReview.Text = "Review";
             // 
-            // Approval_Initial
+            // Open_Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabcApprovals);
-            this.Name = "Approval_Initial";
-            this.Size = new System.Drawing.Size(1174, 894);
-            this.FormRegionShowing += new System.EventHandler(this.Approval_Initial_FormRegionShowing);
-            this.FormRegionClosed += new System.EventHandler(this.Approval_Initial_FormRegionClosed);
+            this.Name = "Open_Approval";
+            this.Size = new System.Drawing.Size(1188, 877);
+            this.FormRegionShowing += new System.EventHandler(this.Open_Approval_FormRegionShowing);
+            this.FormRegionClosed += new System.EventHandler(this.Open_Approval_FormRegionClosed);
+            this.tabcApprovals.ResumeLayout(false);
             this.tabApprovals.ResumeLayout(false);
             this.tabApprovals.PerformLayout();
             this.grpImplementationReview.ResumeLayout(false);
             this.grpImplementationReview.PerformLayout();
             this.grpPostReview.ResumeLayout(false);
             this.grpPostReview.PerformLayout();
-            this.tabcApprovals.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -848,17 +846,22 @@
         /// </summary>
         private static void InitializeManifest(Microsoft.Office.Tools.Outlook.FormRegionManifest manifest, Microsoft.Office.Tools.Outlook.Factory factory)
         {
-            manifest.Description = "Initial Take off for Project Approval";
-            manifest.FormRegionName = "Send to Approve";
-            manifest.FormRegionType = Microsoft.Office.Tools.Outlook.FormRegionType.Replacement;
-            manifest.Title = "Approval_Initial";
+            manifest.FormRegionName = "Open Approval";
+            manifest.ShowReadingPane = false;
 
         }
 
         #endregion
-        private System.Drawing.Printing.PrintDocument pdTestDoc;
-        private System.Windows.Forms.TabPage tabReview;
+
+        private System.Windows.Forms.TabControl tabcApprovals;
         private System.Windows.Forms.TabPage tabApprovals;
+        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.TextBox txtApprovingManager;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtProjectManager;
+        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtPerlScripts;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtCodeReviewDATE;
@@ -915,27 +918,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabcApprovals;
-        private System.Windows.Forms.Label lbStatus;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.TextBox txtApprovingManager;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtProjectManager;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TabPage tabReview;
 
-        public partial class Approval_InitialFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
+        public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {
             public event Microsoft.Office.Tools.Outlook.FormRegionInitializingEventHandler FormRegionInitializing;
 
             private Microsoft.Office.Tools.Outlook.FormRegionManifest _Manifest;
 
             [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public Approval_InitialFactory()
+            public Open_ApprovalFactory()
             {
                 this._Manifest = Globals.Factory.CreateFormRegionManifest();
-                Approval_Initial.InitializeManifest(this._Manifest, Globals.Factory);
-                this.FormRegionInitializing += new Microsoft.Office.Tools.Outlook.FormRegionInitializingEventHandler(this.Approval_InitialFactory_FormRegionInitializing);
+                Open_Approval.InitializeManifest(this._Manifest, Globals.Factory);
+                this.FormRegionInitializing += new Microsoft.Office.Tools.Outlook.FormRegionInitializingEventHandler(this.Open_ApprovalFactory_FormRegionInitializing);
             }
 
             [System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -950,7 +946,7 @@
             [System.Diagnostics.DebuggerNonUserCodeAttribute()]
             Microsoft.Office.Tools.Outlook.IFormRegion Microsoft.Office.Tools.Outlook.IFormRegionFactory.CreateFormRegion(Microsoft.Office.Interop.Outlook.FormRegion formRegion)
             {
-                Approval_Initial form = new Approval_Initial(formRegion);
+                Open_Approval form = new Open_Approval(formRegion);
                 form.Factory = this;
                 return form;
             }
@@ -989,14 +985,14 @@
 
     partial class WindowFormRegionCollection
     {
-        internal Approval_Initial Approval_Initial
+        internal Open_Approval Open_Approval
         {
             get
             {
                 foreach (var item in this)
                 {
-                    if (item.GetType() == typeof(Approval_Initial))
-                        return (Approval_Initial)item;
+                    if (item.GetType() == typeof(Open_Approval))
+                        return (Open_Approval)item;
                 }
                 return null;
             }

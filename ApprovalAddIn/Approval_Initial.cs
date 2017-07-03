@@ -1,6 +1,7 @@
 ﻿
 using Outlook = Microsoft.Office.Interop.Outlook;
 
+
 namespace ApprovalAddIn
 {
     partial class Approval_Initial
@@ -50,6 +51,12 @@ namespace ApprovalAddIn
         private void txtProjectManager_TextChanged(object sender, System.EventArgs e)
         {
 
+        }
+
+        private void btnPrint_Click(object sender, System.EventArgs e)
+        {
+            
+            
         }
     }
 }
