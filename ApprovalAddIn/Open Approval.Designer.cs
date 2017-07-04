@@ -38,12 +38,6 @@
             this.tabApprovals = new System.Windows.Forms.TabPage();
             this.lbStatus = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.txtApprovingManager = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtProjectManager = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtPerlScripts = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtCodeReviewDATE = new System.Windows.Forms.TextBox();
             this.txtCodeReviewBY = new System.Windows.Forms.TextBox();
@@ -52,21 +46,6 @@
             this.txtPartner = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.cbXSLTEmailErrorHeader = new System.Windows.Forms.CheckBox();
-            this.cbRAILSrecord = new System.Windows.Forms.CheckBox();
-            this.cbEmailCodeList = new System.Windows.Forms.CheckBox();
-            this.cbRAILSfilter = new System.Windows.Forms.CheckBox();
-            this.cbFileStructureInProduction = new System.Windows.Forms.CheckBox();
-            this.cbFTPconnect = new System.Windows.Forms.CheckBox();
-            this.cbTRANSPORTparmfile = new System.Windows.Forms.CheckBox();
-            this.cbRAILStable = new System.Windows.Forms.CheckBox();
-            this.cbMapCodeTables = new System.Windows.Forms.CheckBox();
-            this.cbDocumentMap = new System.Windows.Forms.CheckBox();
-            this.cbDocumentExtractionMap = new System.Windows.Forms.CheckBox();
-            this.cbServiceAdapter = new System.Windows.Forms.CheckBox();
-            this.cbBusinessProcess = new System.Windows.Forms.CheckBox();
-            this.cbPerlScripts = new System.Windows.Forms.CheckBox();
-            this.cbEnvelopes = new System.Windows.Forms.CheckBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.grpImplementationReview = new System.Windows.Forms.GroupBox();
@@ -100,33 +79,50 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabReview = new System.Windows.Forms.TabPage();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.txtApprovingManager = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtProjectManager = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtPerlScripts = new System.Windows.Forms.TextBox();
+            this.cbXSLTEmailErrorHeader = new System.Windows.Forms.CheckBox();
+            this.cbRAILSrecord = new System.Windows.Forms.CheckBox();
+            this.cbEmailCodeList = new System.Windows.Forms.CheckBox();
+            this.cbRAILSfilter = new System.Windows.Forms.CheckBox();
+            this.cbFileStructureInProduction = new System.Windows.Forms.CheckBox();
+            this.cbFTPconnect = new System.Windows.Forms.CheckBox();
+            this.cbTRANSPORTparmfile = new System.Windows.Forms.CheckBox();
+            this.cbRAILStable = new System.Windows.Forms.CheckBox();
+            this.cbMapCodeTables = new System.Windows.Forms.CheckBox();
+            this.cbDocumentMap = new System.Windows.Forms.CheckBox();
+            this.cbDocumentExtractionMap = new System.Windows.Forms.CheckBox();
+            this.cbServiceAdapter = new System.Windows.Forms.CheckBox();
+            this.cbBusinessProcess = new System.Windows.Forms.CheckBox();
+            this.cbPerlScripts = new System.Windows.Forms.CheckBox();
+            this.cbEnvelopes = new System.Windows.Forms.CheckBox();
             this.tabcApprovals.SuspendLayout();
             this.tabApprovals.SuspendLayout();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
+            this.tabReview.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabcApprovals
             // 
             this.tabcApprovals.Controls.Add(this.tabApprovals);
             this.tabcApprovals.Controls.Add(this.tabReview);
-            this.tabcApprovals.Location = new System.Drawing.Point(22, 20);
+            this.tabcApprovals.Location = new System.Drawing.Point(3, 3);
             this.tabcApprovals.Name = "tabcApprovals";
             this.tabcApprovals.SelectedIndex = 0;
-            this.tabcApprovals.Size = new System.Drawing.Size(1135, 830);
+            this.tabcApprovals.Size = new System.Drawing.Size(1135, 503);
             this.tabcApprovals.TabIndex = 1;
             // 
             // tabApprovals
             // 
+            this.tabApprovals.AutoScroll = true;
             this.tabApprovals.BackColor = System.Drawing.Color.LightBlue;
             this.tabApprovals.Controls.Add(this.lbStatus);
             this.tabApprovals.Controls.Add(this.label15);
-            this.tabApprovals.Controls.Add(this.btnSend);
-            this.tabApprovals.Controls.Add(this.txtApprovingManager);
-            this.tabApprovals.Controls.Add(this.label32);
-            this.tabApprovals.Controls.Add(this.txtProjectManager);
-            this.tabApprovals.Controls.Add(this.label30);
-            this.tabApprovals.Controls.Add(this.txtPerlScripts);
             this.tabApprovals.Controls.Add(this.txtDescription);
             this.tabApprovals.Controls.Add(this.txtCodeReviewDATE);
             this.tabApprovals.Controls.Add(this.txtCodeReviewBY);
@@ -135,21 +131,6 @@
             this.tabApprovals.Controls.Add(this.txtPartner);
             this.tabApprovals.Controls.Add(this.txtDate);
             this.tabApprovals.Controls.Add(this.txtUser);
-            this.tabApprovals.Controls.Add(this.cbXSLTEmailErrorHeader);
-            this.tabApprovals.Controls.Add(this.cbRAILSrecord);
-            this.tabApprovals.Controls.Add(this.cbEmailCodeList);
-            this.tabApprovals.Controls.Add(this.cbRAILSfilter);
-            this.tabApprovals.Controls.Add(this.cbFileStructureInProduction);
-            this.tabApprovals.Controls.Add(this.cbFTPconnect);
-            this.tabApprovals.Controls.Add(this.cbTRANSPORTparmfile);
-            this.tabApprovals.Controls.Add(this.cbRAILStable);
-            this.tabApprovals.Controls.Add(this.cbMapCodeTables);
-            this.tabApprovals.Controls.Add(this.cbDocumentMap);
-            this.tabApprovals.Controls.Add(this.cbDocumentExtractionMap);
-            this.tabApprovals.Controls.Add(this.cbServiceAdapter);
-            this.tabApprovals.Controls.Add(this.cbBusinessProcess);
-            this.tabApprovals.Controls.Add(this.cbPerlScripts);
-            this.tabApprovals.Controls.Add(this.cbEnvelopes);
             this.tabApprovals.Controls.Add(this.btnPrint);
             this.tabApprovals.Controls.Add(this.label31);
             this.tabApprovals.Controls.Add(this.grpImplementationReview);
@@ -179,7 +160,7 @@
             this.tabApprovals.Location = new System.Drawing.Point(4, 22);
             this.tabApprovals.Name = "tabApprovals";
             this.tabApprovals.Padding = new System.Windows.Forms.Padding(3);
-            this.tabApprovals.Size = new System.Drawing.Size(1127, 804);
+            this.tabApprovals.Size = new System.Drawing.Size(1127, 477);
             this.tabApprovals.TabIndex = 0;
             this.tabApprovals.Text = "Approvals";
             // 
@@ -204,58 +185,6 @@
             this.label15.Size = new System.Drawing.Size(60, 20);
             this.label15.TabIndex = 66;
             this.label15.Text = "Status:";
-            // 
-            // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(725, 745);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(80, 28);
-            this.btnSend.TabIndex = 65;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
-            // 
-            // txtApprovingManager
-            // 
-            this.txtApprovingManager.Location = new System.Drawing.Point(522, 745);
-            this.txtApprovingManager.Multiline = true;
-            this.txtApprovingManager.Name = "txtApprovingManager";
-            this.txtApprovingManager.Size = new System.Drawing.Size(186, 28);
-            this.txtApprovingManager.TabIndex = 64;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(291, 748);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(212, 25);
-            this.label32.TabIndex = 63;
-            this.label32.Text = "Approving Manager: ";
-            // 
-            // txtProjectManager
-            // 
-            this.txtProjectManager.Location = new System.Drawing.Point(522, 695);
-            this.txtProjectManager.Multiline = true;
-            this.txtProjectManager.Name = "txtProjectManager";
-            this.txtProjectManager.Size = new System.Drawing.Size(186, 26);
-            this.txtProjectManager.TabIndex = 62;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(327, 696);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(176, 25);
-            this.label30.TabIndex = 61;
-            this.label30.Text = "Project Manager:";
-            // 
-            // txtPerlScripts
-            // 
-            this.txtPerlScripts.Location = new System.Drawing.Point(776, 492);
-            this.txtPerlScripts.Name = "txtPerlScripts";
-            this.txtPerlScripts.Size = new System.Drawing.Size(161, 20);
-            this.txtPerlScripts.TabIndex = 60;
             // 
             // txtDescription
             // 
@@ -315,171 +244,6 @@
             this.txtUser.Size = new System.Drawing.Size(237, 20);
             this.txtUser.TabIndex = 3;
             // 
-            // cbXSLTEmailErrorHeader
-            // 
-            this.cbXSLTEmailErrorHeader.AutoSize = true;
-            this.cbXSLTEmailErrorHeader.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbXSLTEmailErrorHeader.Location = new System.Drawing.Point(425, 573);
-            this.cbXSLTEmailErrorHeader.Name = "cbXSLTEmailErrorHeader";
-            this.cbXSLTEmailErrorHeader.Size = new System.Drawing.Size(197, 23);
-            this.cbXSLTEmailErrorHeader.TabIndex = 59;
-            this.cbXSLTEmailErrorHeader.Text = "XSLT Email Error Header";
-            this.cbXSLTEmailErrorHeader.UseVisualStyleBackColor = true;
-            // 
-            // cbRAILSrecord
-            // 
-            this.cbRAILSrecord.AutoSize = true;
-            this.cbRAILSrecord.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRAILSrecord.Location = new System.Drawing.Point(667, 614);
-            this.cbRAILSrecord.Name = "cbRAILSrecord";
-            this.cbRAILSrecord.Size = new System.Drawing.Size(118, 23);
-            this.cbRAILSrecord.TabIndex = 58;
-            this.cbRAILSrecord.Text = "RAILS record";
-            this.cbRAILSrecord.UseVisualStyleBackColor = true;
-            // 
-            // cbEmailCodeList
-            // 
-            this.cbEmailCodeList.AutoSize = true;
-            this.cbEmailCodeList.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEmailCodeList.Location = new System.Drawing.Point(667, 531);
-            this.cbEmailCodeList.Name = "cbEmailCodeList";
-            this.cbEmailCodeList.Size = new System.Drawing.Size(138, 23);
-            this.cbEmailCodeList.TabIndex = 46;
-            this.cbEmailCodeList.Text = " Email Code List";
-            this.cbEmailCodeList.UseVisualStyleBackColor = true;
-            // 
-            // cbRAILSfilter
-            // 
-            this.cbRAILSfilter.AutoSize = true;
-            this.cbRAILSfilter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRAILSfilter.Location = new System.Drawing.Point(667, 655);
-            this.cbRAILSfilter.Name = "cbRAILSfilter";
-            this.cbRAILSfilter.Size = new System.Drawing.Size(109, 23);
-            this.cbRAILSfilter.TabIndex = 57;
-            this.cbRAILSfilter.Text = " RAILS filter";
-            this.cbRAILSfilter.UseVisualStyleBackColor = true;
-            // 
-            // cbFileStructureInProduction
-            // 
-            this.cbFileStructureInProduction.AutoSize = true;
-            this.cbFileStructureInProduction.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFileStructureInProduction.Location = new System.Drawing.Point(193, 573);
-            this.cbFileStructureInProduction.Name = "cbFileStructureInProduction";
-            this.cbFileStructureInProduction.Size = new System.Drawing.Size(217, 23);
-            this.cbFileStructureInProduction.TabIndex = 56;
-            this.cbFileStructureInProduction.Text = "File Structure In Production";
-            this.cbFileStructureInProduction.UseVisualStyleBackColor = true;
-            // 
-            // cbFTPconnect
-            // 
-            this.cbFTPconnect.AutoSize = true;
-            this.cbFTPconnect.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFTPconnect.Location = new System.Drawing.Point(195, 614);
-            this.cbFTPconnect.Name = "cbFTPconnect";
-            this.cbFTPconnect.Size = new System.Drawing.Size(114, 23);
-            this.cbFTPconnect.TabIndex = 55;
-            this.cbFTPconnect.Text = "FTP Connect";
-            this.cbFTPconnect.UseVisualStyleBackColor = true;
-            // 
-            // cbTRANSPORTparmfile
-            // 
-            this.cbTRANSPORTparmfile.AutoSize = true;
-            this.cbTRANSPORTparmfile.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTRANSPORTparmfile.Location = new System.Drawing.Point(425, 531);
-            this.cbTRANSPORTparmfile.Name = "cbTRANSPORTparmfile";
-            this.cbTRANSPORTparmfile.Size = new System.Drawing.Size(185, 23);
-            this.cbTRANSPORTparmfile.TabIndex = 54;
-            this.cbTRANSPORTparmfile.Text = "TRANSPORT Parm File";
-            this.cbTRANSPORTparmfile.UseVisualStyleBackColor = true;
-            // 
-            // cbRAILStable
-            // 
-            this.cbRAILStable.AutoSize = true;
-            this.cbRAILStable.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRAILStable.Location = new System.Drawing.Point(667, 573);
-            this.cbRAILStable.Name = "cbRAILStable";
-            this.cbRAILStable.Size = new System.Drawing.Size(107, 23);
-            this.cbRAILStable.TabIndex = 53;
-            this.cbRAILStable.Text = "RAILS table";
-            this.cbRAILStable.UseVisualStyleBackColor = true;
-            // 
-            // cbMapCodeTables
-            // 
-            this.cbMapCodeTables.AutoSize = true;
-            this.cbMapCodeTables.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMapCodeTables.Location = new System.Drawing.Point(425, 492);
-            this.cbMapCodeTables.Name = "cbMapCodeTables";
-            this.cbMapCodeTables.Size = new System.Drawing.Size(147, 23);
-            this.cbMapCodeTables.TabIndex = 52;
-            this.cbMapCodeTables.Text = "Map Code Tables";
-            this.cbMapCodeTables.UseVisualStyleBackColor = true;
-            // 
-            // cbDocumentMap
-            // 
-            this.cbDocumentMap.AutoSize = true;
-            this.cbDocumentMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDocumentMap.Location = new System.Drawing.Point(195, 655);
-            this.cbDocumentMap.Name = "cbDocumentMap";
-            this.cbDocumentMap.Size = new System.Drawing.Size(142, 23);
-            this.cbDocumentMap.TabIndex = 51;
-            this.cbDocumentMap.Text = "Document Maps";
-            this.cbDocumentMap.UseVisualStyleBackColor = true;
-            // 
-            // cbDocumentExtractionMap
-            // 
-            this.cbDocumentExtractionMap.AutoSize = true;
-            this.cbDocumentExtractionMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDocumentExtractionMap.Location = new System.Drawing.Point(195, 531);
-            this.cbDocumentExtractionMap.Name = "cbDocumentExtractionMap";
-            this.cbDocumentExtractionMap.Size = new System.Drawing.Size(207, 23);
-            this.cbDocumentExtractionMap.TabIndex = 50;
-            this.cbDocumentExtractionMap.Text = "Document Extraction Map";
-            this.cbDocumentExtractionMap.UseVisualStyleBackColor = true;
-            // 
-            // cbServiceAdapter
-            // 
-            this.cbServiceAdapter.AutoSize = true;
-            this.cbServiceAdapter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbServiceAdapter.Location = new System.Drawing.Point(425, 655);
-            this.cbServiceAdapter.Name = "cbServiceAdapter";
-            this.cbServiceAdapter.Size = new System.Drawing.Size(137, 23);
-            this.cbServiceAdapter.TabIndex = 49;
-            this.cbServiceAdapter.Text = "Service Adapter";
-            this.cbServiceAdapter.UseVisualStyleBackColor = true;
-            // 
-            // cbBusinessProcess
-            // 
-            this.cbBusinessProcess.AutoSize = true;
-            this.cbBusinessProcess.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBusinessProcess.Location = new System.Drawing.Point(195, 492);
-            this.cbBusinessProcess.Name = "cbBusinessProcess";
-            this.cbBusinessProcess.Size = new System.Drawing.Size(145, 23);
-            this.cbBusinessProcess.TabIndex = 48;
-            this.cbBusinessProcess.Text = "Business Process";
-            this.cbBusinessProcess.UseVisualStyleBackColor = true;
-            // 
-            // cbPerlScripts
-            // 
-            this.cbPerlScripts.AutoSize = true;
-            this.cbPerlScripts.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPerlScripts.Location = new System.Drawing.Point(667, 492);
-            this.cbPerlScripts.Name = "cbPerlScripts";
-            this.cbPerlScripts.Size = new System.Drawing.Size(106, 23);
-            this.cbPerlScripts.TabIndex = 47;
-            this.cbPerlScripts.Text = "Perl Scripts";
-            this.cbPerlScripts.UseVisualStyleBackColor = true;
-            // 
-            // cbEnvelopes
-            // 
-            this.cbEnvelopes.AutoSize = true;
-            this.cbEnvelopes.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEnvelopes.Location = new System.Drawing.Point(425, 614);
-            this.cbEnvelopes.Name = "cbEnvelopes";
-            this.cbEnvelopes.Size = new System.Drawing.Size(98, 23);
-            this.cbEnvelopes.TabIndex = 45;
-            this.cbEnvelopes.Text = "Envelopes";
-            this.cbEnvelopes.UseVisualStyleBackColor = true;
-            // 
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(3, 3);
@@ -520,6 +284,7 @@
             this.rbAbandonedI.TabStop = true;
             this.rbAbandonedI.Text = "Abandoned";
             this.rbAbandonedI.UseVisualStyleBackColor = true;
+            this.rbAbandonedI.CheckedChanged += new System.EventHandler(this.rbAbandonedI_CheckedChanged);
             // 
             // rbBackedOutI
             // 
@@ -531,6 +296,7 @@
             this.rbBackedOutI.TabStop = true;
             this.rbBackedOutI.Text = "Backed Out";
             this.rbBackedOutI.UseVisualStyleBackColor = true;
+            this.rbBackedOutI.CheckedChanged += new System.EventHandler(this.rbBackedOutI_CheckedChanged);
             // 
             // rbInstalledI
             // 
@@ -542,6 +308,7 @@
             this.rbInstalledI.TabStop = true;
             this.rbInstalledI.Text = "Installed";
             this.rbInstalledI.UseVisualStyleBackColor = true;
+            this.rbInstalledI.CheckedChanged += new System.EventHandler(this.rbInstalledI_CheckedChanged);
             // 
             // grpPostReview
             // 
@@ -564,6 +331,7 @@
             this.rbAbandonedP.TabStop = true;
             this.rbAbandonedP.Text = "Abandoned";
             this.rbAbandonedP.UseVisualStyleBackColor = true;
+            this.rbAbandonedP.CheckedChanged += new System.EventHandler(this.rbAbandonedP_CheckedChanged);
             // 
             // rbBackedOutP
             // 
@@ -575,6 +343,7 @@
             this.rbBackedOutP.TabStop = true;
             this.rbBackedOutP.Text = "Backed Out";
             this.rbBackedOutP.UseVisualStyleBackColor = true;
+            this.rbBackedOutP.CheckedChanged += new System.EventHandler(this.rbBackedOutP_CheckedChanged);
             // 
             // rbInstalledP
             // 
@@ -586,6 +355,7 @@
             this.rbInstalledP.TabStop = true;
             this.rbInstalledP.Text = "Installed";
             this.rbInstalledP.UseVisualStyleBackColor = true;
+            this.rbInstalledP.CheckedChanged += new System.EventHandler(this.rbInstalledP_CheckedChanged);
             // 
             // cbCodeReview
             // 
@@ -809,12 +579,250 @@
             // 
             // tabReview
             // 
-            this.tabReview.BackColor = System.Drawing.Color.SlateGray;
+            this.tabReview.BackColor = System.Drawing.Color.LightBlue;
+            this.tabReview.Controls.Add(this.btnSend);
+            this.tabReview.Controls.Add(this.txtApprovingManager);
+            this.tabReview.Controls.Add(this.label32);
+            this.tabReview.Controls.Add(this.txtProjectManager);
+            this.tabReview.Controls.Add(this.label30);
+            this.tabReview.Controls.Add(this.txtPerlScripts);
+            this.tabReview.Controls.Add(this.cbXSLTEmailErrorHeader);
+            this.tabReview.Controls.Add(this.cbRAILSrecord);
+            this.tabReview.Controls.Add(this.cbEmailCodeList);
+            this.tabReview.Controls.Add(this.cbRAILSfilter);
+            this.tabReview.Controls.Add(this.cbFileStructureInProduction);
+            this.tabReview.Controls.Add(this.cbFTPconnect);
+            this.tabReview.Controls.Add(this.cbTRANSPORTparmfile);
+            this.tabReview.Controls.Add(this.cbRAILStable);
+            this.tabReview.Controls.Add(this.cbMapCodeTables);
+            this.tabReview.Controls.Add(this.cbDocumentMap);
+            this.tabReview.Controls.Add(this.cbDocumentExtractionMap);
+            this.tabReview.Controls.Add(this.cbServiceAdapter);
+            this.tabReview.Controls.Add(this.cbBusinessProcess);
+            this.tabReview.Controls.Add(this.cbPerlScripts);
+            this.tabReview.Controls.Add(this.cbEnvelopes);
             this.tabReview.Location = new System.Drawing.Point(4, 22);
             this.tabReview.Name = "tabReview";
-            this.tabReview.Size = new System.Drawing.Size(1127, 804);
+            this.tabReview.Size = new System.Drawing.Size(1127, 477);
             this.tabReview.TabIndex = 2;
             this.tabReview.Text = "Review";
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(922, 441);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(80, 28);
+            this.btnSend.TabIndex = 86;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            // 
+            // txtApprovingManager
+            // 
+            this.txtApprovingManager.Location = new System.Drawing.Point(713, 441);
+            this.txtApprovingManager.Multiline = true;
+            this.txtApprovingManager.Name = "txtApprovingManager";
+            this.txtApprovingManager.Size = new System.Drawing.Size(186, 28);
+            this.txtApprovingManager.TabIndex = 85;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(477, 441);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(212, 25);
+            this.label32.TabIndex = 84;
+            this.label32.Text = "Approving Manager: ";
+            // 
+            // txtProjectManager
+            // 
+            this.txtProjectManager.Location = new System.Drawing.Point(239, 440);
+            this.txtProjectManager.Multiline = true;
+            this.txtProjectManager.Name = "txtProjectManager";
+            this.txtProjectManager.Size = new System.Drawing.Size(186, 26);
+            this.txtProjectManager.TabIndex = 83;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(44, 441);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(176, 25);
+            this.label30.TabIndex = 82;
+            this.label30.Text = "Project Manager:";
+            // 
+            // txtPerlScripts
+            // 
+            this.txtPerlScripts.Location = new System.Drawing.Point(560, 92);
+            this.txtPerlScripts.Name = "txtPerlScripts";
+            this.txtPerlScripts.Size = new System.Drawing.Size(161, 20);
+            this.txtPerlScripts.TabIndex = 81;
+            // 
+            // cbXSLTEmailErrorHeader
+            // 
+            this.cbXSLTEmailErrorHeader.AutoSize = true;
+            this.cbXSLTEmailErrorHeader.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbXSLTEmailErrorHeader.Location = new System.Drawing.Point(328, 214);
+            this.cbXSLTEmailErrorHeader.Name = "cbXSLTEmailErrorHeader";
+            this.cbXSLTEmailErrorHeader.Size = new System.Drawing.Size(197, 23);
+            this.cbXSLTEmailErrorHeader.TabIndex = 80;
+            this.cbXSLTEmailErrorHeader.Text = "XSLT Email Error Header";
+            this.cbXSLTEmailErrorHeader.UseVisualStyleBackColor = true;
+            // 
+            // cbRAILSrecord
+            // 
+            this.cbRAILSrecord.AutoSize = true;
+            this.cbRAILSrecord.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRAILSrecord.Location = new System.Drawing.Point(583, 296);
+            this.cbRAILSrecord.Name = "cbRAILSrecord";
+            this.cbRAILSrecord.Size = new System.Drawing.Size(144, 23);
+            this.cbRAILSrecord.TabIndex = 79;
+            this.cbRAILSrecord.Text = "RAILS csv record";
+            this.cbRAILSrecord.UseVisualStyleBackColor = true;
+            // 
+            // cbEmailCodeList
+            // 
+            this.cbEmailCodeList.AutoSize = true;
+            this.cbEmailCodeList.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmailCodeList.Location = new System.Drawing.Point(583, 143);
+            this.cbEmailCodeList.Name = "cbEmailCodeList";
+            this.cbEmailCodeList.Size = new System.Drawing.Size(138, 23);
+            this.cbEmailCodeList.TabIndex = 67;
+            this.cbEmailCodeList.Text = " Email Code List";
+            this.cbEmailCodeList.UseVisualStyleBackColor = true;
+            // 
+            // cbRAILSfilter
+            // 
+            this.cbRAILSfilter.AutoSize = true;
+            this.cbRAILSfilter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRAILSfilter.Location = new System.Drawing.Point(825, 214);
+            this.cbRAILSfilter.Name = "cbRAILSfilter";
+            this.cbRAILSfilter.Size = new System.Drawing.Size(135, 23);
+            this.cbRAILSfilter.TabIndex = 78;
+            this.cbRAILSfilter.Text = " RAILS csv filter";
+            this.cbRAILSfilter.UseVisualStyleBackColor = true;
+            // 
+            // cbFileStructureInProduction
+            // 
+            this.cbFileStructureInProduction.AutoSize = true;
+            this.cbFileStructureInProduction.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFileStructureInProduction.Location = new System.Drawing.Point(49, 214);
+            this.cbFileStructureInProduction.Name = "cbFileStructureInProduction";
+            this.cbFileStructureInProduction.Size = new System.Drawing.Size(217, 23);
+            this.cbFileStructureInProduction.TabIndex = 77;
+            this.cbFileStructureInProduction.Text = "File Structure In Production";
+            this.cbFileStructureInProduction.UseVisualStyleBackColor = true;
+            // 
+            // cbFTPconnect
+            // 
+            this.cbFTPconnect.AutoSize = true;
+            this.cbFTPconnect.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFTPconnect.Location = new System.Drawing.Point(49, 296);
+            this.cbFTPconnect.Name = "cbFTPconnect";
+            this.cbFTPconnect.Size = new System.Drawing.Size(114, 23);
+            this.cbFTPconnect.TabIndex = 76;
+            this.cbFTPconnect.Text = "FTP Connect";
+            this.cbFTPconnect.UseVisualStyleBackColor = true;
+            // 
+            // cbTRANSPORTparmfile
+            // 
+            this.cbTRANSPORTparmfile.AutoSize = true;
+            this.cbTRANSPORTparmfile.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTRANSPORTparmfile.Location = new System.Drawing.Point(328, 143);
+            this.cbTRANSPORTparmfile.Name = "cbTRANSPORTparmfile";
+            this.cbTRANSPORTparmfile.Size = new System.Drawing.Size(185, 23);
+            this.cbTRANSPORTparmfile.TabIndex = 75;
+            this.cbTRANSPORTparmfile.Text = "TRANSPORT Parm File";
+            this.cbTRANSPORTparmfile.UseVisualStyleBackColor = true;
+            // 
+            // cbRAILStable
+            // 
+            this.cbRAILStable.AutoSize = true;
+            this.cbRAILStable.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRAILStable.Location = new System.Drawing.Point(583, 214);
+            this.cbRAILStable.Name = "cbRAILStable";
+            this.cbRAILStable.Size = new System.Drawing.Size(133, 23);
+            this.cbRAILStable.TabIndex = 74;
+            this.cbRAILStable.Text = "RAILS csv table";
+            this.cbRAILStable.UseVisualStyleBackColor = true;
+            // 
+            // cbMapCodeTables
+            // 
+            this.cbMapCodeTables.AutoSize = true;
+            this.cbMapCodeTables.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMapCodeTables.Location = new System.Drawing.Point(328, 60);
+            this.cbMapCodeTables.Name = "cbMapCodeTables";
+            this.cbMapCodeTables.Size = new System.Drawing.Size(147, 23);
+            this.cbMapCodeTables.TabIndex = 73;
+            this.cbMapCodeTables.Text = "Map Code Tables";
+            this.cbMapCodeTables.UseVisualStyleBackColor = true;
+            // 
+            // cbDocumentMap
+            // 
+            this.cbDocumentMap.AutoSize = true;
+            this.cbDocumentMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDocumentMap.Location = new System.Drawing.Point(825, 63);
+            this.cbDocumentMap.Name = "cbDocumentMap";
+            this.cbDocumentMap.Size = new System.Drawing.Size(142, 23);
+            this.cbDocumentMap.TabIndex = 72;
+            this.cbDocumentMap.Text = "Document Maps";
+            this.cbDocumentMap.UseVisualStyleBackColor = true;
+            // 
+            // cbDocumentExtractionMap
+            // 
+            this.cbDocumentExtractionMap.AutoSize = true;
+            this.cbDocumentExtractionMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDocumentExtractionMap.Location = new System.Drawing.Point(49, 143);
+            this.cbDocumentExtractionMap.Name = "cbDocumentExtractionMap";
+            this.cbDocumentExtractionMap.Size = new System.Drawing.Size(207, 23);
+            this.cbDocumentExtractionMap.TabIndex = 71;
+            this.cbDocumentExtractionMap.Text = "Document Extraction Map";
+            this.cbDocumentExtractionMap.UseVisualStyleBackColor = true;
+            // 
+            // cbServiceAdapter
+            // 
+            this.cbServiceAdapter.AutoSize = true;
+            this.cbServiceAdapter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbServiceAdapter.Location = new System.Drawing.Point(825, 134);
+            this.cbServiceAdapter.Name = "cbServiceAdapter";
+            this.cbServiceAdapter.Size = new System.Drawing.Size(137, 23);
+            this.cbServiceAdapter.TabIndex = 70;
+            this.cbServiceAdapter.Text = "Service Adapter";
+            this.cbServiceAdapter.UseVisualStyleBackColor = true;
+            // 
+            // cbBusinessProcess
+            // 
+            this.cbBusinessProcess.AutoSize = true;
+            this.cbBusinessProcess.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBusinessProcess.Location = new System.Drawing.Point(49, 63);
+            this.cbBusinessProcess.Name = "cbBusinessProcess";
+            this.cbBusinessProcess.Size = new System.Drawing.Size(145, 23);
+            this.cbBusinessProcess.TabIndex = 69;
+            this.cbBusinessProcess.Text = "Business Process";
+            this.cbBusinessProcess.UseVisualStyleBackColor = true;
+            // 
+            // cbPerlScripts
+            // 
+            this.cbPerlScripts.AutoSize = true;
+            this.cbPerlScripts.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPerlScripts.Location = new System.Drawing.Point(583, 63);
+            this.cbPerlScripts.Name = "cbPerlScripts";
+            this.cbPerlScripts.Size = new System.Drawing.Size(106, 23);
+            this.cbPerlScripts.TabIndex = 68;
+            this.cbPerlScripts.Text = "Perl Scripts";
+            this.cbPerlScripts.UseVisualStyleBackColor = true;
+            // 
+            // cbEnvelopes
+            // 
+            this.cbEnvelopes.AutoSize = true;
+            this.cbEnvelopes.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEnvelopes.Location = new System.Drawing.Point(328, 296);
+            this.cbEnvelopes.Name = "cbEnvelopes";
+            this.cbEnvelopes.Size = new System.Drawing.Size(98, 23);
+            this.cbEnvelopes.TabIndex = 66;
+            this.cbEnvelopes.Text = "Envelopes";
+            this.cbEnvelopes.UseVisualStyleBackColor = true;
             // 
             // Open_Approval
             // 
@@ -832,6 +840,8 @@
             this.grpImplementationReview.PerformLayout();
             this.grpPostReview.ResumeLayout(false);
             this.grpPostReview.PerformLayout();
+            this.tabReview.ResumeLayout(false);
+            this.tabReview.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -857,12 +867,6 @@
         private System.Windows.Forms.TabPage tabApprovals;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.TextBox txtApprovingManager;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtProjectManager;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtPerlScripts;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtCodeReviewDATE;
         private System.Windows.Forms.TextBox txtCodeReviewBY;
@@ -871,21 +875,6 @@
         private System.Windows.Forms.TextBox txtPartner;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.CheckBox cbXSLTEmailErrorHeader;
-        private System.Windows.Forms.CheckBox cbRAILSrecord;
-        private System.Windows.Forms.CheckBox cbEmailCodeList;
-        private System.Windows.Forms.CheckBox cbRAILSfilter;
-        private System.Windows.Forms.CheckBox cbFileStructureInProduction;
-        private System.Windows.Forms.CheckBox cbFTPconnect;
-        private System.Windows.Forms.CheckBox cbTRANSPORTparmfile;
-        private System.Windows.Forms.CheckBox cbRAILStable;
-        private System.Windows.Forms.CheckBox cbMapCodeTables;
-        private System.Windows.Forms.CheckBox cbDocumentMap;
-        private System.Windows.Forms.CheckBox cbDocumentExtractionMap;
-        private System.Windows.Forms.CheckBox cbServiceAdapter;
-        private System.Windows.Forms.CheckBox cbBusinessProcess;
-        private System.Windows.Forms.CheckBox cbPerlScripts;
-        private System.Windows.Forms.CheckBox cbEnvelopes;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.GroupBox grpImplementationReview;
@@ -919,6 +908,27 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabReview;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.TextBox txtApprovingManager;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtProjectManager;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtPerlScripts;
+        private System.Windows.Forms.CheckBox cbXSLTEmailErrorHeader;
+        private System.Windows.Forms.CheckBox cbRAILSrecord;
+        private System.Windows.Forms.CheckBox cbEmailCodeList;
+        private System.Windows.Forms.CheckBox cbRAILSfilter;
+        private System.Windows.Forms.CheckBox cbFileStructureInProduction;
+        private System.Windows.Forms.CheckBox cbFTPconnect;
+        private System.Windows.Forms.CheckBox cbTRANSPORTparmfile;
+        private System.Windows.Forms.CheckBox cbRAILStable;
+        private System.Windows.Forms.CheckBox cbMapCodeTables;
+        private System.Windows.Forms.CheckBox cbDocumentMap;
+        private System.Windows.Forms.CheckBox cbDocumentExtractionMap;
+        private System.Windows.Forms.CheckBox cbServiceAdapter;
+        private System.Windows.Forms.CheckBox cbBusinessProcess;
+        private System.Windows.Forms.CheckBox cbPerlScripts;
+        private System.Windows.Forms.CheckBox cbEnvelopes;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {

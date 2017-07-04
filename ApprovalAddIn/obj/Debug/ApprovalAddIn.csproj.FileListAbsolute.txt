@@ -32,5 +32,5 @@ C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.Properties.
 C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.GenerateResource.Cache
 C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.dll
 C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.pdb
-C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.toApproval.resources
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Open_Approval.resources
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.Open_Approval.resources
