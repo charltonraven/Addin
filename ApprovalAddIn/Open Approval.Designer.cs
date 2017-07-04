@@ -36,7 +36,7 @@
         {
             this.tabcApprovals = new System.Windows.Forms.TabControl();
             this.tabApprovals = new System.Windows.Forms.TabPage();
-            this.lbStatus = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtCodeReviewDATE = new System.Windows.Forms.TextBox();
@@ -79,7 +79,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabReview = new System.Windows.Forms.TabPage();
-            this.btnSend = new System.Windows.Forms.Button();
+            this.btnApprove = new System.Windows.Forms.Button();
             this.txtApprovingManager = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.txtProjectManager = new System.Windows.Forms.TextBox();
@@ -100,6 +100,7 @@
             this.cbBusinessProcess = new System.Windows.Forms.CheckBox();
             this.cbPerlScripts = new System.Windows.Forms.CheckBox();
             this.cbEnvelopes = new System.Windows.Forms.CheckBox();
+            this.ddAttachments = new System.Windows.Forms.DomainUpDown();
             this.tabcApprovals.SuspendLayout();
             this.tabApprovals.SuspendLayout();
             this.grpImplementationReview.SuspendLayout();
@@ -121,7 +122,7 @@
             // 
             this.tabApprovals.AutoScroll = true;
             this.tabApprovals.BackColor = System.Drawing.Color.LightBlue;
-            this.tabApprovals.Controls.Add(this.lbStatus);
+            this.tabApprovals.Controls.Add(this.lblStatus);
             this.tabApprovals.Controls.Add(this.label15);
             this.tabApprovals.Controls.Add(this.txtDescription);
             this.tabApprovals.Controls.Add(this.txtCodeReviewDATE);
@@ -164,16 +165,16 @@
             this.tabApprovals.TabIndex = 0;
             this.tabApprovals.Text = "Approvals";
             // 
-            // lbStatus
+            // lblStatus
             // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbStatus.Location = new System.Drawing.Point(502, 6);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(89, 20);
-            this.lbStatus.TabIndex = 67;
-            this.lbStatus.Text = "status here";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblStatus.Location = new System.Drawing.Point(502, 6);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(89, 20);
+            this.lblStatus.TabIndex = 67;
+            this.lblStatus.Text = "status here";
             // 
             // label15
             // 
@@ -188,60 +189,68 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(172, 94);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(237, 20);
+            this.txtDescription.Size = new System.Drawing.Size(237, 26);
             this.txtDescription.TabIndex = 43;
             // 
             // txtCodeReviewDATE
             // 
+            this.txtCodeReviewDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodeReviewDATE.Location = new System.Drawing.Point(921, 189);
             this.txtCodeReviewDATE.Name = "txtCodeReviewDATE";
-            this.txtCodeReviewDATE.Size = new System.Drawing.Size(77, 20);
+            this.txtCodeReviewDATE.Size = new System.Drawing.Size(77, 26);
             this.txtCodeReviewDATE.TabIndex = 39;
             this.txtCodeReviewDATE.Text = "Date";
             // 
             // txtCodeReviewBY
             // 
+            this.txtCodeReviewBY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodeReviewBY.Location = new System.Drawing.Point(825, 189);
             this.txtCodeReviewBY.Name = "txtCodeReviewBY";
-            this.txtCodeReviewBY.Size = new System.Drawing.Size(60, 20);
+            this.txtCodeReviewBY.Size = new System.Drawing.Size(60, 26);
             this.txtCodeReviewBY.TabIndex = 20;
             this.txtCodeReviewBY.Text = "By";
             // 
             // txtTableParmNAME
             // 
+            this.txtTableParmNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTableParmNAME.Location = new System.Drawing.Point(398, 297);
             this.txtTableParmNAME.Name = "txtTableParmNAME";
-            this.txtTableParmNAME.Size = new System.Drawing.Size(154, 20);
+            this.txtTableParmNAME.Size = new System.Drawing.Size(154, 26);
             this.txtTableParmNAME.TabIndex = 19;
             // 
             // txtChangeManagemntRequestNumber
             // 
+            this.txtChangeManagemntRequestNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChangeManagemntRequestNumber.Location = new System.Drawing.Point(776, 94);
             this.txtChangeManagemntRequestNumber.Name = "txtChangeManagemntRequestNumber";
-            this.txtChangeManagemntRequestNumber.Size = new System.Drawing.Size(237, 20);
+            this.txtChangeManagemntRequestNumber.Size = new System.Drawing.Size(237, 26);
             this.txtChangeManagemntRequestNumber.TabIndex = 7;
             // 
             // txtPartner
             // 
+            this.txtPartner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPartner.Location = new System.Drawing.Point(446, 46);
             this.txtPartner.Name = "txtPartner";
-            this.txtPartner.Size = new System.Drawing.Size(237, 20);
+            this.txtPartner.Size = new System.Drawing.Size(237, 26);
             this.txtPartner.TabIndex = 5;
             // 
             // txtDate
             // 
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.Location = new System.Drawing.Point(761, 46);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(237, 20);
+            this.txtDate.Size = new System.Drawing.Size(237, 26);
             this.txtDate.TabIndex = 4;
             // 
             // txtUser
             // 
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(91, 46);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(237, 20);
+            this.txtUser.Size = new System.Drawing.Size(237, 26);
             this.txtUser.TabIndex = 3;
             // 
             // btnPrint
@@ -270,16 +279,18 @@
             this.grpImplementationReview.Controls.Add(this.rbInstalledI);
             this.grpImplementationReview.Location = new System.Drawing.Point(690, 326);
             this.grpImplementationReview.Name = "grpImplementationReview";
-            this.grpImplementationReview.Size = new System.Drawing.Size(297, 53);
+            this.grpImplementationReview.Size = new System.Drawing.Size(308, 53);
             this.grpImplementationReview.TabIndex = 41;
             this.grpImplementationReview.TabStop = false;
             // 
             // rbAbandonedI
             // 
             this.rbAbandonedI.AutoSize = true;
+            this.rbAbandonedI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbAbandonedI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAbandonedI.Location = new System.Drawing.Point(196, 19);
             this.rbAbandonedI.Name = "rbAbandonedI";
-            this.rbAbandonedI.Size = new System.Drawing.Size(80, 17);
+            this.rbAbandonedI.Size = new System.Drawing.Size(99, 22);
             this.rbAbandonedI.TabIndex = 2;
             this.rbAbandonedI.TabStop = true;
             this.rbAbandonedI.Text = "Abandoned";
@@ -289,9 +300,11 @@
             // rbBackedOutI
             // 
             this.rbBackedOutI.AutoSize = true;
+            this.rbBackedOutI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbBackedOutI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbBackedOutI.Location = new System.Drawing.Point(97, 19);
             this.rbBackedOutI.Name = "rbBackedOutI";
-            this.rbBackedOutI.Size = new System.Drawing.Size(82, 17);
+            this.rbBackedOutI.Size = new System.Drawing.Size(103, 22);
             this.rbBackedOutI.TabIndex = 1;
             this.rbBackedOutI.TabStop = true;
             this.rbBackedOutI.Text = "Backed Out";
@@ -301,9 +314,11 @@
             // rbInstalledI
             // 
             this.rbInstalledI.AutoSize = true;
+            this.rbInstalledI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbInstalledI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInstalledI.Location = new System.Drawing.Point(16, 19);
             this.rbInstalledI.Name = "rbInstalledI";
-            this.rbInstalledI.Size = new System.Drawing.Size(64, 17);
+            this.rbInstalledI.Size = new System.Drawing.Size(78, 22);
             this.rbInstalledI.TabIndex = 0;
             this.rbInstalledI.TabStop = true;
             this.rbInstalledI.Text = "Installed";
@@ -317,16 +332,18 @@
             this.grpPostReview.Controls.Add(this.rbInstalledP);
             this.grpPostReview.Location = new System.Drawing.Point(690, 385);
             this.grpPostReview.Name = "grpPostReview";
-            this.grpPostReview.Size = new System.Drawing.Size(297, 53);
+            this.grpPostReview.Size = new System.Drawing.Size(308, 53);
             this.grpPostReview.TabIndex = 40;
             this.grpPostReview.TabStop = false;
             // 
             // rbAbandonedP
             // 
             this.rbAbandonedP.AutoSize = true;
+            this.rbAbandonedP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbAbandonedP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAbandonedP.Location = new System.Drawing.Point(196, 19);
             this.rbAbandonedP.Name = "rbAbandonedP";
-            this.rbAbandonedP.Size = new System.Drawing.Size(80, 17);
+            this.rbAbandonedP.Size = new System.Drawing.Size(99, 22);
             this.rbAbandonedP.TabIndex = 2;
             this.rbAbandonedP.TabStop = true;
             this.rbAbandonedP.Text = "Abandoned";
@@ -336,9 +353,11 @@
             // rbBackedOutP
             // 
             this.rbBackedOutP.AutoSize = true;
+            this.rbBackedOutP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbBackedOutP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbBackedOutP.Location = new System.Drawing.Point(97, 19);
             this.rbBackedOutP.Name = "rbBackedOutP";
-            this.rbBackedOutP.Size = new System.Drawing.Size(82, 17);
+            this.rbBackedOutP.Size = new System.Drawing.Size(103, 22);
             this.rbBackedOutP.TabIndex = 1;
             this.rbBackedOutP.TabStop = true;
             this.rbBackedOutP.Text = "Backed Out";
@@ -348,9 +367,11 @@
             // rbInstalledP
             // 
             this.rbInstalledP.AutoSize = true;
+            this.rbInstalledP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbInstalledP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInstalledP.Location = new System.Drawing.Point(16, 19);
             this.rbInstalledP.Name = "rbInstalledP";
-            this.rbInstalledP.Size = new System.Drawing.Size(64, 17);
+            this.rbInstalledP.Size = new System.Drawing.Size(78, 22);
             this.rbInstalledP.TabIndex = 0;
             this.rbInstalledP.TabStop = true;
             this.rbInstalledP.Text = "Installed";
@@ -360,9 +381,10 @@
             // cbCodeReview
             // 
             this.cbCodeReview.AutoSize = true;
+            this.cbCodeReview.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbCodeReview.Location = new System.Drawing.Point(706, 192);
             this.cbCodeReview.Name = "cbCodeReview";
-            this.cbCodeReview.Size = new System.Drawing.Size(99, 17);
+            this.cbCodeReview.Size = new System.Drawing.Size(97, 17);
             this.cbCodeReview.TabIndex = 37;
             this.cbCodeReview.Text = "cbCodeReview";
             this.cbCodeReview.UseVisualStyleBackColor = true;
@@ -370,9 +392,10 @@
             // cbPartnerApproval
             // 
             this.cbPartnerApproval.AutoSize = true;
+            this.cbPartnerApproval.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPartnerApproval.Location = new System.Drawing.Point(307, 251);
             this.cbPartnerApproval.Name = "cbPartnerApproval";
-            this.cbPartnerApproval.Size = new System.Drawing.Size(114, 17);
+            this.cbPartnerApproval.Size = new System.Drawing.Size(112, 17);
             this.cbPartnerApproval.TabIndex = 36;
             this.cbPartnerApproval.Text = "cbPartnerApproval";
             this.cbPartnerApproval.UseVisualStyleBackColor = true;
@@ -380,9 +403,10 @@
             // cbPartnerSignOff
             // 
             this.cbPartnerSignOff.AutoSize = true;
+            this.cbPartnerSignOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPartnerSignOff.Location = new System.Drawing.Point(707, 298);
             this.cbPartnerSignOff.Name = "cbPartnerSignOff";
-            this.cbPartnerSignOff.Size = new System.Drawing.Size(107, 17);
+            this.cbPartnerSignOff.Size = new System.Drawing.Size(105, 17);
             this.cbPartnerSignOff.TabIndex = 33;
             this.cbPartnerSignOff.Text = "cbPartnerSignOff";
             this.cbPartnerSignOff.UseVisualStyleBackColor = true;
@@ -390,9 +414,10 @@
             // cbKeyUserSignOff
             // 
             this.cbKeyUserSignOff.AutoSize = true;
+            this.cbKeyUserSignOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbKeyUserSignOff.Location = new System.Drawing.Point(707, 248);
             this.cbKeyUserSignOff.Name = "cbKeyUserSignOff";
-            this.cbKeyUserSignOff.Size = new System.Drawing.Size(113, 17);
+            this.cbKeyUserSignOff.Size = new System.Drawing.Size(111, 17);
             this.cbKeyUserSignOff.TabIndex = 31;
             this.cbKeyUserSignOff.Text = "cbKeyUserSignOff";
             this.cbKeyUserSignOff.UseVisualStyleBackColor = true;
@@ -400,9 +425,10 @@
             // cbDevelopmentCompleted
             // 
             this.cbDevelopmentCompleted.AutoSize = true;
+            this.cbDevelopmentCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbDevelopmentCompleted.Location = new System.Drawing.Point(307, 346);
             this.cbDevelopmentCompleted.Name = "cbDevelopmentCompleted";
-            this.cbDevelopmentCompleted.Size = new System.Drawing.Size(151, 17);
+            this.cbDevelopmentCompleted.Size = new System.Drawing.Size(149, 17);
             this.cbDevelopmentCompleted.TabIndex = 30;
             this.cbDevelopmentCompleted.Text = "cbDevelopmentCompleted";
             this.cbDevelopmentCompleted.UseVisualStyleBackColor = true;
@@ -410,9 +436,10 @@
             // cbTestingCompleted
             // 
             this.cbTestingCompleted.AutoSize = true;
+            this.cbTestingCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTestingCompleted.Location = new System.Drawing.Point(307, 411);
             this.cbTestingCompleted.Name = "cbTestingCompleted";
-            this.cbTestingCompleted.Size = new System.Drawing.Size(123, 17);
+            this.cbTestingCompleted.Size = new System.Drawing.Size(121, 17);
             this.cbTestingCompleted.TabIndex = 29;
             this.cbTestingCompleted.Text = "cbTestingCompleted";
             this.cbTestingCompleted.UseVisualStyleBackColor = true;
@@ -420,9 +447,10 @@
             // cbtableParm
             // 
             this.cbtableParm.AutoSize = true;
+            this.cbtableParm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbtableParm.Location = new System.Drawing.Point(307, 300);
             this.cbtableParm.Name = "cbtableParm";
-            this.cbtableParm.Size = new System.Drawing.Size(85, 17);
+            this.cbtableParm.Size = new System.Drawing.Size(83, 17);
             this.cbtableParm.TabIndex = 28;
             this.cbtableParm.Text = "cbtableParm";
             this.cbtableParm.UseVisualStyleBackColor = true;
@@ -430,9 +458,10 @@
             // cbUserApproval
             // 
             this.cbUserApproval.AutoSize = true;
-            this.cbUserApproval.Location = new System.Drawing.Point(307, 195);
+            this.cbUserApproval.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbUserApproval.Location = new System.Drawing.Point(307, 198);
             this.cbUserApproval.Name = "cbUserApproval";
-            this.cbUserApproval.Size = new System.Drawing.Size(102, 17);
+            this.cbUserApproval.Size = new System.Drawing.Size(100, 17);
             this.cbUserApproval.TabIndex = 27;
             this.cbUserApproval.Text = "cbUserApproval";
             this.cbUserApproval.UseVisualStyleBackColor = true;
@@ -580,7 +609,8 @@
             // tabReview
             // 
             this.tabReview.BackColor = System.Drawing.Color.LightBlue;
-            this.tabReview.Controls.Add(this.btnSend);
+            this.tabReview.Controls.Add(this.ddAttachments);
+            this.tabReview.Controls.Add(this.btnApprove);
             this.tabReview.Controls.Add(this.txtApprovingManager);
             this.tabReview.Controls.Add(this.label32);
             this.tabReview.Controls.Add(this.txtProjectManager);
@@ -607,22 +637,24 @@
             this.tabReview.TabIndex = 2;
             this.tabReview.Text = "Review";
             // 
-            // btnSend
+            // btnApprove
             // 
-            this.btnSend.Location = new System.Drawing.Point(922, 441);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(80, 28);
-            this.btnSend.TabIndex = 86;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnApprove.Location = new System.Drawing.Point(922, 441);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Size = new System.Drawing.Size(80, 28);
+            this.btnApprove.TabIndex = 86;
+            this.btnApprove.Text = "Approve";
+            this.btnApprove.UseVisualStyleBackColor = true;
             // 
             // txtApprovingManager
             // 
+            this.txtApprovingManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApprovingManager.Location = new System.Drawing.Point(713, 441);
             this.txtApprovingManager.Multiline = true;
             this.txtApprovingManager.Name = "txtApprovingManager";
             this.txtApprovingManager.Size = new System.Drawing.Size(186, 28);
             this.txtApprovingManager.TabIndex = 85;
+            this.txtApprovingManager.TextChanged += new System.EventHandler(this.txtApprovingManager_TextChanged);
             // 
             // label32
             // 
@@ -636,6 +668,7 @@
             // 
             // txtProjectManager
             // 
+            this.txtProjectManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProjectManager.Location = new System.Drawing.Point(239, 440);
             this.txtProjectManager.Multiline = true;
             this.txtProjectManager.Name = "txtProjectManager";
@@ -662,10 +695,11 @@
             // cbXSLTEmailErrorHeader
             // 
             this.cbXSLTEmailErrorHeader.AutoSize = true;
+            this.cbXSLTEmailErrorHeader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbXSLTEmailErrorHeader.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbXSLTEmailErrorHeader.Location = new System.Drawing.Point(328, 214);
             this.cbXSLTEmailErrorHeader.Name = "cbXSLTEmailErrorHeader";
-            this.cbXSLTEmailErrorHeader.Size = new System.Drawing.Size(197, 23);
+            this.cbXSLTEmailErrorHeader.Size = new System.Drawing.Size(195, 23);
             this.cbXSLTEmailErrorHeader.TabIndex = 80;
             this.cbXSLTEmailErrorHeader.Text = "XSLT Email Error Header";
             this.cbXSLTEmailErrorHeader.UseVisualStyleBackColor = true;
@@ -673,10 +707,11 @@
             // cbRAILSrecord
             // 
             this.cbRAILSrecord.AutoSize = true;
+            this.cbRAILSrecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbRAILSrecord.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRAILSrecord.Location = new System.Drawing.Point(583, 296);
             this.cbRAILSrecord.Name = "cbRAILSrecord";
-            this.cbRAILSrecord.Size = new System.Drawing.Size(144, 23);
+            this.cbRAILSrecord.Size = new System.Drawing.Size(142, 23);
             this.cbRAILSrecord.TabIndex = 79;
             this.cbRAILSrecord.Text = "RAILS csv record";
             this.cbRAILSrecord.UseVisualStyleBackColor = true;
@@ -684,10 +719,11 @@
             // cbEmailCodeList
             // 
             this.cbEmailCodeList.AutoSize = true;
+            this.cbEmailCodeList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbEmailCodeList.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEmailCodeList.Location = new System.Drawing.Point(583, 143);
             this.cbEmailCodeList.Name = "cbEmailCodeList";
-            this.cbEmailCodeList.Size = new System.Drawing.Size(138, 23);
+            this.cbEmailCodeList.Size = new System.Drawing.Size(136, 23);
             this.cbEmailCodeList.TabIndex = 67;
             this.cbEmailCodeList.Text = " Email Code List";
             this.cbEmailCodeList.UseVisualStyleBackColor = true;
@@ -695,10 +731,11 @@
             // cbRAILSfilter
             // 
             this.cbRAILSfilter.AutoSize = true;
+            this.cbRAILSfilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbRAILSfilter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRAILSfilter.Location = new System.Drawing.Point(825, 214);
             this.cbRAILSfilter.Name = "cbRAILSfilter";
-            this.cbRAILSfilter.Size = new System.Drawing.Size(135, 23);
+            this.cbRAILSfilter.Size = new System.Drawing.Size(133, 23);
             this.cbRAILSfilter.TabIndex = 78;
             this.cbRAILSfilter.Text = " RAILS csv filter";
             this.cbRAILSfilter.UseVisualStyleBackColor = true;
@@ -706,10 +743,11 @@
             // cbFileStructureInProduction
             // 
             this.cbFileStructureInProduction.AutoSize = true;
+            this.cbFileStructureInProduction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFileStructureInProduction.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFileStructureInProduction.Location = new System.Drawing.Point(49, 214);
             this.cbFileStructureInProduction.Name = "cbFileStructureInProduction";
-            this.cbFileStructureInProduction.Size = new System.Drawing.Size(217, 23);
+            this.cbFileStructureInProduction.Size = new System.Drawing.Size(215, 23);
             this.cbFileStructureInProduction.TabIndex = 77;
             this.cbFileStructureInProduction.Text = "File Structure In Production";
             this.cbFileStructureInProduction.UseVisualStyleBackColor = true;
@@ -717,10 +755,11 @@
             // cbFTPconnect
             // 
             this.cbFTPconnect.AutoSize = true;
+            this.cbFTPconnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFTPconnect.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFTPconnect.Location = new System.Drawing.Point(49, 296);
             this.cbFTPconnect.Name = "cbFTPconnect";
-            this.cbFTPconnect.Size = new System.Drawing.Size(114, 23);
+            this.cbFTPconnect.Size = new System.Drawing.Size(112, 23);
             this.cbFTPconnect.TabIndex = 76;
             this.cbFTPconnect.Text = "FTP Connect";
             this.cbFTPconnect.UseVisualStyleBackColor = true;
@@ -728,10 +767,11 @@
             // cbTRANSPORTparmfile
             // 
             this.cbTRANSPORTparmfile.AutoSize = true;
+            this.cbTRANSPORTparmfile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTRANSPORTparmfile.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTRANSPORTparmfile.Location = new System.Drawing.Point(328, 143);
             this.cbTRANSPORTparmfile.Name = "cbTRANSPORTparmfile";
-            this.cbTRANSPORTparmfile.Size = new System.Drawing.Size(185, 23);
+            this.cbTRANSPORTparmfile.Size = new System.Drawing.Size(183, 23);
             this.cbTRANSPORTparmfile.TabIndex = 75;
             this.cbTRANSPORTparmfile.Text = "TRANSPORT Parm File";
             this.cbTRANSPORTparmfile.UseVisualStyleBackColor = true;
@@ -739,10 +779,11 @@
             // cbRAILStable
             // 
             this.cbRAILStable.AutoSize = true;
+            this.cbRAILStable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbRAILStable.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRAILStable.Location = new System.Drawing.Point(583, 214);
             this.cbRAILStable.Name = "cbRAILStable";
-            this.cbRAILStable.Size = new System.Drawing.Size(133, 23);
+            this.cbRAILStable.Size = new System.Drawing.Size(131, 23);
             this.cbRAILStable.TabIndex = 74;
             this.cbRAILStable.Text = "RAILS csv table";
             this.cbRAILStable.UseVisualStyleBackColor = true;
@@ -750,10 +791,11 @@
             // cbMapCodeTables
             // 
             this.cbMapCodeTables.AutoSize = true;
+            this.cbMapCodeTables.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbMapCodeTables.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMapCodeTables.Location = new System.Drawing.Point(328, 60);
             this.cbMapCodeTables.Name = "cbMapCodeTables";
-            this.cbMapCodeTables.Size = new System.Drawing.Size(147, 23);
+            this.cbMapCodeTables.Size = new System.Drawing.Size(145, 23);
             this.cbMapCodeTables.TabIndex = 73;
             this.cbMapCodeTables.Text = "Map Code Tables";
             this.cbMapCodeTables.UseVisualStyleBackColor = true;
@@ -761,10 +803,11 @@
             // cbDocumentMap
             // 
             this.cbDocumentMap.AutoSize = true;
+            this.cbDocumentMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbDocumentMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDocumentMap.Location = new System.Drawing.Point(825, 63);
             this.cbDocumentMap.Name = "cbDocumentMap";
-            this.cbDocumentMap.Size = new System.Drawing.Size(142, 23);
+            this.cbDocumentMap.Size = new System.Drawing.Size(140, 23);
             this.cbDocumentMap.TabIndex = 72;
             this.cbDocumentMap.Text = "Document Maps";
             this.cbDocumentMap.UseVisualStyleBackColor = true;
@@ -772,10 +815,11 @@
             // cbDocumentExtractionMap
             // 
             this.cbDocumentExtractionMap.AutoSize = true;
+            this.cbDocumentExtractionMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbDocumentExtractionMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDocumentExtractionMap.Location = new System.Drawing.Point(49, 143);
             this.cbDocumentExtractionMap.Name = "cbDocumentExtractionMap";
-            this.cbDocumentExtractionMap.Size = new System.Drawing.Size(207, 23);
+            this.cbDocumentExtractionMap.Size = new System.Drawing.Size(205, 23);
             this.cbDocumentExtractionMap.TabIndex = 71;
             this.cbDocumentExtractionMap.Text = "Document Extraction Map";
             this.cbDocumentExtractionMap.UseVisualStyleBackColor = true;
@@ -783,10 +827,11 @@
             // cbServiceAdapter
             // 
             this.cbServiceAdapter.AutoSize = true;
+            this.cbServiceAdapter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbServiceAdapter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbServiceAdapter.Location = new System.Drawing.Point(825, 134);
             this.cbServiceAdapter.Name = "cbServiceAdapter";
-            this.cbServiceAdapter.Size = new System.Drawing.Size(137, 23);
+            this.cbServiceAdapter.Size = new System.Drawing.Size(135, 23);
             this.cbServiceAdapter.TabIndex = 70;
             this.cbServiceAdapter.Text = "Service Adapter";
             this.cbServiceAdapter.UseVisualStyleBackColor = true;
@@ -794,10 +839,11 @@
             // cbBusinessProcess
             // 
             this.cbBusinessProcess.AutoSize = true;
+            this.cbBusinessProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbBusinessProcess.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBusinessProcess.Location = new System.Drawing.Point(49, 63);
             this.cbBusinessProcess.Name = "cbBusinessProcess";
-            this.cbBusinessProcess.Size = new System.Drawing.Size(145, 23);
+            this.cbBusinessProcess.Size = new System.Drawing.Size(143, 23);
             this.cbBusinessProcess.TabIndex = 69;
             this.cbBusinessProcess.Text = "Business Process";
             this.cbBusinessProcess.UseVisualStyleBackColor = true;
@@ -805,10 +851,11 @@
             // cbPerlScripts
             // 
             this.cbPerlScripts.AutoSize = true;
+            this.cbPerlScripts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPerlScripts.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPerlScripts.Location = new System.Drawing.Point(583, 63);
             this.cbPerlScripts.Name = "cbPerlScripts";
-            this.cbPerlScripts.Size = new System.Drawing.Size(106, 23);
+            this.cbPerlScripts.Size = new System.Drawing.Size(104, 23);
             this.cbPerlScripts.TabIndex = 68;
             this.cbPerlScripts.Text = "Perl Scripts";
             this.cbPerlScripts.UseVisualStyleBackColor = true;
@@ -816,13 +863,22 @@
             // cbEnvelopes
             // 
             this.cbEnvelopes.AutoSize = true;
+            this.cbEnvelopes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbEnvelopes.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEnvelopes.Location = new System.Drawing.Point(328, 296);
             this.cbEnvelopes.Name = "cbEnvelopes";
-            this.cbEnvelopes.Size = new System.Drawing.Size(98, 23);
+            this.cbEnvelopes.Size = new System.Drawing.Size(96, 23);
             this.cbEnvelopes.TabIndex = 66;
             this.cbEnvelopes.Text = "Envelopes";
             this.cbEnvelopes.UseVisualStyleBackColor = true;
+            // 
+            // ddAttachments
+            // 
+            this.ddAttachments.Location = new System.Drawing.Point(825, 300);
+            this.ddAttachments.Name = "ddAttachments";
+            this.ddAttachments.Size = new System.Drawing.Size(120, 20);
+            this.ddAttachments.TabIndex = 87;
+            this.ddAttachments.Text = "ddAttatch";
             // 
             // Open_Approval
             // 
@@ -865,7 +921,7 @@
 
         private System.Windows.Forms.TabControl tabcApprovals;
         private System.Windows.Forms.TabPage tabApprovals;
-        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtCodeReviewDATE;
@@ -908,7 +964,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabReview;
-        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.TextBox txtApprovingManager;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtProjectManager;
@@ -929,6 +985,7 @@
         private System.Windows.Forms.CheckBox cbBusinessProcess;
         private System.Windows.Forms.CheckBox cbPerlScripts;
         private System.Windows.Forms.CheckBox cbEnvelopes;
+        private System.Windows.Forms.DomainUpDown ddAttachments;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {
