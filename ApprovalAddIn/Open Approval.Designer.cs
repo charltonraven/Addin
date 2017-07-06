@@ -43,7 +43,7 @@
             this.rbAbandonedP = new System.Windows.Forms.RadioButton();
             this.rbBackedOutP = new System.Windows.Forms.RadioButton();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.rbInstalledP = new System.Windows.Forms.RadioButton();
+            this.rbSuccessP = new System.Windows.Forms.RadioButton();
             this.txtTableParmNAME = new System.Windows.Forms.TextBox();
             this.txtChangeManagemntRequestNumber = new System.Windows.Forms.TextBox();
             this.txtPartner = new System.Windows.Forms.TextBox();
@@ -89,19 +89,18 @@
             this.cbBusinessProcess = new System.Windows.Forms.CheckBox();
             this.cbPerlScripts = new System.Windows.Forms.CheckBox();
             this.cbEnvelopes = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblTableParmName = new System.Windows.Forms.Label();
+            this.lblCodeReviewBy = new System.Windows.Forms.Label();
+            this.lblCodeReviewDate = new System.Windows.Forms.Label();
             this.grpOptions = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.lblCompletionDateTitle = new System.Windows.Forms.Label();
             this.txtProjectManager = new System.Windows.Forms.TextBox();
             this.lblCompletionDate = new System.Windows.Forms.Label();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnReject = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
             this.grpOptions.SuspendLayout();
@@ -114,6 +113,7 @@
             this.txtCodeReviewDATE.Name = "txtCodeReviewDATE";
             this.txtCodeReviewDATE.Size = new System.Drawing.Size(139, 26);
             this.txtCodeReviewDATE.TabIndex = 96;
+            this.txtCodeReviewDATE.TextChanged += new System.EventHandler(this.txtCodeReviewDATE_TextChanged);
             // 
             // txtCodeReviewBY
             // 
@@ -122,6 +122,7 @@
             this.txtCodeReviewBY.Name = "txtCodeReviewBY";
             this.txtCodeReviewBY.Size = new System.Drawing.Size(93, 26);
             this.txtCodeReviewBY.TabIndex = 87;
+            this.txtCodeReviewBY.TextChanged += new System.EventHandler(this.txtCodeReviewBY_TextChanged);
             // 
             // rbAbandonedI
             // 
@@ -174,6 +175,7 @@
             this.rbAbandonedP.TabStop = true;
             this.rbAbandonedP.Text = "Abandoned";
             this.rbAbandonedP.UseVisualStyleBackColor = true;
+            this.rbAbandonedP.CheckedChanged += new System.EventHandler(this.rbAbandonedP_CheckedChanged);
             // 
             // rbBackedOutP
             // 
@@ -187,6 +189,7 @@
             this.rbBackedOutP.TabStop = true;
             this.rbBackedOutP.Text = "Backed Out";
             this.rbBackedOutP.UseVisualStyleBackColor = true;
+            this.rbBackedOutP.CheckedChanged += new System.EventHandler(this.rbBackedOutP_CheckedChanged);
             // 
             // txtDescription
             // 
@@ -196,19 +199,21 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(328, 163);
             this.txtDescription.TabIndex = 100;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
-            // rbInstalledP
+            // rbSuccessP
             // 
-            this.rbInstalledP.AutoSize = true;
-            this.rbInstalledP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbInstalledP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbInstalledP.Location = new System.Drawing.Point(16, 19);
-            this.rbInstalledP.Name = "rbInstalledP";
-            this.rbInstalledP.Size = new System.Drawing.Size(78, 22);
-            this.rbInstalledP.TabIndex = 0;
-            this.rbInstalledP.TabStop = true;
-            this.rbInstalledP.Text = "Installed";
-            this.rbInstalledP.UseVisualStyleBackColor = true;
+            this.rbSuccessP.AutoSize = true;
+            this.rbSuccessP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbSuccessP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSuccessP.Location = new System.Drawing.Point(12, 19);
+            this.rbSuccessP.Name = "rbSuccessP";
+            this.rbSuccessP.Size = new System.Drawing.Size(83, 22);
+            this.rbSuccessP.TabIndex = 0;
+            this.rbSuccessP.TabStop = true;
+            this.rbSuccessP.Text = "Success";
+            this.rbSuccessP.UseVisualStyleBackColor = true;
+            this.rbSuccessP.CheckedChanged += new System.EventHandler(this.rbSuccessP_CheckedChanged);
             // 
             // txtTableParmNAME
             // 
@@ -217,6 +222,7 @@
             this.txtTableParmNAME.Name = "txtTableParmNAME";
             this.txtTableParmNAME.Size = new System.Drawing.Size(182, 26);
             this.txtTableParmNAME.TabIndex = 86;
+            this.txtTableParmNAME.TextChanged += new System.EventHandler(this.txtTableParmNAME_TextChanged);
             // 
             // txtChangeManagemntRequestNumber
             // 
@@ -225,6 +231,7 @@
             this.txtChangeManagemntRequestNumber.Name = "txtChangeManagemntRequestNumber";
             this.txtChangeManagemntRequestNumber.Size = new System.Drawing.Size(184, 26);
             this.txtChangeManagemntRequestNumber.TabIndex = 75;
+            this.txtChangeManagemntRequestNumber.TextChanged += new System.EventHandler(this.txtChangeManagemntRequestNumber_TextChanged);
             // 
             // txtPartner
             // 
@@ -233,6 +240,7 @@
             this.txtPartner.Name = "txtPartner";
             this.txtPartner.Size = new System.Drawing.Size(237, 26);
             this.txtPartner.TabIndex = 73;
+            this.txtPartner.TextChanged += new System.EventHandler(this.txtPartner_TextChanged);
             // 
             // txtDate
             // 
@@ -241,6 +249,7 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(149, 26);
             this.txtDate.TabIndex = 72;
+            this.txtDate.TextChanged += new System.EventHandler(this.txtDate_TextChanged);
             // 
             // txtUser
             // 
@@ -249,6 +258,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(237, 26);
             this.txtUser.TabIndex = 71;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // label31
             // 
@@ -275,7 +285,7 @@
             // 
             this.grpPostReview.Controls.Add(this.rbAbandonedP);
             this.grpPostReview.Controls.Add(this.rbBackedOutP);
-            this.grpPostReview.Controls.Add(this.rbInstalledP);
+            this.grpPostReview.Controls.Add(this.rbSuccessP);
             this.grpPostReview.Location = new System.Drawing.Point(307, 671);
             this.grpPostReview.Name = "grpPostReview";
             this.grpPostReview.Size = new System.Drawing.Size(308, 53);
@@ -292,6 +302,7 @@
             this.cbCodeReview.TabIndex = 95;
             this.cbCodeReview.Text = "cbCodeReview";
             this.cbCodeReview.UseVisualStyleBackColor = true;
+            this.cbCodeReview.CheckedChanged += new System.EventHandler(this.cbCodeReview_CheckedChanged);
             // 
             // cbPartnerApproval
             // 
@@ -303,6 +314,7 @@
             this.cbPartnerApproval.TabIndex = 94;
             this.cbPartnerApproval.Text = "cbPartnerApproval";
             this.cbPartnerApproval.UseVisualStyleBackColor = true;
+            this.cbPartnerApproval.CheckedChanged += new System.EventHandler(this.cbPartnerApproval_CheckedChanged);
             // 
             // cbPartnerSignOff
             // 
@@ -314,6 +326,7 @@
             this.cbPartnerSignOff.TabIndex = 93;
             this.cbPartnerSignOff.Text = "cbPartnerSignOff";
             this.cbPartnerSignOff.UseVisualStyleBackColor = true;
+            this.cbPartnerSignOff.CheckedChanged += new System.EventHandler(this.cbPartnerSignOff_CheckedChanged);
             // 
             // cbKeyUserSignOff
             // 
@@ -325,6 +338,7 @@
             this.cbKeyUserSignOff.TabIndex = 92;
             this.cbKeyUserSignOff.Text = "cbKeyUserSignOff";
             this.cbKeyUserSignOff.UseVisualStyleBackColor = true;
+            this.cbKeyUserSignOff.CheckedChanged += new System.EventHandler(this.cbKeyUserSignOff_CheckedChanged);
             // 
             // cbDevelopmentCompleted
             // 
@@ -336,6 +350,7 @@
             this.cbDevelopmentCompleted.TabIndex = 91;
             this.cbDevelopmentCompleted.Text = "cbDevelopmentCompleted";
             this.cbDevelopmentCompleted.UseVisualStyleBackColor = true;
+            this.cbDevelopmentCompleted.CheckedChanged += new System.EventHandler(this.cbDevelopmentCompleted_CheckedChanged);
             // 
             // cbTestingCompleted
             // 
@@ -347,6 +362,7 @@
             this.cbTestingCompleted.TabIndex = 90;
             this.cbTestingCompleted.Text = "cbTestingCompleted";
             this.cbTestingCompleted.UseVisualStyleBackColor = true;
+            this.cbTestingCompleted.CheckedChanged += new System.EventHandler(this.cbTestingCompleted_CheckedChanged);
             // 
             // cbtableParm
             // 
@@ -358,6 +374,7 @@
             this.cbtableParm.TabIndex = 89;
             this.cbtableParm.Text = "cbtableParm";
             this.cbtableParm.UseVisualStyleBackColor = true;
+            this.cbtableParm.CheckedChanged += new System.EventHandler(this.cbtableParm_CheckedChanged);
             // 
             // cbUserApproval
             // 
@@ -369,6 +386,7 @@
             this.cbUserApproval.TabIndex = 88;
             this.cbUserApproval.Text = "cbUserApproval";
             this.cbUserApproval.UseVisualStyleBackColor = true;
+            this.cbUserApproval.CheckedChanged += new System.EventHandler(this.cbUserApproval_CheckedChanged);
             // 
             // label14
             // 
@@ -521,6 +539,7 @@
             this.cbXSLTEmailErrorHeader.TabIndex = 116;
             this.cbXSLTEmailErrorHeader.Text = "XSLT Email Error Header";
             this.cbXSLTEmailErrorHeader.UseVisualStyleBackColor = true;
+            this.cbXSLTEmailErrorHeader.CheckedChanged += new System.EventHandler(this.cbXSLTEmailErrorHeader_CheckedChanged);
             // 
             // cbRAILSrecord
             // 
@@ -533,6 +552,7 @@
             this.cbRAILSrecord.TabIndex = 115;
             this.cbRAILSrecord.Text = "RAILS csv Record";
             this.cbRAILSrecord.UseVisualStyleBackColor = true;
+            this.cbRAILSrecord.CheckedChanged += new System.EventHandler(this.cbRAILSrecord_CheckedChanged);
             // 
             // cbEmailCodeList
             // 
@@ -545,6 +565,7 @@
             this.cbEmailCodeList.TabIndex = 103;
             this.cbEmailCodeList.Text = "Email Code List";
             this.cbEmailCodeList.UseVisualStyleBackColor = true;
+            this.cbEmailCodeList.CheckedChanged += new System.EventHandler(this.cbEmailCodeList_CheckedChanged);
             // 
             // cbRAILSfilter
             // 
@@ -557,6 +578,7 @@
             this.cbRAILSfilter.TabIndex = 114;
             this.cbRAILSfilter.Text = "RAILS csv Filter";
             this.cbRAILSfilter.UseVisualStyleBackColor = true;
+            this.cbRAILSfilter.CheckedChanged += new System.EventHandler(this.cbRAILSfilter_CheckedChanged);
             // 
             // cbFileStructureInProduction
             // 
@@ -569,6 +591,7 @@
             this.cbFileStructureInProduction.TabIndex = 113;
             this.cbFileStructureInProduction.Text = "File Structure In Production";
             this.cbFileStructureInProduction.UseVisualStyleBackColor = true;
+            this.cbFileStructureInProduction.CheckedChanged += new System.EventHandler(this.cbFileStructureInProduction_CheckedChanged);
             // 
             // cbFTPconnect
             // 
@@ -581,6 +604,7 @@
             this.cbFTPconnect.TabIndex = 112;
             this.cbFTPconnect.Text = "FTP Connect";
             this.cbFTPconnect.UseVisualStyleBackColor = true;
+            this.cbFTPconnect.CheckedChanged += new System.EventHandler(this.cbFTPconnect_CheckedChanged);
             // 
             // cbTRANSPORTparmfile
             // 
@@ -593,6 +617,7 @@
             this.cbTRANSPORTparmfile.TabIndex = 111;
             this.cbTRANSPORTparmfile.Text = "TRANSPORT Parm File";
             this.cbTRANSPORTparmfile.UseVisualStyleBackColor = true;
+            this.cbTRANSPORTparmfile.CheckedChanged += new System.EventHandler(this.cbTRANSPORTparmfile_CheckedChanged);
             // 
             // cbRAILStable
             // 
@@ -605,6 +630,7 @@
             this.cbRAILStable.TabIndex = 110;
             this.cbRAILStable.Text = "RAILS csv Tables";
             this.cbRAILStable.UseVisualStyleBackColor = true;
+            this.cbRAILStable.CheckedChanged += new System.EventHandler(this.cbRAILStable_CheckedChanged);
             // 
             // cbMapCodeTables
             // 
@@ -617,6 +643,7 @@
             this.cbMapCodeTables.TabIndex = 109;
             this.cbMapCodeTables.Text = "Map Code Tables";
             this.cbMapCodeTables.UseVisualStyleBackColor = true;
+            this.cbMapCodeTables.CheckedChanged += new System.EventHandler(this.cbMapCodeTables_CheckedChanged);
             // 
             // cbDocumentMap
             // 
@@ -629,6 +656,7 @@
             this.cbDocumentMap.TabIndex = 108;
             this.cbDocumentMap.Text = "Document Maps";
             this.cbDocumentMap.UseVisualStyleBackColor = true;
+            this.cbDocumentMap.CheckedChanged += new System.EventHandler(this.cbDocumentMap_CheckedChanged);
             // 
             // cbDocumentExtractionMap
             // 
@@ -641,6 +669,7 @@
             this.cbDocumentExtractionMap.TabIndex = 107;
             this.cbDocumentExtractionMap.Text = "Document Extraction Map";
             this.cbDocumentExtractionMap.UseVisualStyleBackColor = true;
+            this.cbDocumentExtractionMap.CheckedChanged += new System.EventHandler(this.cbDocumentExtractionMap_CheckedChanged);
             // 
             // cbServiceAdapter
             // 
@@ -653,6 +682,7 @@
             this.cbServiceAdapter.TabIndex = 106;
             this.cbServiceAdapter.Text = "Service Adapter";
             this.cbServiceAdapter.UseVisualStyleBackColor = true;
+            this.cbServiceAdapter.CheckedChanged += new System.EventHandler(this.cbServiceAdapter_CheckedChanged);
             // 
             // cbBusinessProcess
             // 
@@ -665,6 +695,7 @@
             this.cbBusinessProcess.TabIndex = 105;
             this.cbBusinessProcess.Text = "Business Process";
             this.cbBusinessProcess.UseVisualStyleBackColor = true;
+            this.cbBusinessProcess.CheckedChanged += new System.EventHandler(this.cbBusinessProcess_CheckedChanged);
             // 
             // cbPerlScripts
             // 
@@ -677,6 +708,7 @@
             this.cbPerlScripts.TabIndex = 104;
             this.cbPerlScripts.Text = "Perl Scripts";
             this.cbPerlScripts.UseVisualStyleBackColor = true;
+            this.cbPerlScripts.CheckedChanged += new System.EventHandler(this.cbPerlScripts_CheckedChanged);
             // 
             // cbEnvelopes
             // 
@@ -689,36 +721,37 @@
             this.cbEnvelopes.TabIndex = 118;
             this.cbEnvelopes.Text = "Envelopes";
             this.cbEnvelopes.UseVisualStyleBackColor = true;
+            this.cbEnvelopes.CheckedChanged += new System.EventHandler(this.cbEnvelopes_CheckedChanged);
             // 
-            // label16
+            // lblTableParmName
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(456, 295);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 20);
-            this.label16.TabIndex = 120;
-            this.label16.Text = "Name:";
+            this.lblTableParmName.AutoSize = true;
+            this.lblTableParmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableParmName.Location = new System.Drawing.Point(456, 295);
+            this.lblTableParmName.Name = "lblTableParmName";
+            this.lblTableParmName.Size = new System.Drawing.Size(55, 20);
+            this.lblTableParmName.TabIndex = 120;
+            this.lblTableParmName.Text = "Name:";
             // 
-            // label17
+            // lblCodeReviewBy
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(429, 457);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 20);
-            this.label17.TabIndex = 121;
-            this.label17.Text = "By:";
+            this.lblCodeReviewBy.AutoSize = true;
+            this.lblCodeReviewBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeReviewBy.Location = new System.Drawing.Point(429, 457);
+            this.lblCodeReviewBy.Name = "lblCodeReviewBy";
+            this.lblCodeReviewBy.Size = new System.Drawing.Size(31, 20);
+            this.lblCodeReviewBy.TabIndex = 121;
+            this.lblCodeReviewBy.Text = "By:";
             // 
-            // label18
+            // lblCodeReviewDate
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(569, 460);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 20);
-            this.label18.TabIndex = 122;
-            this.label18.Text = "Date:";
+            this.lblCodeReviewDate.AutoSize = true;
+            this.lblCodeReviewDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeReviewDate.Location = new System.Drawing.Point(569, 460);
+            this.lblCodeReviewDate.Name = "lblCodeReviewDate";
+            this.lblCodeReviewDate.Size = new System.Drawing.Size(48, 20);
+            this.lblCodeReviewDate.TabIndex = 122;
+            this.lblCodeReviewDate.Text = "Date:";
             // 
             // grpOptions
             // 
@@ -753,16 +786,6 @@
             this.label19.TabIndex = 124;
             this.label19.Text = "Project Manager:";
             // 
-            // lblCompletionDateTitle
-            // 
-            this.lblCompletionDateTitle.AutoSize = true;
-            this.lblCompletionDateTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompletionDateTitle.Location = new System.Drawing.Point(773, 879);
-            this.lblCompletionDateTitle.Name = "lblCompletionDateTitle";
-            this.lblCompletionDateTitle.Size = new System.Drawing.Size(128, 20);
-            this.lblCompletionDateTitle.TabIndex = 125;
-            this.lblCompletionDateTitle.Text = "Completion Date";
-            // 
             // txtProjectManager
             // 
             this.txtProjectManager.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -771,14 +794,15 @@
             this.txtProjectManager.Name = "txtProjectManager";
             this.txtProjectManager.Size = new System.Drawing.Size(207, 19);
             this.txtProjectManager.TabIndex = 126;
+            this.txtProjectManager.TextChanged += new System.EventHandler(this.txtProjectManager_TextChanged);
             // 
             // lblCompletionDate
             // 
             this.lblCompletionDate.AutoSize = true;
-            this.lblCompletionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompletionDate.Location = new System.Drawing.Point(908, 879);
+            this.lblCompletionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompletionDate.Location = new System.Drawing.Point(89, 0);
             this.lblCompletionDate.Name = "lblCompletionDate";
-            this.lblCompletionDate.Size = new System.Drawing.Size(124, 20);
+            this.lblCompletionDate.Size = new System.Drawing.Size(82, 13);
             this.lblCompletionDate.TabIndex = 127;
             this.lblCompletionDate.Text = "CompletionDate";
             // 
@@ -792,6 +816,7 @@
             this.btnApprove.Size = new System.Drawing.Size(44, 53);
             this.btnApprove.TabIndex = 128;
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnReject
             // 
@@ -803,6 +828,7 @@
             this.btnReject.Size = new System.Drawing.Size(48, 53);
             this.btnReject.TabIndex = 129;
             this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // lblStatus
             // 
@@ -825,13 +851,14 @@
             this.label15.TabIndex = 130;
             this.label15.Text = "Title:";
             // 
-            // textBox1
+            // txtTitle
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(93, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 26);
-            this.textBox1.TabIndex = 131;
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(93, 105);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(237, 26);
+            this.txtTitle.TabIndex = 131;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // Open_Approval
             // 
@@ -839,18 +866,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.lblCompletionDate);
             this.Controls.Add(this.txtProjectManager);
-            this.Controls.Add(this.lblCompletionDateTitle);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.grpOptions);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblCodeReviewDate);
+            this.Controls.Add(this.lblCodeReviewBy);
+            this.Controls.Add(this.lblTableParmName);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtCodeReviewDATE);
             this.Controls.Add(this.txtCodeReviewBY);
@@ -924,7 +950,7 @@
         private System.Windows.Forms.RadioButton rbAbandonedP;
         private System.Windows.Forms.RadioButton rbBackedOutP;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.RadioButton rbInstalledP;
+        private System.Windows.Forms.RadioButton rbSuccessP;
         private System.Windows.Forms.TextBox txtTableParmNAME;
         private System.Windows.Forms.TextBox txtChangeManagemntRequestNumber;
         private System.Windows.Forms.TextBox txtPartner;
@@ -970,19 +996,18 @@
         private System.Windows.Forms.CheckBox cbBusinessProcess;
         private System.Windows.Forms.CheckBox cbPerlScripts;
         private System.Windows.Forms.CheckBox cbEnvelopes;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblTableParmName;
+        private System.Windows.Forms.Label lblCodeReviewBy;
+        private System.Windows.Forms.Label lblCodeReviewDate;
         private System.Windows.Forms.GroupBox grpOptions;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label lblCompletionDateTitle;
         private System.Windows.Forms.TextBox txtProjectManager;
         private System.Windows.Forms.Label lblCompletionDate;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnReject;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTitle;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {
