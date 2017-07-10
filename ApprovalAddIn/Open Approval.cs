@@ -57,6 +57,7 @@ namespace ApprovalAddIn
             Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
             String subject = mailItem.Subject;
 
+            //Sends to Approving Manager from Project Manager
             if (subject.Contains("Needs Approval"))
             {
                 lblStatus.Text = "Needs Approval";
@@ -284,11 +285,9 @@ namespace ApprovalAddIn
                     {
                         //  ddAttachments.Items.Insert(i, mailAttachments[i].DisplayName);
                     }
-
-
                 }
                 lblCompletionDate.Visible = false;
-              
+
                 cbtableParm.Enabled = false;
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
@@ -330,10 +329,17 @@ namespace ApprovalAddIn
                 rbBackedOutP.Enabled = true;
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
+               
                 // txtApprovingManager.Text = mailItem.To;
+
+
 
             }
 
+
+
+
+            //Sends to Project Manager from Approving Manager. Successful Approval
             if (subject.Contains("Approved!"))
             {
                 lblStatus.Text = "Approved";
@@ -555,53 +561,61 @@ namespace ApprovalAddIn
                         }
                     }
 
-                    lblCompletionDate.Visible = true;
-                 
-                    cbtableParm.Enabled = false;
-                    cbBusinessProcess.Enabled = false;
-                    cbDevelopmentCompleted.Enabled = false;
-                    cbDocumentExtractionMap.Enabled = false;
-                    cbDocumentMap.Enabled = false;
-                    cbEmailCodeList.Enabled = false;
-                    cbEnvelopes.Enabled = false;
-                    cbFileStructureInProduction.Enabled = false;
-                    cbFTPconnect.Enabled = false;
-                    cbKeyUserSignOff.Enabled = false;
-                    cbMapCodeTables.Enabled = false;
-                    cbPartnerApproval.Enabled = false;
-                    cbPartnerSignOff.Enabled = false;
-                    cbPerlScripts.Enabled = false;
-                    cbRAILSfilter.Enabled = false;
-                    cbRAILSrecord.Enabled = false;
-                    cbRAILStable.Enabled = false;
-                    cbServiceAdapter.Enabled = false;
-                    cbTestingCompleted.Enabled = false;
-                    cbTRANSPORTparmfile.Enabled = false;
-                    cbUserApproval.Enabled = false;
-                    cbXSLTEmailErrorHeader.Enabled = false;
-                    //txtApprovingManager.Enabled = false;
-                    txtChangeManagemntRequestNumber.Enabled = false;
-                    txtDate.Enabled = false;
-                    txtDescription.Enabled = false;
-                    txtPartner.Enabled = false;
-                    txtProjectManager.Enabled = false;
-                    txtTableParmNAME.Enabled = false;
-                    txtUser.Enabled = false;
-                    txtCodeReviewBY.Enabled = false;
-                    txtTitle.Enabled = false;
-                    txtCodeReviewDATE.Enabled = false;
-                    rbAbandonedI.Enabled = false;
-                    rbBackedOutI.Enabled = false;
-                    rbInstalledI.Enabled = false;
-                    rbSuccessP.Enabled = true;
-                    rbAbandonedP.Enabled = true;
-                    rbBackedOutP.Enabled = true;
-                    lblCodeReviewBy.Enabled = false;
-                    lblCodeReviewDate.Enabled = false;
-                    // txtApprovingManager.Text = mailItem.To;
                 }
 
+                lblCompletionDate.Visible = true;
+
+                cbtableParm.Enabled = false;
+                cbBusinessProcess.Enabled = false;
+                cbDevelopmentCompleted.Enabled = false;
+                cbDocumentExtractionMap.Enabled = false;
+                cbDocumentMap.Enabled = false;
+                cbEmailCodeList.Enabled = false;
+                cbEnvelopes.Enabled = false;
+                cbFileStructureInProduction.Enabled = false;
+                cbFTPconnect.Enabled = false;
+                cbKeyUserSignOff.Enabled = false;
+                cbMapCodeTables.Enabled = false;
+                cbPartnerApproval.Enabled = false;
+                cbPartnerSignOff.Enabled = false;
+                cbPerlScripts.Enabled = false;
+                cbRAILSfilter.Enabled = false;
+                cbRAILSrecord.Enabled = false;
+                cbRAILStable.Enabled = false;
+                cbServiceAdapter.Enabled = false;
+                cbTestingCompleted.Enabled = false;
+                cbTRANSPORTparmfile.Enabled = false;
+                cbUserApproval.Enabled = false;
+                cbXSLTEmailErrorHeader.Enabled = false;
+                //txtApprovingManager.Enabled = false;
+                txtChangeManagemntRequestNumber.Enabled = false;
+                txtDate.Enabled = false;
+                txtDescription.Enabled = false;
+                txtPartner.Enabled = false;
+                txtProjectManager.Enabled = false;
+                txtTableParmNAME.Enabled = false;
+                txtUser.Enabled = false;
+                txtCodeReviewBY.Enabled = false;
+                txtTitle.Enabled = false;
+                txtCodeReviewDATE.Enabled = false;
+                rbAbandonedI.Enabled = false;
+                rbBackedOutI.Enabled = false;
+                rbInstalledI.Enabled = false;
+                rbSuccessP.Enabled = true;
+                rbAbandonedP.Enabled = true;
+                rbBackedOutP.Enabled = true;
+                lblCodeReviewBy.Enabled = false;
+                lblCodeReviewDate.Enabled = false;
+                //btnApprove.Visible = false;
+                btnReject.Visible = false;
+                // txtApprovingManager.Text = mailItem.To;
+
             }
+
+
+
+
+            //Sends to Project Manager from Approving Manager. UnSuccessful Approval
             if (subject.Contains("Not Approved"))
             {
                 lblStatus.Text = "Not Approved";
@@ -823,58 +837,63 @@ namespace ApprovalAddIn
                         }
                     }
 
-                    lblCompletionDate.Visible = true;
-
-                    cbtableParm.Enabled = false;
-                    cbBusinessProcess.Enabled = false;
-                    cbDevelopmentCompleted.Enabled = false;
-                    cbDocumentExtractionMap.Enabled = false;
-                    cbDocumentMap.Enabled = false;
-                    cbEmailCodeList.Enabled = false;
-                    cbEnvelopes.Enabled = false;
-                    cbFileStructureInProduction.Enabled = false;
-                    cbFTPconnect.Enabled = false;
-                    cbKeyUserSignOff.Enabled = false;
-                    cbMapCodeTables.Enabled = false;
-                    txtCodeReviewBY.Enabled = false;
-                    txtCodeReviewDATE.Enabled = false;
-                    cbPartnerApproval.Enabled = false;
-                    cbPartnerSignOff.Enabled = false;
-                    cbPerlScripts.Enabled = false;
-                    cbRAILSfilter.Enabled = false;
-                    cbRAILSrecord.Enabled = false;
-                    cbRAILStable.Enabled = false;
-                    cbServiceAdapter.Enabled = false;
-                    cbTestingCompleted.Enabled = false;
-                    cbTRANSPORTparmfile.Enabled = false;
-                    cbUserApproval.Enabled = false;
-                    cbXSLTEmailErrorHeader.Enabled = false;
-                    //txtApprovingManager.Enabled = false;
-                    txtChangeManagemntRequestNumber.Enabled = false;
-                    txtDate.Enabled = false;
-                    txtDescription.Enabled = false;
-                    txtPartner.Enabled = false;
-                    txtProjectManager.Enabled = false;
-                    txtTableParmNAME.Enabled = false;
-                    txtUser.Enabled = false;
-                    txtCodeReviewBY.Enabled = false;
-                    txtTitle.Enabled = false;
-                    txtCodeReviewDATE.Enabled = false;
-                    rbAbandonedI.Enabled = false;
-                    rbBackedOutI.Enabled = false;
-                    rbInstalledI.Enabled = false;
-                    rbSuccessP.Enabled = false;
-                    rbAbandonedP.Enabled = false;
-                    rbBackedOutP.Enabled = false;
-                    lblCodeReviewBy.Enabled = false;
-                    lblCodeReviewDate.Enabled = false;
-                    btnApprove.Visible = false;
-                    btnReject.Visible = false;
+                    
 
                     // txtApprovingManager.Text = mailItem.To;
                 }
 
+
+                lblCompletionDate.Visible = true;
+                cbtableParm.Enabled = false;
+                cbBusinessProcess.Enabled = false;
+                cbDevelopmentCompleted.Enabled = false;
+                cbDocumentExtractionMap.Enabled = false;
+                cbDocumentMap.Enabled = false;
+                cbEmailCodeList.Enabled = false;
+                cbEnvelopes.Enabled = false;
+                cbFileStructureInProduction.Enabled = false;
+                cbFTPconnect.Enabled = false;
+                cbKeyUserSignOff.Enabled = false;
+                cbMapCodeTables.Enabled = false;
+                txtCodeReviewBY.Enabled = false;
+                txtCodeReviewDATE.Enabled = false;
+                cbPartnerApproval.Enabled = false;
+                cbPartnerSignOff.Enabled = false;
+                cbPerlScripts.Enabled = false;
+                cbRAILSfilter.Enabled = false;
+                cbRAILSrecord.Enabled = false;
+                cbRAILStable.Enabled = false;
+                cbServiceAdapter.Enabled = false;
+                cbTestingCompleted.Enabled = false;
+                cbTRANSPORTparmfile.Enabled = false;
+                cbUserApproval.Enabled = false;
+                cbXSLTEmailErrorHeader.Enabled = false;
+                //txtApprovingManager.Enabled = false;
+                txtChangeManagemntRequestNumber.Enabled = false;
+                txtDate.Enabled = false;
+                txtDescription.Enabled = false;
+                txtPartner.Enabled = false;
+                txtProjectManager.Enabled = false;
+                txtTableParmNAME.Enabled = false;
+                txtUser.Enabled = false;
+                txtCodeReviewBY.Enabled = false;
+                txtTitle.Enabled = false;
+                txtCodeReviewDATE.Enabled = false;
+                rbAbandonedI.Enabled = false;
+                rbBackedOutI.Enabled = false;
+                rbInstalledI.Enabled = false;
+                rbSuccessP.Enabled = false;
+                rbAbandonedP.Enabled = false;
+                rbBackedOutP.Enabled = false;
+                lblCodeReviewBy.Enabled = false;
+                lblCodeReviewDate.Enabled = false;
+                btnSave.Visible = false;
+               
+                btnReject.Visible = false;
+
             }
+
+
         }
 
         // Occurs when the form region is closed.
@@ -888,18 +907,18 @@ namespace ApprovalAddIn
 
         private void btnApprove_Click(object sender, EventArgs e)
         {
-            Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
 
-            CompletionDate = currentDate;
-            String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
-            String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
-            SendApproved(lineTitles, lineAnswers, mailItem);
-            mailItem.Close(Outlook.OlInspectorClose.olDiscard);
         }
 
 
         public void SendApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem)
         {
+            SharepointUpload upload = new SharepointUpload();
+
+            upload = new SharepointUpload("Charlton.williams@sonoco.com","Raven47946$",mailItem.Attachments);
+
+
+
 
             StringBuilder stringbuilder = new StringBuilder();
 
@@ -913,13 +932,12 @@ namespace ApprovalAddIn
             String body = stringbuilder.ToString();
             String Subject = "Approved! " + User + " and Partner " + Partner;
 
-
             Outlook.MailItem ReplyEmail = mailItem.Reply();
             ReplyEmail.Subject = Subject;
             ReplyEmail.Body = body;
             ReplyEmail.Importance = Outlook.OlImportance.olImportanceHigh;
             ReplyEmail.Send();
-
+            
 
 
         }
@@ -948,12 +966,6 @@ namespace ApprovalAddIn
 
 
         }
-        public static void ApproveOrNot()
-        {
-
-        }
-
-
 
         private void rbInstalledI_CheckedChanged(object sender, EventArgs e)
         {
@@ -1022,6 +1034,17 @@ namespace ApprovalAddIn
             String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
             SendNotApproved(lineTitles, lineAnswers, mailItem);
             mailItem.Close(Outlook.OlInspectorClose.olDiscard);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
+
+            CompletionDate = currentDate;
+            String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
+            String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
+            SendApproved(lineTitles, lineAnswers, mailItem);
+            //   mailItem.Close(Outlook.OlInspectorClose.olDiscard);
         }
 
         private void txtProjectManager_TextChanged(object sender, EventArgs e)

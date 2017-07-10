@@ -96,11 +96,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txtProjectManager = new System.Windows.Forms.TextBox();
             this.lblCompletionDate = new System.Windows.Forms.Label();
-            this.btnApprove = new System.Windows.Forms.Button();
             this.btnReject = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
             this.grpOptions.SuspendLayout();
@@ -806,18 +806,6 @@
             this.lblCompletionDate.TabIndex = 127;
             this.lblCompletionDate.Text = "CompletionDate";
             // 
-            // btnApprove
-            // 
-            this.btnApprove.FlatAppearance.BorderSize = 0;
-            this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApprove.Image = ((System.Drawing.Image)(resources.GetObject("btnApprove.Image")));
-            this.btnApprove.Location = new System.Drawing.Point(407, 803);
-            this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(44, 53);
-            this.btnApprove.TabIndex = 128;
-            this.btnApprove.UseVisualStyleBackColor = true;
-            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
-            // 
             // btnReject
             // 
             this.btnReject.FlatAppearance.BorderSize = 0;
@@ -860,16 +848,29 @@
             this.txtTitle.TabIndex = 131;
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(394, 810);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 39);
+            this.btnSave.TabIndex = 132;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Open_Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnReject);
-            this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.lblCompletionDate);
             this.Controls.Add(this.txtProjectManager);
             this.Controls.Add(this.label19);
@@ -1003,11 +1004,11 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtProjectManager;
         private System.Windows.Forms.Label lblCompletionDate;
-        private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnReject;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.Button btnSave;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {
