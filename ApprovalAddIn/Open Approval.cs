@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Office = Microsoft.Office.Core;
 using Outlook = Microsoft.Office.Interop.Outlook;
+using System.Web.Services.Description;
+using System.IO;
 
 namespace ApprovalAddIn
 {
@@ -15,6 +17,9 @@ namespace ApprovalAddIn
         String from = "Charlton.Williams@sonoco.com";
         bool UAOP, PAOIP, tableParm, developementCompleted, testingCompleted, codeReview, keyUserSignOff, partnerSignOff, Envelopes, BP, ServiceAdapters, perlScripts, EmailCodeList, docMaps, docExtractionMap, XSLTEmail;
 
+
+        private String [] InitialAndUsername;
+        private String Password;
 
 
         bool mapCodeTables, RAILStable, RAILSrecord, RAILSfilter, fileStructureProd, FTPconnect, TRANSPORTfile;
@@ -61,14 +66,21 @@ namespace ApprovalAddIn
             if (subject.Contains("Needs Approval"))
             {
                 lblStatus.Text = "Needs Approval";
-
+                lblTestEmail.Text = mailItem.To;
 
                 String body = mailItem.Body;
 
+                this.InitialAndUsername = UsernameEmail(mailItem.To);
+
+                
+                
+
+                
+                
 
                 String[] lines = body.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
-                for (int i = 0; i < lines.Length && !lines[i].Equals(""); ++i)
+                for (int i = 0; i < lines.Length && !lines[i].Equals("-----------------------------------------"); ++i)
                 {
 
                     int firstSpace = lines[i].IndexOf(" ");
@@ -278,17 +290,13 @@ namespace ApprovalAddIn
                 }
 
                 StringBuilder attachmentInfo = new StringBuilder();
-                Outlook.Attachments mailAttachments = mailItem.Attachments;
-                if (mailAttachments != null)
-                {
-                    for (int i = 1; i <= mailAttachments.Count; i++)
-                    {
-                        //  ddAttachments.Items.Insert(i, mailAttachments[i].DisplayName);
-                    }
-                }
-                lblCompletionDate.Visible = false;
+                
+               
 
+
+                lblCompletionDate.Visible = false;
                 cbtableParm.Enabled = false;
+                btnSave.Enabled = false;
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
                 cbDocumentExtractionMap.Enabled = false;
@@ -347,6 +355,7 @@ namespace ApprovalAddIn
 
                 String body = mailItem.Body;
 
+                
 
                 String[] lines = body.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
@@ -566,6 +575,7 @@ namespace ApprovalAddIn
                 lblCompletionDate.Visible = true;
 
                 cbtableParm.Enabled = false;
+               
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
                 cbDocumentExtractionMap.Enabled = false;
@@ -842,7 +852,7 @@ namespace ApprovalAddIn
                     // txtApprovingManager.Text = mailItem.To;
                 }
 
-
+                
                 lblCompletionDate.Visible = true;
                 cbtableParm.Enabled = false;
                 cbBusinessProcess.Enabled = false;
@@ -896,6 +906,21 @@ namespace ApprovalAddIn
 
         }
 
+        private String []  UsernameEmail(String name)
+        {
+
+            String[] flname = name.Split(' ');
+            String periodIncluded = flname[0] + "." + flname[1];
+            String initials = flname[0].ToCharArray()[0].ToString()+ flname[1].ToCharArray()[0].ToString();
+
+           
+
+            String[] nameVariables = new String[] { initials, periodIncluded + "@sonoco.com" };
+
+            return nameVariables;
+            
+        }
+
         // Occurs when the form region is closed.
         // Use this.OutlookItem to get a reference to the current Outlook item.
         // Use this.OutlookFormRegion to get a reference to the form region.
@@ -911,36 +936,7 @@ namespace ApprovalAddIn
         }
 
 
-        public void SendApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem)
-        {
-            SharepointUpload upload = new SharepointUpload();
-
-            upload = new SharepointUpload("Charlton.williams@sonoco.com","Raven47946$",mailItem.Attachments);
-
-
-
-
-            StringBuilder stringbuilder = new StringBuilder();
-
-
-
-            for (int i = 0; i < lineTitles.Length; i++)
-            {
-                stringbuilder.AppendLine(lineTitles[i] + "\t" + lineAnswers[i]);
-            }
-
-            String body = stringbuilder.ToString();
-            String Subject = "Approved! " + User + " and Partner " + Partner;
-
-            Outlook.MailItem ReplyEmail = mailItem.Reply();
-            ReplyEmail.Subject = Subject;
-            ReplyEmail.Body = body;
-            ReplyEmail.Importance = Outlook.OlImportance.olImportanceHigh;
-            ReplyEmail.Send();
-            
-
-
-        }
+        
         public void SendNotApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem)
         {
 
@@ -1038,13 +1034,95 @@ namespace ApprovalAddIn
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
 
-            CompletionDate = currentDate;
-            String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
-            String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
-            SendApproved(lineTitles, lineAnswers, mailItem);
-            //   mailItem.Close(Outlook.OlInspectorClose.olDiscard);
+            DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\TempAttach");
+            if (!txtPassword.Text.Equals("")) {
+
+               
+                Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
+                Outlook.Attachments mailAttachments = mailItem.Attachments;
+
+                if (mailAttachments != null)
+                {
+                    for (int i = 1; i <= mailAttachments.Count; i++)
+                    {
+                       
+
+                        if (!saveAttatchementsFolder.Exists)
+                        {
+                            saveAttatchementsFolder.Create();
+                        }
+
+                        String filePath = Path.Combine(saveAttatchementsFolder.FullName, mailAttachments[i].FileName);
+                        mailAttachments[i].SaveAsFile(filePath);
+
+                    }
+                }
+
+
+                CompletionDate = currentDate;
+                String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
+                String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
+                SendApproved(lineTitles, lineAnswers, mailItem,InitialAndUsername,Password);
+
+
+                FileInfo[] files = saveAttatchementsFolder.GetFiles();
+                foreach (FileInfo file in files)
+                {
+
+                    file.Delete();
+                }
+
+                   mailItem.Close(Outlook.OlInspectorClose.olDiscard);
+                }
+            
+        }
+
+        public void SendApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem, String [] InitialAndUsername, String Password)
+        {
+               String ModUser = User.Replace(" ", "");
+            String ModTitle = Title.Replace(" ", "");
+            String ModPartner = Partner.Replace(" ", "");
+
+            String date = DateTime.Now.ToString("yyyyMMdd");
+            String Foldername = date + "_" + ModUser + "_" + ModPartner + "_" + ModTitle+ "_" + InitialAndUsername[0];
+            
+            SharepointUpload upload = new SharepointUpload(InitialAndUsername[1], Password, Foldername, mailItem.Attachments);
+
+
+
+
+
+            StringBuilder stringbuilder = new StringBuilder();
+
+
+
+            for (int i = 0; i < lineTitles.Length; i++)
+            {
+                stringbuilder.AppendLine(lineTitles[i] + "\t" + lineAnswers[i]);
+            }
+
+            String body = stringbuilder.ToString();
+            String Subject = "Approved! " + User + " and Partner " + Partner;
+
+            Outlook.MailItem ReplyEmail = mailItem.Reply();
+            ReplyEmail.Subject = Subject;
+            ReplyEmail.Body = body;
+            ReplyEmail.Importance = Outlook.OlImportance.olImportanceHigh;
+            ReplyEmail.Send();
+            
+
+
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtPassword.Text.Equals(""))
+            {
+                btnSave.Enabled=true;
+                Password = txtPassword.Text;
+            }
         }
 
         private void txtProjectManager_TextChanged(object sender, EventArgs e)

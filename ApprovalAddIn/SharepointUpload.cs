@@ -14,8 +14,10 @@ namespace ApprovalAddIn
     class SharepointUpload
     {
        public String SiteURL = "https://sonoco.sharepoint.com/sites/business-technology/team/edi/";
+        private String documentListName = "EDI Projects";
+        private String folderName;
         private String Username = "";
-       private  String Password = "";
+       private  String password = "";
        private  Attachments attachments;
 
 
@@ -24,11 +26,12 @@ namespace ApprovalAddIn
 
         }
 
-       public SharepointUpload(String Username, String Password, Attachments attachments)
+       public SharepointUpload(String Username, String Password,String folderName, Attachments attachments)
         {
             this.Username = Username;
-            this.Password = Password;
+            this.password = Password;
             this.attachments = attachments;
+            this.folderName = folderName;
 
             UploadToSharepoint();
 
@@ -36,64 +39,83 @@ namespace ApprovalAddIn
 
         public void UploadToSharepoint()
         {
-            Random rand = new Random();
-            int randNum = rand.Next(1000);
-            var SaveFilePath = @"C:\Temp";
-            for (int i = 1; i <= attachments.Count; i++)
-            {
-                //var SaveFilePath = attachments[i].GetTemporaryFilePath();
-                String a = attachments[i].FileName;
-                attachments[i].SaveAsFile(SaveFilePath + "\\" + attachments[i].FileName);
-            }
 
 
+            //Initialize contact with Sharepoint
+            SecureString Password = new SecureString();
+            foreach (char c in password.ToCharArray()) Password.AppendChar(c);
+            SharePointOnlineCredentials credentials = new SharePointOnlineCredentials(Username, Password);
+            String SiteURL = "https://sonoco.sharepoint.com/sites/business-technology/team/edi/";
             ClientContext clientContext = new ClientContext(SiteURL);
-            SecureString sPassword = new SecureString();
-            foreach (char c in this.Password.ToCharArray()) sPassword.AppendChar(c);
-            clientContext.Credentials = new SharePointOnlineCredentials(this.Username, sPassword);
+            clientContext.Credentials = credentials;
+            Web web = clientContext.Web;
+            clientContext.Load(web);
+
+            //Create new Folder                  
             List olist = clientContext.Web.Lists.GetByTitle("EDI Projects");
-            clientContext.ExecuteQuery();
-
-            //To Create Folder
-            ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
-            itemCreateInfo.UnderlyingObjectType = FileSystemObjectType.Folder;
-            itemCreateInfo.LeafName = "Completed Projects/testFolder"+randNum;
-            ListItem oListItem = olist.AddItem(itemCreateInfo);
-            oListItem.Update();
-
-
+            Microsoft.SharePoint.Client.Folder newFolder = olist.RootFolder.Folders.Add("EDI Projects/Completed Projects/"+folderName);
+            User user = web.EnsureUser(Username);
             clientContext.ExecuteQuery();
 
 
 
-            //clientContext.AuthenticationMode = ClientAuthenticationMode.FormsAuthentication;
-            //clientContext.FormsAuthenticationLoginInfo = new FormsAuthenticationLoginInfo("Charlton.Williams@sonoco.com", "Raven47946$");
-            DirectoryInfo directory = new DirectoryInfo(@"C:\Temp");
+            //Set permissions on Folder !!!!!!
+            newFolder.ListItemAllFields.BreakRoleInheritance(true, true);
+            clientContext.Load(clientContext.Web.RoleDefinitions);
+            clientContext.ExecuteQuery();
+            RoleDefinitionBindingCollection roleDefinitionBindingCollection = new RoleDefinitionBindingCollection(clientContext);
+            roleDefinitionBindingCollection.Add(clientContext.Web.RoleDefinitions.GetByName("Full Control"));
+            var siteUser = clientContext.Web.EnsureUser(Username);
+            olist.RoleAssignments.Add(siteUser, roleDefinitionBindingCollection);
+            clientContext.ExecuteQuery();
+
+
+
+
+            //*************************Upload File to new Folder ********************
+            DirectoryInfo directory = new DirectoryInfo(@"C:\TempAttach");
             FileInfo[] files = directory.GetFiles();
 
-            foreach (FileInfo file in files) {
-                var FileCreationInfo = new FileCreationInformation
+            if (clientContext.HasPendingRequest)
+                clientContext.ExecuteQuery();
+
+
+            foreach (FileInfo file in files)
+            {
+
+                using (FileStream fs = file.OpenRead())
                 {
-                    Content = System.IO.File.ReadAllBytes(file.FullName),
-                    Overwrite = true,
-                    //  Url = Path.Combine(@"Completed Projects\testFolder", Path.GetFileName(file.FullName))
-                    Url = Path.Combine(@"Completed Projects\testFolder" + randNum, Path.GetFileName(file.FullName))
-                };
+                    String documentName = file.FullName;
+                    byte[] byteFile = System.IO.File.ReadAllBytes(documentName);
 
-                
+                    Microsoft.SharePoint.Client.Folder folder = web.GetFolderByServerRelativeUrl("EDI Projects/Completed Projects/"+folderName);
 
-                var uploadFile = olist.RootFolder.Files.Add(FileCreationInfo);
-                clientContext.Load(uploadFile);
-               
-             clientContext.ExecuteQuery();
+
+                    if (clientContext.HasPendingRequest)
+                        clientContext.ExecuteQuery();
+
+                    List documentsList = clientContext.Web.Lists.GetByTitle(documentListName);
+
+                    var fileCreationInformation = new FileCreationInformation();
+
+                    fileCreationInformation.Content = byteFile;
+
+                    fileCreationInformation.Overwrite = true;
+
+                    fileCreationInformation.Url = "/sites/business-technology/team/edi/EDI Projects/Completed Projects/"+folderName+"/" + file.Name;
+
+                    Microsoft.SharePoint.Client.File uploadFile = documentsList.RootFolder.Files.Add(fileCreationInformation);
+
+                    uploadFile.ListItemAllFields.Update();
+                    clientContext.ExecuteQuery();
+
+
+                }
+
+
             }
 
 
-
-
-
-                
-            
         }
 
 

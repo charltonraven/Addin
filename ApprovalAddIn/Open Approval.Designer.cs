@@ -101,6 +101,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblTestEmail = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
             this.grpOptions.SuspendLayout();
@@ -811,7 +813,7 @@
             this.btnReject.FlatAppearance.BorderSize = 0;
             this.btnReject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReject.Image = ((System.Drawing.Image)(resources.GetObject("btnReject.Image")));
-            this.btnReject.Location = new System.Drawing.Point(505, 803);
+            this.btnReject.Location = new System.Drawing.Point(608, 794);
             this.btnReject.Name = "btnReject";
             this.btnReject.Size = new System.Drawing.Size(48, 53);
             this.btnReject.TabIndex = 129;
@@ -854,12 +856,31 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(394, 810);
+            this.btnSave.Location = new System.Drawing.Point(556, 801);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 39);
+            this.btnSave.Size = new System.Drawing.Size(46, 39);
             this.btnSave.TabIndex = 132;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lblTestEmail
+            // 
+            this.lblTestEmail.AutoSize = true;
+            this.lblTestEmail.Location = new System.Drawing.Point(391, 10);
+            this.lblTestEmail.Name = "lblTestEmail";
+            this.lblTestEmail.Size = new System.Drawing.Size(41, 13);
+            this.lblTestEmail.TabIndex = 133;
+            this.lblTestEmail.Text = "label16";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(382, 806);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(170, 26);
+            this.txtPassword.TabIndex = 134;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // Open_Approval
             // 
@@ -867,6 +888,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblTestEmail);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label15);
@@ -1009,6 +1032,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblTestEmail;
+        private System.Windows.Forms.TextBox txtPassword;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {
