@@ -103,6 +103,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lblTestEmail = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnScreenShot = new System.Windows.Forms.Button();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
             this.grpOptions.SuspendLayout();
@@ -882,12 +883,23 @@
             this.txtPassword.TabIndex = 134;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
+            // btnScreenShot
+            // 
+            this.btnScreenShot.Location = new System.Drawing.Point(926, 872);
+            this.btnScreenShot.Name = "btnScreenShot";
+            this.btnScreenShot.Size = new System.Drawing.Size(83, 22);
+            this.btnScreenShot.TabIndex = 135;
+            this.btnScreenShot.Text = "Snap";
+            this.btnScreenShot.UseVisualStyleBackColor = true;
+            this.btnScreenShot.Click += new System.EventHandler(this.btnScreenShot_Click);
+            // 
             // Open_Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Controls.Add(this.btnScreenShot);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblTestEmail);
             this.Controls.Add(this.btnSave);
@@ -1034,6 +1046,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblTestEmail;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnScreenShot;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {

@@ -6,6 +6,14 @@ using Office = Microsoft.Office.Core;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using System.Web.Services.Description;
 using System.IO;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
+
+
 
 namespace ApprovalAddIn
 {
@@ -71,13 +79,7 @@ namespace ApprovalAddIn
                 String body = mailItem.Body;
 
                 this.InitialAndUsername = UsernameEmail(mailItem.To);
-
-                
-                
-
-                
-                
-
+           
                 String[] lines = body.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
                 for (int i = 0; i < lines.Length && !lines[i].Equals("-----------------------------------------"); ++i)
@@ -337,9 +339,11 @@ namespace ApprovalAddIn
                 rbBackedOutP.Enabled = true;
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
-               
+
                 // txtApprovingManager.Text = mailItem.To;
 
+
+                
 
 
             }
@@ -1125,6 +1129,43 @@ namespace ApprovalAddIn
             }
         }
 
+        private void btnScreenShot_Click(object sender, EventArgs e)
+        {
+            //------------------------------------------------------------------------------------------------
+
+            GetSnapshot()
+
+
+            //var bmpScreenshot = new Bitmap(this.Width,
+            //              this.Height,
+            //               System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+            //var grxScreenshot = Graphics.FromImage(bmpScreenshot);
+
+            //grxScreenshot.CopyFromScreen(Screen.PrimaryScreen.Bounds.X,
+            //            Screen.PrimaryScreen.Bounds.Y,
+            //            0,
+            //            0,
+            //            Screen.PrimaryScreen.Bounds.Size,
+            //            CopyPixelOperation.SourceCopy);
+
+
+            //string outputFileName = @"C:\Users\63530\Desktop\image.png";
+            //using (MemoryStream memory = new MemoryStream())
+            //{
+            //    using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
+            //    {
+            //        bmpScreenshot.Save(memory, ImageFormat.Png);
+            //        byte[] bytes = memory.ToArray();
+            //        fs.Write(bytes, 0, bytes.Length);
+            //    }
+            //}
+
+
+            //------------------------------------------------------------------------------------------------
+
+        }
+
         private void txtProjectManager_TextChanged(object sender, EventArgs e)
         {
             ProjectManager = txtProjectManager.Text;
@@ -1462,7 +1503,59 @@ namespace ApprovalAddIn
                 UAOP = false;
             }
         }
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool GetWindowRect(IntPtr hWnd, ref RECT lpRect);
 
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
+
+        public static Bitmap GetSnapshot(IntPtr hWnd) // capture a window by its handle
+        {
+            Int32 windowLeft;
+            Int32 windowTop;
+            Int32 windowWidth;
+            Int32 windowHeight;
+            if (hWnd == IntPtr.Zero) return null;
+            if (!GetWindowRect(hWnd, out windowLeft, out windowTop, out windowWidth, out windowHeight)) return null;
+
+            Bitmap bmp = new Bitmap(windowWidth, windowHeight, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Graphics gfxBmp = Graphics.FromImage(bmp);
+            IntPtr hdcBitmap = gfxBmp.GetHdc();
+
+            PrintWindow(hWnd, hdcBitmap, 0); // from user32.dll
+
+            gfxBmp.ReleaseHdc(hdcBitmap);
+            gfxBmp.Dispose();
+
+            return bmp;
+        }
+
+        private static bool GetWindowRect(IntPtr hWnd, out Int32 left, out Int32 top, out Int32 width, out Int32 height)
+        {
+            left = 0;
+            top = 0;
+            width = 0;
+            height = 0;
+
+            RECT rct = new RECT();
+            if (!GetWindowRect(hWnd, ref rct)) return false; // from user32.dll
+
+            left = rct.Left;
+            top = rct.Top;
+            width = rct.Right - rct.Left + 1;
+            height = rct.Bottom - rct.Top + 1;
+            return true;
+        }
+
+        public struct RECT
+        {
+            public Int32 Left;
+            public Int32 Top;
+            public Int32 Right;
+            public Int32 Bottom;
+        }
 
     }
 
