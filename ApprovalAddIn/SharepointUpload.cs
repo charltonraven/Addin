@@ -15,11 +15,11 @@ namespace ApprovalAddIn
     class SharepointUpload
     {
        public String SiteURL = "https://sonoco.sharepoint.com/sites/business-technology/team/edi/";
-        private String documentListName = "EDI Projects";
-        private String folderName;
-        private String Username = "";
+       private String documentListName = "EDI Projects";
+       private String folderName;
+       private String Username = "";
        private  String password = "";
-       private  Attachments attachments;
+       
 
 
         public SharepointUpload()
@@ -27,11 +27,10 @@ namespace ApprovalAddIn
 
         }
 
-       public SharepointUpload(String Username, String Password,String folderName, Attachments attachments)
+       public SharepointUpload(String Username, String Password,String folderName)
         {
             this.Username = Username;
             this.password = Password;
-            this.attachments = attachments;
             this.folderName = folderName;
 
             UploadToSharepoint();
@@ -40,8 +39,6 @@ namespace ApprovalAddIn
 
         public void UploadToSharepoint()
         {
-
-
             //Initialize contact with Sharepoint
             SecureString Password = new SecureString();
             foreach (char c in password.ToCharArray()) Password.AppendChar(c);
@@ -112,10 +109,69 @@ namespace ApprovalAddIn
 
 
                 }
+                
+
+
+                }
+
+
+        }
+        public void UploadWordDocToSharepoint()
+        {
+            //Initialize contact with Sharepoint
+            SecureString Password = new SecureString();
+            foreach (char c in password.ToCharArray()) Password.AppendChar(c);
+            SharePointOnlineCredentials credentials = new SharePointOnlineCredentials(Username, Password);
+            String SiteURL = "https://sonoco.sharepoint.com/sites/business-technology/team/edi/";
+            ClientContext clientContext = new ClientContext(SiteURL);
+            clientContext.Credentials = credentials;
+            Web web = clientContext.Web;
+            clientContext.Load(web);
+
+
+
+            DirectoryInfo directory = new DirectoryInfo(@"C:\TempAttach");
+            FileInfo[] files = directory.GetFiles();
+
+            if (clientContext.HasPendingRequest)
+                clientContext.ExecuteQuery();
+
+
+            foreach (FileInfo file in files)
+            {
+
+                using (FileStream fs = file.OpenRead())
+                {
+                    String documentName = file.FullName;
+                    byte[] byteFile = System.IO.File.ReadAllBytes(documentName);
+
+                    Microsoft.SharePoint.Client.Folder folder = web.GetFolderByServerRelativeUrl("EDI Projects/Completed Projects/" + folderName);
+
+
+                    if (clientContext.HasPendingRequest)
+                        clientContext.ExecuteQuery();
+
+                    List documentsList = clientContext.Web.Lists.GetByTitle(documentListName);
+
+                    var fileCreationInformation = new FileCreationInformation();
+
+                    fileCreationInformation.Content = byteFile;
+
+                    fileCreationInformation.Overwrite = true;
+
+                    fileCreationInformation.Url = "/sites/business-technology/team/edi/EDI Projects/Completed Projects/" + folderName + "/" + file.Name;
+
+                    Microsoft.SharePoint.Client.File uploadFile = documentsList.RootFolder.Files.Add(fileCreationInformation);
+
+                    uploadFile.ListItemAllFields.Update();
+                    clientContext.ExecuteQuery();
+
+
+                }
+
 
 
             }
-
 
         }
 

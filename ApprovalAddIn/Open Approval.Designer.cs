@@ -104,6 +104,7 @@
             this.lblTestEmail = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnScreenShot = new System.Windows.Forms.Button();
+            this.btnWordDocUpload = new System.Windows.Forms.Button();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
             this.grpOptions.SuspendLayout();
@@ -112,7 +113,7 @@
             // txtCodeReviewDATE
             // 
             this.txtCodeReviewDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodeReviewDATE.Location = new System.Drawing.Point(623, 451);
+            this.txtCodeReviewDATE.Location = new System.Drawing.Point(608, 444);
             this.txtCodeReviewDATE.Name = "txtCodeReviewDATE";
             this.txtCodeReviewDATE.Size = new System.Drawing.Size(139, 26);
             this.txtCodeReviewDATE.TabIndex = 96;
@@ -121,7 +122,7 @@
             // txtCodeReviewBY
             // 
             this.txtCodeReviewBY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodeReviewBY.Location = new System.Drawing.Point(460, 447);
+            this.txtCodeReviewBY.Location = new System.Drawing.Point(455, 442);
             this.txtCodeReviewBY.Name = "txtCodeReviewBY";
             this.txtCodeReviewBY.Size = new System.Drawing.Size(93, 26);
             this.txtCodeReviewBY.TabIndex = 87;
@@ -221,7 +222,7 @@
             // txtTableParmNAME
             // 
             this.txtTableParmNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableParmNAME.Location = new System.Drawing.Point(517, 287);
+            this.txtTableParmNAME.Location = new System.Drawing.Point(490, 284);
             this.txtTableParmNAME.Name = "txtTableParmNAME";
             this.txtTableParmNAME.Size = new System.Drawing.Size(182, 26);
             this.txtTableParmNAME.TabIndex = 86;
@@ -730,7 +731,7 @@
             // 
             this.lblTableParmName.AutoSize = true;
             this.lblTableParmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableParmName.Location = new System.Drawing.Point(456, 295);
+            this.lblTableParmName.Location = new System.Drawing.Point(429, 290);
             this.lblTableParmName.Name = "lblTableParmName";
             this.lblTableParmName.Size = new System.Drawing.Size(55, 20);
             this.lblTableParmName.TabIndex = 120;
@@ -740,7 +741,7 @@
             // 
             this.lblCodeReviewBy.AutoSize = true;
             this.lblCodeReviewBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeReviewBy.Location = new System.Drawing.Point(429, 457);
+            this.lblCodeReviewBy.Location = new System.Drawing.Point(423, 450);
             this.lblCodeReviewBy.Name = "lblCodeReviewBy";
             this.lblCodeReviewBy.Size = new System.Drawing.Size(31, 20);
             this.lblCodeReviewBy.TabIndex = 121;
@@ -750,7 +751,7 @@
             // 
             this.lblCodeReviewDate.AutoSize = true;
             this.lblCodeReviewDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeReviewDate.Location = new System.Drawing.Point(569, 460);
+            this.lblCodeReviewDate.Location = new System.Drawing.Point(554, 450);
             this.lblCodeReviewDate.Name = "lblCodeReviewDate";
             this.lblCodeReviewDate.Size = new System.Drawing.Size(48, 20);
             this.lblCodeReviewDate.TabIndex = 122;
@@ -893,12 +894,26 @@
             this.btnScreenShot.UseVisualStyleBackColor = true;
             this.btnScreenShot.Click += new System.EventHandler(this.btnScreenShot_Click);
             // 
+            // btnWordDocUpload
+            // 
+            this.btnWordDocUpload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWordDocUpload.BackgroundImage")));
+            this.btnWordDocUpload.FlatAppearance.BorderSize = 0;
+            this.btnWordDocUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWordDocUpload.Image = ((System.Drawing.Image)(resources.GetObject("btnWordDocUpload.Image")));
+            this.btnWordDocUpload.Location = new System.Drawing.Point(558, 803);
+            this.btnWordDocUpload.Name = "btnWordDocUpload";
+            this.btnWordDocUpload.Size = new System.Drawing.Size(46, 39);
+            this.btnWordDocUpload.TabIndex = 136;
+            this.btnWordDocUpload.UseVisualStyleBackColor = true;
+            this.btnWordDocUpload.Click += new System.EventHandler(this.btnWordDocUpload_Click);
+            // 
             // Open_Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Controls.Add(this.btnWordDocUpload);
             this.Controls.Add(this.btnScreenShot);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblTestEmail);
@@ -948,7 +963,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Open_Approval";
-            this.Size = new System.Drawing.Size(1057, 910);
+            this.Size = new System.Drawing.Size(1066, 910);
             this.FormRegionShowing += new System.EventHandler(this.Open_Approval_FormRegionShowing);
             this.FormRegionClosed += new System.EventHandler(this.Open_Approval_FormRegionClosed);
             this.grpImplementationReview.ResumeLayout(false);
@@ -1047,6 +1062,7 @@
         private System.Windows.Forms.Label lblTestEmail;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnScreenShot;
+        private System.Windows.Forms.Button btnWordDocUpload;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {

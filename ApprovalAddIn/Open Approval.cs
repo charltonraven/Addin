@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using Word = Microsoft.Office.Interop.Word;
 
 
 
@@ -24,15 +25,20 @@ namespace ApprovalAddIn
         String currentDate = DateTime.Today.ToShortDateString();
         String from = "Charlton.Williams@sonoco.com";
         bool UAOP, PAOIP, tableParm, developementCompleted, testingCompleted, codeReview, keyUserSignOff, partnerSignOff, Envelopes, BP, ServiceAdapters, perlScripts, EmailCodeList, docMaps, docExtractionMap, XSLTEmail;
+        bool BusinessProcessSch = true;
+        bool ServiceAdapterSch = true;
+        bool SetPartnerInGISStatsTable = true;
+        String perlScriptsName = "Test Perl Name";
 
+        String folderName;
 
-        private String [] InitialAndUsername;
+        private String[] InitialAndUsername;
         private String Password;
 
 
         bool mapCodeTables, RAILStable, RAILSrecord, RAILSfilter, fileStructureProd, FTPconnect, TRANSPORTfile;
         private List<String> attachments = new List<string>();
-        
+
 
 
         #region Form Region Factory 
@@ -79,7 +85,7 @@ namespace ApprovalAddIn
                 String body = mailItem.Body;
 
                 this.InitialAndUsername = UsernameEmail(mailItem.To);
-           
+
                 String[] lines = body.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
                 for (int i = 0; i < lines.Length && !lines[i].Equals("-----------------------------------------"); ++i)
@@ -292,8 +298,8 @@ namespace ApprovalAddIn
                 }
 
                 StringBuilder attachmentInfo = new StringBuilder();
-                
-               
+
+
 
 
                 lblCompletionDate.Visible = false;
@@ -339,11 +345,13 @@ namespace ApprovalAddIn
                 rbBackedOutP.Enabled = true;
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
+                btnWordDocUpload.Visible = false;
+                btnSave.Visible = false;
 
                 // txtApprovingManager.Text = mailItem.To;
 
 
-                
+
 
 
             }
@@ -359,8 +367,8 @@ namespace ApprovalAddIn
 
                 String body = mailItem.Body;
 
-                
 
+                this.InitialAndUsername = UsernameEmail(mailItem.To);
                 String[] lines = body.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
                 for (int i = 0; i < lines.Length && !lines[i].Equals(""); ++i)
@@ -572,14 +580,16 @@ namespace ApprovalAddIn
                         {
                             lblCompletionDate.Text = value;
                         }
+                        if (item.Equals("SharepointFolderName"))
+                        {
+                            folderName = value;
+                        }
                     }
 
                 }
 
                 lblCompletionDate.Visible = true;
-
                 cbtableParm.Enabled = false;
-               
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
                 cbDocumentExtractionMap.Enabled = false;
@@ -623,6 +633,8 @@ namespace ApprovalAddIn
                 //btnApprove.Visible = false;
                 btnReject.Visible = false;
                 // txtApprovingManager.Text = mailItem.To;
+                btnWordDocUpload.Visible = true;
+                btnSave.Visible = false;
 
             }
 
@@ -851,12 +863,12 @@ namespace ApprovalAddIn
                         }
                     }
 
-                    
+
 
                     // txtApprovingManager.Text = mailItem.To;
                 }
 
-                
+
                 lblCompletionDate.Visible = true;
                 cbtableParm.Enabled = false;
                 cbBusinessProcess.Enabled = false;
@@ -902,7 +914,7 @@ namespace ApprovalAddIn
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
                 btnSave.Visible = false;
-               
+                btnWordDocUpload.Visible = true;
                 btnReject.Visible = false;
 
             }
@@ -910,19 +922,19 @@ namespace ApprovalAddIn
 
         }
 
-        private String []  UsernameEmail(String name)
+        private String[] UsernameEmail(String name)
         {
 
             String[] flname = name.Split(' ');
             String periodIncluded = flname[0] + "." + flname[1];
-            String initials = flname[0].ToCharArray()[0].ToString()+ flname[1].ToCharArray()[0].ToString();
+            String initials = flname[0].ToCharArray()[0].ToString() + flname[1].ToCharArray()[0].ToString();
 
-           
+
 
             String[] nameVariables = new String[] { initials, periodIncluded + "@sonoco.com" };
 
             return nameVariables;
-            
+
         }
 
         // Occurs when the form region is closed.
@@ -940,7 +952,7 @@ namespace ApprovalAddIn
         }
 
 
-        
+
         public void SendNotApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem)
         {
 
@@ -967,82 +979,16 @@ namespace ApprovalAddIn
 
         }
 
-        private void rbInstalledI_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbInstalledI.Checked == true)
-            {
-                impFinalStatus = "Installed";
-            }
-        }
 
-        private void rbBackedOutI_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbBackedOutI.Checked == true)
-            {
-                impFinalStatus = "Backed Out";
-            }
-        }
-
-        private void rbAbandonedI_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbAbandonedI.Checked == true)
-            {
-                impFinalStatus = "Abandoned";
-            }
-        }
-
-        private void txtApprovingManager_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbInstalledP_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbSuccessP_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbSuccessP.Checked == true)
-            {
-                PostImpReview = "Success";
-            }
-        }
-
-        private void rbBackedOutP_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbSuccessP.Checked == true)
-            {
-                PostImpReview = "Backed Out";
-            }
-        }
-
-        private void rbAbandonedP_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbSuccessP.Checked == true)
-            {
-                PostImpReview = "Abandoned";
-            }
-        }
-
-        private void btnReject_Click(object sender, EventArgs e)
-        {
-            Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
-
-            CompletionDate = currentDate;
-            String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
-            String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
-            SendNotApproved(lineTitles, lineAnswers, mailItem);
-            mailItem.Close(Outlook.OlInspectorClose.olDiscard);
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
 
             DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\TempAttach");
-            if (!txtPassword.Text.Equals("")) {
+            if (!txtPassword.Text.Equals(""))
+            {
 
-               
+
                 Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
                 Outlook.Attachments mailAttachments = mailItem.Attachments;
 
@@ -1050,7 +996,7 @@ namespace ApprovalAddIn
                 {
                     for (int i = 1; i <= mailAttachments.Count; i++)
                     {
-                       
+
 
                         if (!saveAttatchementsFolder.Exists)
                         {
@@ -1067,7 +1013,7 @@ namespace ApprovalAddIn
                 CompletionDate = currentDate;
                 String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
                 String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
-                SendApproved(lineTitles, lineAnswers, mailItem,InitialAndUsername,Password);
+                SendApproved(lineTitles, lineAnswers, mailItem, InitialAndUsername, Password);
 
 
                 FileInfo[] files = saveAttatchementsFolder.GetFiles();
@@ -1077,21 +1023,21 @@ namespace ApprovalAddIn
                     file.Delete();
                 }
 
-                   mailItem.Close(Outlook.OlInspectorClose.olDiscard);
-                }
-            
+                mailItem.Close(Outlook.OlInspectorClose.olDiscard);
+            }
+
         }
 
-        public void SendApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem, String [] InitialAndUsername, String Password)
+        public void SendApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem, String[] InitialAndUsername, String Password)
         {
-               String ModUser = User.Replace(" ", "");
+            String ModUser = User.Replace(" ", "");
             String ModTitle = Title.Replace(" ", "");
             String ModPartner = Partner.Replace(" ", "");
 
             String date = DateTime.Now.ToString("yyyyMMdd");
-            String Foldername = date + "_" + ModUser + "_" + ModPartner + "_" + ModTitle+ "_" + InitialAndUsername[0];
-            
-            SharepointUpload upload = new SharepointUpload(InitialAndUsername[1], Password, Foldername, mailItem.Attachments);
+            String Foldername = date + "_" + ModUser + "_" + ModPartner + "_" + ModTitle + "_" + InitialAndUsername[0];
+
+            SharepointUpload upload = new SharepointUpload(InitialAndUsername[1], Password, Foldername);
 
 
 
@@ -1106,6 +1052,8 @@ namespace ApprovalAddIn
                 stringbuilder.AppendLine(lineTitles[i] + "\t" + lineAnswers[i]);
             }
 
+            stringbuilder.AppendLine("SharepointFolderName" + "\t" + Foldername);
+
             String body = stringbuilder.ToString();
             String Subject = "Approved! " + User + " and Partner " + Partner;
 
@@ -1114,7 +1062,7 @@ namespace ApprovalAddIn
             ReplyEmail.Body = body;
             ReplyEmail.Importance = Outlook.OlImportance.olImportanceHigh;
             ReplyEmail.Send();
-            
+
 
 
 
@@ -1124,45 +1072,88 @@ namespace ApprovalAddIn
         {
             if (!txtPassword.Text.Equals(""))
             {
-                btnSave.Enabled=true;
+                btnSave.Enabled = true;
                 Password = txtPassword.Text;
             }
         }
 
         private void btnScreenShot_Click(object sender, EventArgs e)
         {
-            //------------------------------------------------------------------------------------------------
+            String[] Section_1 = { User, Partner, currentDate, Title, CMRN };
 
-            GetSnapshot()
+            String[] Section_2 = { "Users Approval of Project: ", (UAOP == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Partner Approval of Initial Project: ", (PAOIP == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Table/Parm Update: ", (tableParm == true) ? ((char)0x221A).ToString() : "", "name: "+tableParmName, "",
+                                    "Development Completed: ", (developementCompleted == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Testing Completed: ", (testingCompleted == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Code Review/Check Sign Off: ", (codeReview == true) ? ((char)0x221A).ToString() : "", "by: "+codeReviewBY, "date: "+codeReviewDate,
+                                    "Key User Signoff: ", (keyUserSignOff == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Partner Signoff: ", (partnerSignOff == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Implementation Final Status: ", impFinalStatus, "", "",
+                                    "Post Implementation Review: ",PostImpReview, "", "", };
 
+            String[] Section_3 = { "Envelopes: ", (Envelopes == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Business Processes: ", (BP == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Service Adapters: ", (ServiceAdapters == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Perl Scripts: ", (perlScripts == true) ? ((char)0x221A).ToString() : "", "name: "+perlScriptsName,
+                                    "Email Code List: ", (EmailCodeList == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Document Maps: ", (docMaps == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Document Extraction Map: ", (docExtractionMap == true) ? ((char)0x221A).ToString() : "", "",
+                                    "XSLT Email Error Header: ", (XSLTEmail == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Map Code Tables: ",  (mapCodeTables == true) ? ((char)0x221A).ToString() : "", "",
+                                    "RAILS csv Table: ", (RAILStable == true) ? ((char)0x221A).ToString() : "", "",
+                                    "RAILS csv Record: ", (RAILSrecord == true) ? ((char)0x221A).ToString() : "", "",
+                                    "RAILS csv Filter: ", (RAILSfilter == true) ? ((char)0x221A).ToString() : "", "",
+                                    "File Structure in Production: ", (fileStructureProd == true) ? ((char)0x221A).ToString() : "", "",
+                                    "FTP Connect: ", (FTPconnect == true) ? ((char)0x221A).ToString() : "", "",
+                                    "TRANSPORT Parm File: ", (TRANSPORTfile == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Business Process Schedule: ", (BusinessProcessSch == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Service Adapter Schedule: ", (ServiceAdapterSch == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Set Partner in GIS Stats table: ", (SetPartnerInGISStatsTable == true) ? ((char)0x221A).ToString() : "", ""};
+            String[] Section_4 = { ProjectManager, currentDate };
 
-            //var bmpScreenshot = new Bitmap(this.Width,
-            //              this.Height,
-            //               System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            CreateDocument create = new CreateDocument(Section_1, Section_2, Section_3, Section_4);
 
-            //var grxScreenshot = Graphics.FromImage(bmpScreenshot);
+        }
 
-            //grxScreenshot.CopyFromScreen(Screen.PrimaryScreen.Bounds.X,
-            //            Screen.PrimaryScreen.Bounds.Y,
-            //            0,
-            //            0,
-            //            Screen.PrimaryScreen.Bounds.Size,
-            //            CopyPixelOperation.SourceCopy);
+        private void btnWordDocUpload_Click(object sender, EventArgs e)
+        {
+            String[] Section_1 = { User, Partner, currentDate, Title, CMRN };
 
+            String[] Section_2 = { "Users Approval of Project: ", (UAOP == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Partner Approval of Initial Project: ", (PAOIP == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Table/Parm Update: ", (tableParm == true) ? ((char)0x221A).ToString() : "", "name: "+tableParmName, "",
+                                    "Development Completed: ", (developementCompleted == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Testing Completed: ", (testingCompleted == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Code Review/Check Sign Off: ", (codeReview == true) ? ((char)0x221A).ToString() : "", "by: "+codeReviewBY, "date: "+codeReviewDate,
+                                    "Key User Signoff: ", (keyUserSignOff == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Partner Signoff: ", (partnerSignOff == true) ? ((char)0x221A).ToString() : "", "", "",
+                                    "Implementation Final Status: ", impFinalStatus, "", "",
+                                    "Post Implementation Review: ",PostImpReview, "", "", };
 
-            //string outputFileName = @"C:\Users\63530\Desktop\image.png";
-            //using (MemoryStream memory = new MemoryStream())
-            //{
-            //    using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
-            //    {
-            //        bmpScreenshot.Save(memory, ImageFormat.Png);
-            //        byte[] bytes = memory.ToArray();
-            //        fs.Write(bytes, 0, bytes.Length);
-            //    }
-            //}
+            String[] Section_3 = { "Envelopes: ", (Envelopes == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Business Processes: ", (BP == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Service Adapters: ", (ServiceAdapters == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Perl Scripts: ", (perlScripts == true) ? ((char)0x221A).ToString() : "", "name: "+perlScriptsName,
+                                    "Email Code List: ", (EmailCodeList == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Document Maps: ", (docMaps == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Document Extraction Map: ", (docExtractionMap == true) ? ((char)0x221A).ToString() : "", "",
+                                    "XSLT Email Error Header: ", (XSLTEmail == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Map Code Tables: ",  (mapCodeTables == true) ? ((char)0x221A).ToString() : "", "",
+                                    "RAILS csv Table: ", (RAILStable == true) ? ((char)0x221A).ToString() : "", "",
+                                    "RAILS csv Record: ", (RAILSrecord == true) ? ((char)0x221A).ToString() : "", "",
+                                    "RAILS csv Filter: ", (RAILSfilter == true) ? ((char)0x221A).ToString() : "", "",
+                                    "File Structure in Production: ", (fileStructureProd == true) ? ((char)0x221A).ToString() : "", "",
+                                    "FTP Connect: ", (FTPconnect == true) ? ((char)0x221A).ToString() : "", "",
+                                    "TRANSPORT Parm File: ", (TRANSPORTfile == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Business Process Schedule: ", (BusinessProcessSch == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Service Adapter Schedule: ", (ServiceAdapterSch == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Set Partner in GIS Stats table: ", (SetPartnerInGISStatsTable == true) ? ((char)0x221A).ToString() : "", ""};
+            String[] Section_4 = { ProjectManager, currentDate };
 
-
-            //------------------------------------------------------------------------------------------------
+            CreateDocument create = new CreateDocument(Section_1, Section_2, Section_3, Section_4);
+           
+            SharepointUpload upLoadWordDoc = new SharepointUpload(InitialAndUsername[1],Password,folderName);
 
         }
 
@@ -1503,60 +1494,74 @@ namespace ApprovalAddIn
                 UAOP = false;
             }
         }
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool GetWindowRect(IntPtr hWnd, ref RECT lpRect);
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
-
-        public static Bitmap GetSnapshot(IntPtr hWnd) // capture a window by its handle
+        private void rbInstalledI_CheckedChanged(object sender, EventArgs e)
         {
-            Int32 windowLeft;
-            Int32 windowTop;
-            Int32 windowWidth;
-            Int32 windowHeight;
-            if (hWnd == IntPtr.Zero) return null;
-            if (!GetWindowRect(hWnd, out windowLeft, out windowTop, out windowWidth, out windowHeight)) return null;
-
-            Bitmap bmp = new Bitmap(windowWidth, windowHeight, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            Graphics gfxBmp = Graphics.FromImage(bmp);
-            IntPtr hdcBitmap = gfxBmp.GetHdc();
-
-            PrintWindow(hWnd, hdcBitmap, 0); // from user32.dll
-
-            gfxBmp.ReleaseHdc(hdcBitmap);
-            gfxBmp.Dispose();
-
-            return bmp;
+            if (rbInstalledI.Checked == true)
+            {
+                impFinalStatus = "Installed";
+            }
         }
 
-        private static bool GetWindowRect(IntPtr hWnd, out Int32 left, out Int32 top, out Int32 width, out Int32 height)
+        private void rbBackedOutI_CheckedChanged(object sender, EventArgs e)
         {
-            left = 0;
-            top = 0;
-            width = 0;
-            height = 0;
-
-            RECT rct = new RECT();
-            if (!GetWindowRect(hWnd, ref rct)) return false; // from user32.dll
-
-            left = rct.Left;
-            top = rct.Top;
-            width = rct.Right - rct.Left + 1;
-            height = rct.Bottom - rct.Top + 1;
-            return true;
+            if (rbBackedOutI.Checked == true)
+            {
+                impFinalStatus = "Backed Out";
+            }
         }
 
-        public struct RECT
+        private void rbAbandonedI_CheckedChanged(object sender, EventArgs e)
         {
-            public Int32 Left;
-            public Int32 Top;
-            public Int32 Right;
-            public Int32 Bottom;
+            if (rbAbandonedI.Checked == true)
+            {
+                impFinalStatus = "Abandoned";
+            }
         }
 
+        private void txtApprovingManager_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbInstalledP_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbSuccessP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSuccessP.Checked == true)
+            {
+                PostImpReview = "Success";
+            }
+        }
+
+        private void rbBackedOutP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSuccessP.Checked == true)
+            {
+                PostImpReview = "Backed Out";
+            }
+        }
+
+        private void rbAbandonedP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSuccessP.Checked == true)
+            {
+                PostImpReview = "Abandoned";
+            }
+        }
+
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+            Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
+
+            CompletionDate = currentDate;
+            String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
+            String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
+            SendNotApproved(lineTitles, lineAnswers, mailItem);
+            mailItem.Close(Outlook.OlInspectorClose.olDiscard);
+        }
     }
 
 
