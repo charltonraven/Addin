@@ -95,36 +95,36 @@
             this.grpOptions = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtProjectManager = new System.Windows.Forms.TextBox();
-            this.lblCompletionDate = new System.Windows.Forms.Label();
-            this.btnReject = new System.Windows.Forms.Button();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblTestEmail = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnScreenShot = new System.Windows.Forms.Button();
             this.btnWordDocUpload = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbSetPartnerinGISStatsTable = new System.Windows.Forms.CheckBox();
+            this.cbServiceAdapterSchedule = new System.Windows.Forms.CheckBox();
+            this.cbBusinessProcessSchedule = new System.Windows.Forms.CheckBox();
             this.grpImplementationReview.SuspendLayout();
             this.grpPostReview.SuspendLayout();
             this.grpOptions.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCodeReviewDATE
             // 
             this.txtCodeReviewDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodeReviewDATE.Location = new System.Drawing.Point(608, 444);
+            this.txtCodeReviewDATE.Location = new System.Drawing.Point(675, 444);
             this.txtCodeReviewDATE.Name = "txtCodeReviewDATE";
-            this.txtCodeReviewDATE.Size = new System.Drawing.Size(139, 26);
+            this.txtCodeReviewDATE.Size = new System.Drawing.Size(100, 26);
             this.txtCodeReviewDATE.TabIndex = 96;
             this.txtCodeReviewDATE.TextChanged += new System.EventHandler(this.txtCodeReviewDATE_TextChanged);
             // 
             // txtCodeReviewBY
             // 
             this.txtCodeReviewBY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodeReviewBY.Location = new System.Drawing.Point(455, 442);
+            this.txtCodeReviewBY.Location = new System.Drawing.Point(455, 444);
             this.txtCodeReviewBY.Name = "txtCodeReviewBY";
-            this.txtCodeReviewBY.Size = new System.Drawing.Size(93, 26);
+            this.txtCodeReviewBY.Size = new System.Drawing.Size(160, 26);
             this.txtCodeReviewBY.TabIndex = 87;
             this.txtCodeReviewBY.TextChanged += new System.EventHandler(this.txtCodeReviewBY_TextChanged);
             // 
@@ -133,7 +133,7 @@
             this.rbAbandonedI.AutoSize = true;
             this.rbAbandonedI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbAbandonedI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAbandonedI.Location = new System.Drawing.Point(196, 19);
+            this.rbAbandonedI.Location = new System.Drawing.Point(205, 19);
             this.rbAbandonedI.Name = "rbAbandonedI";
             this.rbAbandonedI.Size = new System.Drawing.Size(99, 22);
             this.rbAbandonedI.TabIndex = 2;
@@ -172,7 +172,7 @@
             this.rbAbandonedP.AutoSize = true;
             this.rbAbandonedP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbAbandonedP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAbandonedP.Location = new System.Drawing.Point(196, 19);
+            this.rbAbandonedP.Location = new System.Drawing.Point(205, 19);
             this.rbAbandonedP.Name = "rbAbandonedP";
             this.rbAbandonedP.Size = new System.Drawing.Size(99, 22);
             this.rbAbandonedP.TabIndex = 2;
@@ -180,6 +180,7 @@
             this.rbAbandonedP.Text = "Abandoned";
             this.rbAbandonedP.UseVisualStyleBackColor = true;
             this.rbAbandonedP.CheckedChanged += new System.EventHandler(this.rbAbandonedP_CheckedChanged);
+            this.rbAbandonedP.Click += new System.EventHandler(this.rbAbandonedP_Click);
             // 
             // rbBackedOutP
             // 
@@ -194,11 +195,12 @@
             this.rbBackedOutP.Text = "Backed Out";
             this.rbBackedOutP.UseVisualStyleBackColor = true;
             this.rbBackedOutP.CheckedChanged += new System.EventHandler(this.rbBackedOutP_CheckedChanged);
+            this.rbBackedOutP.Click += new System.EventHandler(this.rbBackedOutP_Click);
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(702, 677);
+            this.txtDescription.Location = new System.Drawing.Point(718, 735);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(328, 163);
@@ -210,7 +212,7 @@
             this.rbSuccessP.AutoSize = true;
             this.rbSuccessP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbSuccessP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSuccessP.Location = new System.Drawing.Point(12, 19);
+            this.rbSuccessP.Location = new System.Drawing.Point(8, 19);
             this.rbSuccessP.Name = "rbSuccessP";
             this.rbSuccessP.Size = new System.Drawing.Size(83, 22);
             this.rbSuccessP.TabIndex = 0;
@@ -218,6 +220,7 @@
             this.rbSuccessP.Text = "Success";
             this.rbSuccessP.UseVisualStyleBackColor = true;
             this.rbSuccessP.CheckedChanged += new System.EventHandler(this.rbSuccessP_CheckedChanged);
+            this.rbSuccessP.Click += new System.EventHandler(this.rbSuccessP_Click);
             // 
             // txtTableParmNAME
             // 
@@ -268,7 +271,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(810, 655);
+            this.label31.Location = new System.Drawing.Point(835, 713);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(91, 19);
             this.label31.TabIndex = 99;
@@ -281,7 +284,7 @@
             this.grpImplementationReview.Controls.Add(this.rbInstalledI);
             this.grpImplementationReview.Location = new System.Drawing.Point(307, 592);
             this.grpImplementationReview.Name = "grpImplementationReview";
-            this.grpImplementationReview.Size = new System.Drawing.Size(308, 53);
+            this.grpImplementationReview.Size = new System.Drawing.Size(315, 53);
             this.grpImplementationReview.TabIndex = 98;
             this.grpImplementationReview.TabStop = false;
             // 
@@ -290,9 +293,9 @@
             this.grpPostReview.Controls.Add(this.rbAbandonedP);
             this.grpPostReview.Controls.Add(this.rbBackedOutP);
             this.grpPostReview.Controls.Add(this.rbSuccessP);
-            this.grpPostReview.Location = new System.Drawing.Point(307, 671);
+            this.grpPostReview.Location = new System.Drawing.Point(307, 680);
             this.grpPostReview.Name = "grpPostReview";
-            this.grpPostReview.Size = new System.Drawing.Size(308, 53);
+            this.grpPostReview.Size = new System.Drawing.Size(315, 53);
             this.grpPostReview.TabIndex = 97;
             this.grpPostReview.TabStop = false;
             // 
@@ -537,7 +540,7 @@
             this.cbXSLTEmailErrorHeader.AutoSize = true;
             this.cbXSLTEmailErrorHeader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbXSLTEmailErrorHeader.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbXSLTEmailErrorHeader.Location = new System.Drawing.Point(17, 235);
+            this.cbXSLTEmailErrorHeader.Location = new System.Drawing.Point(16, 220);
             this.cbXSLTEmailErrorHeader.Name = "cbXSLTEmailErrorHeader";
             this.cbXSLTEmailErrorHeader.Size = new System.Drawing.Size(195, 23);
             this.cbXSLTEmailErrorHeader.TabIndex = 116;
@@ -550,7 +553,7 @@
             this.cbRAILSrecord.AutoSize = true;
             this.cbRAILSrecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbRAILSrecord.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRAILSrecord.Location = new System.Drawing.Point(16, 330);
+            this.cbRAILSrecord.Location = new System.Drawing.Point(16, 308);
             this.cbRAILSrecord.Name = "cbRAILSrecord";
             this.cbRAILSrecord.Size = new System.Drawing.Size(146, 23);
             this.cbRAILSrecord.TabIndex = 115;
@@ -563,7 +566,7 @@
             this.cbEmailCodeList.AutoSize = true;
             this.cbEmailCodeList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbEmailCodeList.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEmailCodeList.Location = new System.Drawing.Point(16, 148);
+            this.cbEmailCodeList.Location = new System.Drawing.Point(16, 133);
             this.cbEmailCodeList.Name = "cbEmailCodeList";
             this.cbEmailCodeList.Size = new System.Drawing.Size(132, 23);
             this.cbEmailCodeList.TabIndex = 103;
@@ -576,7 +579,7 @@
             this.cbRAILSfilter.AutoSize = true;
             this.cbRAILSfilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbRAILSfilter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRAILSfilter.Location = new System.Drawing.Point(17, 359);
+            this.cbRAILSfilter.Location = new System.Drawing.Point(16, 337);
             this.cbRAILSfilter.Name = "cbRAILSfilter";
             this.cbRAILSfilter.Size = new System.Drawing.Size(132, 23);
             this.cbRAILSfilter.TabIndex = 114;
@@ -589,7 +592,7 @@
             this.cbFileStructureInProduction.AutoSize = true;
             this.cbFileStructureInProduction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFileStructureInProduction.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFileStructureInProduction.Location = new System.Drawing.Point(17, 389);
+            this.cbFileStructureInProduction.Location = new System.Drawing.Point(16, 366);
             this.cbFileStructureInProduction.Name = "cbFileStructureInProduction";
             this.cbFileStructureInProduction.Size = new System.Drawing.Size(215, 23);
             this.cbFileStructureInProduction.TabIndex = 113;
@@ -602,7 +605,7 @@
             this.cbFTPconnect.AutoSize = true;
             this.cbFTPconnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbFTPconnect.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFTPconnect.Location = new System.Drawing.Point(17, 418);
+            this.cbFTPconnect.Location = new System.Drawing.Point(16, 395);
             this.cbFTPconnect.Name = "cbFTPconnect";
             this.cbFTPconnect.Size = new System.Drawing.Size(112, 23);
             this.cbFTPconnect.TabIndex = 112;
@@ -615,7 +618,7 @@
             this.cbTRANSPORTparmfile.AutoSize = true;
             this.cbTRANSPORTparmfile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTRANSPORTparmfile.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTRANSPORTparmfile.Location = new System.Drawing.Point(17, 447);
+            this.cbTRANSPORTparmfile.Location = new System.Drawing.Point(16, 424);
             this.cbTRANSPORTparmfile.Name = "cbTRANSPORTparmfile";
             this.cbTRANSPORTparmfile.Size = new System.Drawing.Size(183, 23);
             this.cbTRANSPORTparmfile.TabIndex = 111;
@@ -628,7 +631,7 @@
             this.cbRAILStable.AutoSize = true;
             this.cbRAILStable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbRAILStable.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRAILStable.Location = new System.Drawing.Point(17, 299);
+            this.cbRAILStable.Location = new System.Drawing.Point(16, 279);
             this.cbRAILStable.Name = "cbRAILStable";
             this.cbRAILStable.Size = new System.Drawing.Size(141, 23);
             this.cbRAILStable.TabIndex = 110;
@@ -641,7 +644,7 @@
             this.cbMapCodeTables.AutoSize = true;
             this.cbMapCodeTables.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbMapCodeTables.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMapCodeTables.Location = new System.Drawing.Point(17, 270);
+            this.cbMapCodeTables.Location = new System.Drawing.Point(16, 250);
             this.cbMapCodeTables.Name = "cbMapCodeTables";
             this.cbMapCodeTables.Size = new System.Drawing.Size(145, 23);
             this.cbMapCodeTables.TabIndex = 109;
@@ -654,7 +657,7 @@
             this.cbDocumentMap.AutoSize = true;
             this.cbDocumentMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbDocumentMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDocumentMap.Location = new System.Drawing.Point(17, 177);
+            this.cbDocumentMap.Location = new System.Drawing.Point(16, 162);
             this.cbDocumentMap.Name = "cbDocumentMap";
             this.cbDocumentMap.Size = new System.Drawing.Size(140, 23);
             this.cbDocumentMap.TabIndex = 108;
@@ -667,7 +670,7 @@
             this.cbDocumentExtractionMap.AutoSize = true;
             this.cbDocumentExtractionMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbDocumentExtractionMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDocumentExtractionMap.Location = new System.Drawing.Point(17, 206);
+            this.cbDocumentExtractionMap.Location = new System.Drawing.Point(16, 191);
             this.cbDocumentExtractionMap.Name = "cbDocumentExtractionMap";
             this.cbDocumentExtractionMap.Size = new System.Drawing.Size(205, 23);
             this.cbDocumentExtractionMap.TabIndex = 107;
@@ -680,7 +683,7 @@
             this.cbServiceAdapter.AutoSize = true;
             this.cbServiceAdapter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbServiceAdapter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbServiceAdapter.Location = new System.Drawing.Point(17, 90);
+            this.cbServiceAdapter.Location = new System.Drawing.Point(16, 75);
             this.cbServiceAdapter.Name = "cbServiceAdapter";
             this.cbServiceAdapter.Size = new System.Drawing.Size(135, 23);
             this.cbServiceAdapter.TabIndex = 106;
@@ -693,7 +696,7 @@
             this.cbBusinessProcess.AutoSize = true;
             this.cbBusinessProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbBusinessProcess.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBusinessProcess.Location = new System.Drawing.Point(16, 61);
+            this.cbBusinessProcess.Location = new System.Drawing.Point(16, 46);
             this.cbBusinessProcess.Name = "cbBusinessProcess";
             this.cbBusinessProcess.Size = new System.Drawing.Size(143, 23);
             this.cbBusinessProcess.TabIndex = 105;
@@ -706,7 +709,7 @@
             this.cbPerlScripts.AutoSize = true;
             this.cbPerlScripts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPerlScripts.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPerlScripts.Location = new System.Drawing.Point(16, 119);
+            this.cbPerlScripts.Location = new System.Drawing.Point(16, 104);
             this.cbPerlScripts.Name = "cbPerlScripts";
             this.cbPerlScripts.Size = new System.Drawing.Size(104, 23);
             this.cbPerlScripts.TabIndex = 104;
@@ -719,7 +722,7 @@
             this.cbEnvelopes.AutoSize = true;
             this.cbEnvelopes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbEnvelopes.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEnvelopes.Location = new System.Drawing.Point(16, 32);
+            this.cbEnvelopes.Location = new System.Drawing.Point(16, 19);
             this.cbEnvelopes.Name = "cbEnvelopes";
             this.cbEnvelopes.Size = new System.Drawing.Size(96, 23);
             this.cbEnvelopes.TabIndex = 118;
@@ -751,7 +754,7 @@
             // 
             this.lblCodeReviewDate.AutoSize = true;
             this.lblCodeReviewDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeReviewDate.Location = new System.Drawing.Point(554, 450);
+            this.lblCodeReviewDate.Location = new System.Drawing.Point(621, 450);
             this.lblCodeReviewDate.Name = "lblCodeReviewDate";
             this.lblCodeReviewDate.Size = new System.Drawing.Size(48, 20);
             this.lblCodeReviewDate.TabIndex = 122;
@@ -774,9 +777,9 @@
             this.grpOptions.Controls.Add(this.cbServiceAdapter);
             this.grpOptions.Controls.Add(this.cbXSLTEmailErrorHeader);
             this.grpOptions.Controls.Add(this.cbMapCodeTables);
-            this.grpOptions.Location = new System.Drawing.Point(798, 146);
+            this.grpOptions.Location = new System.Drawing.Point(798, 137);
             this.grpOptions.Name = "grpOptions";
-            this.grpOptions.Size = new System.Drawing.Size(234, 487);
+            this.grpOptions.Size = new System.Drawing.Size(248, 449);
             this.grpOptions.TabIndex = 123;
             this.grpOptions.TabStop = false;
             // 
@@ -799,39 +802,6 @@
             this.txtProjectManager.Size = new System.Drawing.Size(207, 19);
             this.txtProjectManager.TabIndex = 126;
             this.txtProjectManager.TextChanged += new System.EventHandler(this.txtProjectManager_TextChanged);
-            // 
-            // lblCompletionDate
-            // 
-            this.lblCompletionDate.AutoSize = true;
-            this.lblCompletionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompletionDate.Location = new System.Drawing.Point(89, 0);
-            this.lblCompletionDate.Name = "lblCompletionDate";
-            this.lblCompletionDate.Size = new System.Drawing.Size(82, 13);
-            this.lblCompletionDate.TabIndex = 127;
-            this.lblCompletionDate.Text = "CompletionDate";
-            // 
-            // btnReject
-            // 
-            this.btnReject.FlatAppearance.BorderSize = 0;
-            this.btnReject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReject.Image = ((System.Drawing.Image)(resources.GetObject("btnReject.Image")));
-            this.btnReject.Location = new System.Drawing.Point(608, 794);
-            this.btnReject.Name = "btnReject";
-            this.btnReject.Size = new System.Drawing.Size(48, 53);
-            this.btnReject.TabIndex = 129;
-            this.btnReject.UseVisualStyleBackColor = true;
-            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblStatus.Location = new System.Drawing.Point(4, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(59, 13);
-            this.lblStatus.TabIndex = 102;
-            this.lblStatus.Text = "status here";
             // 
             // label15
             // 
@@ -865,15 +835,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblTestEmail
-            // 
-            this.lblTestEmail.AutoSize = true;
-            this.lblTestEmail.Location = new System.Drawing.Point(391, 10);
-            this.lblTestEmail.Name = "lblTestEmail";
-            this.lblTestEmail.Size = new System.Drawing.Size(41, 13);
-            this.lblTestEmail.TabIndex = 133;
-            this.lblTestEmail.Text = "label16";
-            // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -884,51 +845,87 @@
             this.txtPassword.TabIndex = 134;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
-            // btnScreenShot
-            // 
-            this.btnScreenShot.Location = new System.Drawing.Point(926, 872);
-            this.btnScreenShot.Name = "btnScreenShot";
-            this.btnScreenShot.Size = new System.Drawing.Size(83, 22);
-            this.btnScreenShot.TabIndex = 135;
-            this.btnScreenShot.Text = "Snap";
-            this.btnScreenShot.UseVisualStyleBackColor = true;
-            this.btnScreenShot.Click += new System.EventHandler(this.btnScreenShot_Click);
-            // 
             // btnWordDocUpload
             // 
             this.btnWordDocUpload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWordDocUpload.BackgroundImage")));
             this.btnWordDocUpload.FlatAppearance.BorderSize = 0;
             this.btnWordDocUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWordDocUpload.Image = ((System.Drawing.Image)(resources.GetObject("btnWordDocUpload.Image")));
-            this.btnWordDocUpload.Location = new System.Drawing.Point(558, 803);
+            this.btnWordDocUpload.Location = new System.Drawing.Point(558, 801);
             this.btnWordDocUpload.Name = "btnWordDocUpload";
             this.btnWordDocUpload.Size = new System.Drawing.Size(46, 39);
             this.btnWordDocUpload.TabIndex = 136;
             this.btnWordDocUpload.UseVisualStyleBackColor = true;
             this.btnWordDocUpload.Click += new System.EventHandler(this.btnWordDocUpload_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbSetPartnerinGISStatsTable);
+            this.groupBox1.Controls.Add(this.cbServiceAdapterSchedule);
+            this.groupBox1.Controls.Add(this.cbBusinessProcessSchedule);
+            this.groupBox1.Location = new System.Drawing.Point(798, 592);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(248, 107);
+            this.groupBox1.TabIndex = 124;
+            this.groupBox1.TabStop = false;
+            // 
+            // cbSetPartnerinGISStatsTable
+            // 
+            this.cbSetPartnerinGISStatsTable.AutoSize = true;
+            this.cbSetPartnerinGISStatsTable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbSetPartnerinGISStatsTable.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSetPartnerinGISStatsTable.Location = new System.Drawing.Point(11, 77);
+            this.cbSetPartnerinGISStatsTable.Name = "cbSetPartnerinGISStatsTable";
+            this.cbSetPartnerinGISStatsTable.Size = new System.Drawing.Size(227, 23);
+            this.cbSetPartnerinGISStatsTable.TabIndex = 111;
+            this.cbSetPartnerinGISStatsTable.Text = "Set Partner In GIS Stats Table";
+            this.cbSetPartnerinGISStatsTable.UseVisualStyleBackColor = true;
+            this.cbSetPartnerinGISStatsTable.CheckedChanged += new System.EventHandler(this.cbSetPartnerinGISStatsTable_CheckedChanged);
+            // 
+            // cbServiceAdapterSchedule
+            // 
+            this.cbServiceAdapterSchedule.AutoSize = true;
+            this.cbServiceAdapterSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbServiceAdapterSchedule.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbServiceAdapterSchedule.Location = new System.Drawing.Point(11, 48);
+            this.cbServiceAdapterSchedule.Name = "cbServiceAdapterSchedule";
+            this.cbServiceAdapterSchedule.Size = new System.Drawing.Size(202, 23);
+            this.cbServiceAdapterSchedule.TabIndex = 112;
+            this.cbServiceAdapterSchedule.Text = "Service Adatper Schedule";
+            this.cbServiceAdapterSchedule.UseVisualStyleBackColor = true;
+            this.cbServiceAdapterSchedule.CheckedChanged += new System.EventHandler(this.cbServiceAdapterSchedule_CheckedChanged);
+            // 
+            // cbBusinessProcessSchedule
+            // 
+            this.cbBusinessProcessSchedule.AutoSize = true;
+            this.cbBusinessProcessSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbBusinessProcessSchedule.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBusinessProcessSchedule.Location = new System.Drawing.Point(11, 19);
+            this.cbBusinessProcessSchedule.Name = "cbBusinessProcessSchedule";
+            this.cbBusinessProcessSchedule.Size = new System.Drawing.Size(210, 23);
+            this.cbBusinessProcessSchedule.TabIndex = 113;
+            this.cbBusinessProcessSchedule.Text = "Business Process Schedule";
+            this.cbBusinessProcessSchedule.UseVisualStyleBackColor = true;
+            this.cbBusinessProcessSchedule.CheckedChanged += new System.EventHandler(this.cbBusinessProcessSchedule_CheckedChanged);
+            // 
             // Open_Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnWordDocUpload);
-            this.Controls.Add(this.btnScreenShot);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblTestEmail);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.btnReject);
-            this.Controls.Add(this.lblCompletionDate);
             this.Controls.Add(this.txtProjectManager);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.grpOptions);
             this.Controls.Add(this.lblCodeReviewDate);
             this.Controls.Add(this.lblCodeReviewBy);
             this.Controls.Add(this.lblTableParmName);
-            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtCodeReviewDATE);
             this.Controls.Add(this.txtCodeReviewBY);
             this.Controls.Add(this.txtDescription);
@@ -972,6 +969,8 @@
             this.grpPostReview.PerformLayout();
             this.grpOptions.ResumeLayout(false);
             this.grpOptions.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1053,16 +1052,15 @@
         private System.Windows.Forms.GroupBox grpOptions;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtProjectManager;
-        private System.Windows.Forms.Label lblCompletionDate;
-        private System.Windows.Forms.Button btnReject;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label lblTestEmail;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnScreenShot;
         private System.Windows.Forms.Button btnWordDocUpload;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox cbSetPartnerinGISStatsTable;
+        private System.Windows.Forms.CheckBox cbServiceAdapterSchedule;
+        private System.Windows.Forms.CheckBox cbBusinessProcessSchedule;
 
         public partial class Open_ApprovalFactory : Microsoft.Office.Tools.Outlook.IFormRegionFactory
         {

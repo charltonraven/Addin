@@ -29,6 +29,7 @@ namespace ApprovalAddIn
         bool ServiceAdapterSch = true;
         bool SetPartnerInGISStatsTable = true;
         String perlScriptsName = "Test Perl Name";
+        String InitialDate;
 
         String folderName;
 
@@ -79,8 +80,8 @@ namespace ApprovalAddIn
             //Sends to Approving Manager from Project Manager
             if (subject.Contains("Needs Approval"))
             {
-                lblStatus.Text = "Needs Approval";
-                lblTestEmail.Text = mailItem.To;
+
+
 
                 String body = mailItem.Body;
 
@@ -101,7 +102,7 @@ namespace ApprovalAddIn
 
                         if (item.Equals("Status"))
                         {
-                            lblStatus.Text = value;
+
                             continue;
                         }
 
@@ -279,6 +280,21 @@ namespace ApprovalAddIn
                         if (item.Equals("TRANSPORTParmFile"))
                         {
                             cbTRANSPORTparmfile.Checked = bool.Parse(value); continue;
+
+                        }
+                        if (item.Equals("BusinessProcessSchedule"))
+                        {
+                            cbBusinessProcessSchedule.Checked = bool.Parse(value); continue;
+
+                        }
+                        if (item.Equals("ServiceAdapterSchedule"))
+                        {
+                            cbServiceAdapterSchedule.Checked = bool.Parse(value); continue;
+
+                        }
+                        if (item.Equals("SetPartnerInGISStatsTable"))
+                        {
+                            cbSetPartnerinGISStatsTable.Checked = bool.Parse(value); continue;
 
                         }
                         if (item.Equals("ProjectManager"))
@@ -302,7 +318,7 @@ namespace ApprovalAddIn
 
 
 
-                lblCompletionDate.Visible = false;
+
                 cbtableParm.Enabled = false;
                 btnSave.Enabled = false;
                 cbBusinessProcess.Enabled = false;
@@ -326,7 +342,6 @@ namespace ApprovalAddIn
                 cbTRANSPORTparmfile.Enabled = false;
                 cbUserApproval.Enabled = false;
                 cbXSLTEmailErrorHeader.Enabled = false;
-                //txtApprovingManager.Enabled = false;
                 txtChangeManagemntRequestNumber.Enabled = false;
                 txtDate.Enabled = false;
                 txtDescription.Enabled = false;
@@ -340,13 +355,13 @@ namespace ApprovalAddIn
                 rbAbandonedI.Enabled = false;
                 rbBackedOutI.Enabled = false;
                 rbInstalledI.Enabled = false;
-                rbSuccessP.Enabled = true;
-                rbAbandonedP.Enabled = true;
-                rbBackedOutP.Enabled = true;
+                rbAbandonedP.Enabled = false;
+                rbBackedOutP.Enabled = false;
+                rbSuccessP.Enabled = false;
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
                 btnWordDocUpload.Visible = false;
-                btnSave.Visible = false;
+
 
                 // txtApprovingManager.Text = mailItem.To;
 
@@ -362,7 +377,7 @@ namespace ApprovalAddIn
             //Sends to Project Manager from Approving Manager. Successful Approval
             if (subject.Contains("Approved!"))
             {
-                lblStatus.Text = "Approved";
+
 
 
                 String body = mailItem.Body;
@@ -384,7 +399,7 @@ namespace ApprovalAddIn
 
                         if (item.Equals("Status"))
                         {
-                            lblStatus.Text = value;
+
                             continue;
                         }
 
@@ -576,10 +591,7 @@ namespace ApprovalAddIn
                         {
                             txtDescription.Text = value;
                         }
-                        if (item.Equals("CompletionDate"))
-                        {
-                            lblCompletionDate.Text = value;
-                        }
+
                         if (item.Equals("SharepointFolderName"))
                         {
                             folderName = value;
@@ -588,7 +600,11 @@ namespace ApprovalAddIn
 
                 }
 
-                lblCompletionDate.Visible = true;
+                rbBackedOutP.Checked = false;
+                rbAbandonedP.Checked = false;
+
+
+
                 cbtableParm.Enabled = false;
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
@@ -611,7 +627,6 @@ namespace ApprovalAddIn
                 cbTRANSPORTparmfile.Enabled = false;
                 cbUserApproval.Enabled = false;
                 cbXSLTEmailErrorHeader.Enabled = false;
-                //txtApprovingManager.Enabled = false;
                 txtChangeManagemntRequestNumber.Enabled = false;
                 txtDate.Enabled = false;
                 txtDescription.Enabled = false;
@@ -625,16 +640,22 @@ namespace ApprovalAddIn
                 rbAbandonedI.Enabled = false;
                 rbBackedOutI.Enabled = false;
                 rbInstalledI.Enabled = false;
+                rbAbandonedP.Enabled = false;
+                rbBackedOutP.Enabled = false;
+                rbSuccessP.Enabled = false;
                 rbSuccessP.Enabled = true;
                 rbAbandonedP.Enabled = true;
                 rbBackedOutP.Enabled = true;
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
                 //btnApprove.Visible = false;
-                btnReject.Visible = false;
                 // txtApprovingManager.Text = mailItem.To;
                 btnWordDocUpload.Visible = true;
                 btnSave.Visible = false;
+                cbCodeReview.Enabled = false;
+                txtCodeReviewBY.Enabled = false;
+                txtCodeReviewDATE.Enabled = false;
+
 
             }
 
@@ -644,7 +665,7 @@ namespace ApprovalAddIn
             //Sends to Project Manager from Approving Manager. UnSuccessful Approval
             if (subject.Contains("Not Approved"))
             {
-                lblStatus.Text = "Not Approved";
+
 
 
                 String body = mailItem.Body;
@@ -665,7 +686,7 @@ namespace ApprovalAddIn
 
                         if (item.Equals("Status"))
                         {
-                            lblStatus.Text = value;
+
                             continue;
                         }
 
@@ -857,10 +878,8 @@ namespace ApprovalAddIn
                         {
                             txtDescription.Text = value;
                         }
-                        if (item.Equals("CompletionDate"))
-                        {
-                            lblCompletionDate.Text = value;
-                        }
+                        
+
                     }
 
 
@@ -869,8 +888,7 @@ namespace ApprovalAddIn
                 }
 
 
-                lblCompletionDate.Visible = true;
-                cbtableParm.Enabled = false;
+
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
                 cbDocumentExtractionMap.Enabled = false;
@@ -915,7 +933,7 @@ namespace ApprovalAddIn
                 lblCodeReviewDate.Enabled = false;
                 btnSave.Visible = false;
                 btnWordDocUpload.Visible = true;
-                btnReject.Visible = false;
+
 
             }
 
@@ -998,6 +1016,7 @@ namespace ApprovalAddIn
                     {
 
 
+
                         if (!saveAttatchementsFolder.Exists)
                         {
                             saveAttatchementsFolder.Create();
@@ -1013,6 +1032,7 @@ namespace ApprovalAddIn
                 CompletionDate = currentDate;
                 String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
                 String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
+
                 SendApproved(lineTitles, lineAnswers, mailItem, InitialAndUsername, Password);
 
 
@@ -1110,17 +1130,31 @@ namespace ApprovalAddIn
                                     "Business Process Schedule: ", (BusinessProcessSch == true) ? ((char)0x221A).ToString() : "", "",
                                     "Service Adapter Schedule: ", (ServiceAdapterSch == true) ? ((char)0x221A).ToString() : "", "",
                                     "Set Partner in GIS Stats table: ", (SetPartnerInGISStatsTable == true) ? ((char)0x221A).ToString() : "", ""};
-            String[] Section_4 = { ProjectManager, currentDate };
 
-            CreateDocument create = new CreateDocument(Section_1, Section_2, Section_3, Section_4);
+            String[] Section_4 ={ "Business Process Schedule: ", (BusinessProcessSch == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Service Adapter Schedule: ", (ServiceAdapterSch == true) ? ((char)0x221A).ToString() : "", "",
+                                    "Set Partner in GIS Stats table: ", (SetPartnerInGISStatsTable == true) ? ((char)0x221A).ToString() : "", ""};
+            String[] SignatureAndDate = { ProjectManager, currentDate };
+
+            CreateDocument create = new CreateDocument(Section_1, Section_2, Section_3, Section_4, SignatureAndDate);
 
         }
 
         private void btnWordDocUpload_Click(object sender, EventArgs e)
         {
-            String[] Section_1 = { User, Partner, currentDate, Title, CMRN };
 
-            String[] Section_2 = { "Users Approval of Project: ", (UAOP == true) ? ((char)0x221A).ToString() : "", "", "",
+
+            DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\TempAttach");
+            if (!txtPassword.Text.Equals(""))
+            {
+
+
+                Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
+                Outlook.Attachments mailAttachments = mailItem.Attachments;
+
+                String[] Section_1 = { User, Partner, currentDate, Title, CMRN };
+
+                String[] Section_2 = { "Users Approval of Project: ", (UAOP == true) ? ((char)0x221A).ToString() : "", "", "",
                                     "Partner Approval of Initial Project: ", (PAOIP == true) ? ((char)0x221A).ToString() : "", "", "",
                                     "Table/Parm Update: ", (tableParm == true) ? ((char)0x221A).ToString() : "", "name: "+tableParmName, "",
                                     "Development Completed: ", (developementCompleted == true) ? ((char)0x221A).ToString() : "", "", "",
@@ -1131,29 +1165,46 @@ namespace ApprovalAddIn
                                     "Implementation Final Status: ", impFinalStatus, "", "",
                                     "Post Implementation Review: ",PostImpReview, "", "", };
 
-            String[] Section_3 = { "Envelopes: ", (Envelopes == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Business Processes: ", (BP == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Service Adapters: ", (ServiceAdapters == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Perl Scripts: ", (perlScripts == true) ? ((char)0x221A).ToString() : "", "name: "+perlScriptsName,
-                                    "Email Code List: ", (EmailCodeList == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Document Maps: ", (docMaps == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Document Extraction Map: ", (docExtractionMap == true) ? ((char)0x221A).ToString() : "", "",
-                                    "XSLT Email Error Header: ", (XSLTEmail == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Map Code Tables: ",  (mapCodeTables == true) ? ((char)0x221A).ToString() : "", "",
-                                    "RAILS csv Table: ", (RAILStable == true) ? ((char)0x221A).ToString() : "", "",
-                                    "RAILS csv Record: ", (RAILSrecord == true) ? ((char)0x221A).ToString() : "", "",
-                                    "RAILS csv Filter: ", (RAILSfilter == true) ? ((char)0x221A).ToString() : "", "",
-                                    "File Structure in Production: ", (fileStructureProd == true) ? ((char)0x221A).ToString() : "", "",
-                                    "FTP Connect: ", (FTPconnect == true) ? ((char)0x221A).ToString() : "", "",
-                                    "TRANSPORT Parm File: ", (TRANSPORTfile == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Business Process Schedule: ", (BusinessProcessSch == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Service Adapter Schedule: ", (ServiceAdapterSch == true) ? ((char)0x221A).ToString() : "", "",
-                                    "Set Partner in GIS Stats table: ", (SetPartnerInGISStatsTable == true) ? ((char)0x221A).ToString() : "", ""};
-            String[] Section_4 = { ProjectManager, currentDate };
+                String[] Section_3 = { "Envelopes: ", (Envelopes == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Business Processes: ", (BP == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Service Adapters: ", (ServiceAdapters == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Perl Scripts: ", (perlScripts == true) ? ((char)0x221A).ToString() : "", "name: "+perlScriptsName,"",
+                                    "Email Code List: ", (EmailCodeList == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Document Maps: ", (docMaps == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Document Extraction Map: ", (docExtractionMap == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "XSLT Email Error Header: ", (XSLTEmail == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Map Code Tables: ",  (mapCodeTables == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "RAILS csv Table: ", (RAILStable == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "RAILS csv Record: ", (RAILSrecord == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "RAILS csv Filter: ", (RAILSfilter == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "File Structure in Production: ", (fileStructureProd == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "FTP Connect: ", (FTPconnect == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "TRANSPORT Parm File: ", (TRANSPORTfile == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Business Process Schedule: ", (BusinessProcessSch == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Service Adapter Schedule: ", (ServiceAdapterSch == true) ? ((char)0x221A).ToString() : "", "","",
+                                    "Set Partner in GIS Stats table: ", (SetPartnerInGISStatsTable == true) ? ((char)0x221A).ToString() : "", "","",};
 
-            CreateDocument create = new CreateDocument(Section_1, Section_2, Section_3, Section_4);
-           
-            SharepointUpload upLoadWordDoc = new SharepointUpload(InitialAndUsername[1],Password,folderName);
+                String[] Section_4 ={ "Business Process Schedule: ", (BusinessProcessSch == true) ? ((char)0x221A).ToString() : "","","",
+                                    "Service Adapter Schedule: ", (ServiceAdapterSch == true) ? ((char)0x221A).ToString() : "","","",
+                                    "Set Partner in GIS Stats table: ", (SetPartnerInGISStatsTable == true) ? ((char)0x221A).ToString() : "","","",};
+                String[] SignatureAndDate = { ProjectManager, currentDate };
+
+                CreateDocument create = new CreateDocument(Section_1, Section_2, Section_3, Section_4, SignatureAndDate);
+
+                SharepointUpload upLoadWordDoc = new SharepointUpload(InitialAndUsername[1], Password, folderName);
+
+
+
+                FileInfo[] files = saveAttatchementsFolder.GetFiles();
+                foreach (FileInfo file in files)
+                {
+
+                    file.Delete();
+                }
+
+                mailItem.Close(Outlook.OlInspectorClose.olDiscard);
+            }
+
 
         }
 
@@ -1169,7 +1220,7 @@ namespace ApprovalAddIn
 
         private void txtCodeReviewDATE_TextChanged(object sender, EventArgs e)
         {
-            codeReviewDate = txtCodeReviewDATE.Text;
+            codeReviewDate = currentDate;
         }
 
         private void txtCodeReviewBY_TextChanged(object sender, EventArgs e)
@@ -1194,12 +1245,84 @@ namespace ApprovalAddIn
 
         private void txtDate_TextChanged(object sender, EventArgs e)
         {
-            currentDate = txtDate.Text;
+            InitialDate = txtDate.Text;
         }
 
         private void txtPartner_TextChanged(object sender, EventArgs e)
         {
             Partner = txtPartner.Text;
+        }
+
+        private void rbSuccessP_Click(object sender, EventArgs e)
+        {
+            if (rbSuccessP.Checked == true)
+            {
+                PostImpReview = "Success";
+
+            }
+        }
+
+        private void rbBackedOutP_Click(object sender, EventArgs e)
+        {
+            if (rbBackedOutP.Checked == true)
+            {
+                PostImpReview = "Backed Out";
+
+            }
+        }
+
+        private void rbAbandonedP_Click(object sender, EventArgs e)
+        {
+            if (rbAbandonedP.Checked == true)
+            {
+                PostImpReview = "Abandoned";
+
+            }
+        }
+
+        private void rbAbandoned_p_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbSetPartnerinGISStatsTable_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSetPartnerinGISStatsTable.Checked == true)
+            {
+                SetPartnerInGISStatsTable = true;
+
+            }
+            else
+            {
+                SetPartnerInGISStatsTable = false;
+            }
+        }
+
+        private void cbBusinessProcessSchedule_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbBusinessProcessSchedule.Checked == true)
+            {
+                BusinessProcessSch = true;
+
+            }
+            else
+            {
+                BusinessProcessSch = false;
+            }
+        }
+
+        private void cbServiceAdapterSchedule_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbServiceAdapterSchedule.Checked == true)
+            {
+                ServiceAdapterSch = true;
+
+            }
+            else
+            {
+                ServiceAdapterSch = false;
+            }
+
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
@@ -1246,14 +1369,23 @@ namespace ApprovalAddIn
 
         private void cbCodeReview_CheckedChanged(object sender, EventArgs e)
         {
+
+            Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
+           
+          
+
             if (cbCodeReview.Checked == true)
             {
+
+                txtCodeReviewBY.Text = mailItem.To;
                 codeReview = true;
-                txtCodeReviewBY.Enabled = true;
-                txtCodeReviewDATE.Enabled = true;
+                txtCodeReviewBY.Enabled = false;
+                txtCodeReviewDATE.Text = DateTime.Today.ToShortDateString();
+                txtCodeReviewDATE.Enabled = false;
                 lblCodeReviewDate.Enabled = true;
                 lblCodeReviewBy.Enabled = true;
-                txtCodeReviewDATE.Text = currentDate;
+
+
             }
             else
             {
@@ -1530,26 +1662,17 @@ namespace ApprovalAddIn
 
         private void rbSuccessP_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbSuccessP.Checked == true)
-            {
-                PostImpReview = "Success";
-            }
+
         }
 
         private void rbBackedOutP_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbSuccessP.Checked == true)
-            {
-                PostImpReview = "Backed Out";
-            }
+
         }
 
         private void rbAbandonedP_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbSuccessP.Checked == true)
-            {
-                PostImpReview = "Abandoned";
-            }
+
         }
 
         private void btnReject_Click(object sender, EventArgs e)

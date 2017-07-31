@@ -9,7 +9,7 @@ namespace ApprovalAddIn
 {
     class CreateDocument
     {
-       public  CreateDocument(String [] Section_1, String[] Section_2, String[] Section_3, String[] Section_4)
+       public  CreateDocument(String [] Section_1, String[] Section_2, String[] Section_3, String[] Section_4,String[] SignaturAndDate)
         {
             object oMissing = System.Reflection.Missing.Value;
             object oEndOfDoc = "\\endofdoc"; /* \endofdoc is a predefined bookmark */
@@ -28,11 +28,21 @@ namespace ApprovalAddIn
 
             object oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
 
+            //Section 0: Title Section
+            Word.Paragraph Title_Section;
+            Title_Section = oDoc.Content.Paragraphs.Add(ref oMissing);
+            Title_Section.Range.Font.Size = 16;
+            Title_Section.Range.Bold = 1;
+            Title_Section.Range.Text = "e-Commerce/EDI SI5 Promotion Check List";
+            Title_Section.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            Title_Section.Range.InsertParagraphAfter();
 
-            //User Partner Section---------------------------------------------------------------------------------------------------------
+
+            //Section 1: User Partner Section---------------------------------------------------------------------------------------------------------
             Word.Paragraph UserPartner_Section;
             UserPartner_Section = oDoc.Content.Paragraphs.Add(ref oMissing);
             UserPartner_Section.Range.Text = "User: " + Section_1[0];
+            UserPartner_Section.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
             UserPartner_Section.Range.InsertAfter("\t\t");
             UserPartner_Section.Range.InsertAfter("Partner: " + Section_1[1]);
             UserPartner_Section.Range.InsertAfter("\t\t");
@@ -44,19 +54,16 @@ namespace ApprovalAddIn
             UserPartner_Section.Range.InsertParagraphAfter();
 
 
-            //User Signoff Checklist Section------------------------------------------------------------------------------------------------------
-        
 
+            //Section 2: User Signoff Checklist Section------------------------------------------------------------------------------------------------------
             Word.Table UserCheckList;
-
             Word.Range wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             UserCheckList = oDoc.Tables.Add(wrdRng, 10, 4, ref oMissing, ref oMissing);
             UserCheckList.Range.ParagraphFormat.SpaceAfter = 6;
             UserCheckList.AllowAutoFit = true;
-            UserCheckList.Range.Font.Size = 8;
+            UserCheckList.Columns[1].SetWidth(oWord.CentimetersToPoints(6f), Word.WdRulerStyle.wdAdjustNone);
+            UserCheckList.Range.Font.Size = 10;
             Word.Column first = UserCheckList.Columns[1];
-            //first.SetWidth(100, Word.WdRulerStyle.wdAdjustFirstColumn);
-
             int checklist = 0;
             for (int r = 1; r <= 10; r++)
             {
@@ -69,51 +76,85 @@ namespace ApprovalAddIn
             }
 
 
-            //User Signoff Checklist Section--------------------------------------------------------------------------------------------------------------
+
+            //Section 3: User Signoff Checklist Section--------------------------------------------------------------------------------------------------------------
             //Insert another paragraph.
             Word.Paragraph oPara3;
             oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
             oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
-            oPara3.Range.Text = " ------------------------------------------------------------------------------------------------------------------------------------------";
+            oPara3.Range.Text = " ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
             oPara3.Range.Font.Bold = 0;
             oPara3.Range.Font.Size = 8;
             oPara3.Range.InsertParagraphAfter();
+
+            Word.Table Checklist;
+
+            wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            oPara3.Range.Paragraphs.LineSpacing = 10f;
+            Checklist = oDoc.Tables.Add(wrdRng, 15, 4, ref oMissing, ref oMissing);
+            Checklist.Range.ParagraphFormat.SpaceAfter = 6;
+            Checklist.Columns[1].SetWidth(oWord.CentimetersToPoints(5f), Word.WdRulerStyle.wdAdjustNone);
+            Checklist.AllowAutoFit = true;
+
+            checklist = 0;
+            for (int r = 1; r <= 15; r++)
+            {
+                for (int c = 1; c <= 4; c++)
+                {
+
+                    Checklist.Cell(r, c).Range.Text = Section_3[checklist];
+                    checklist++;
+                }
+            }
+
+            //Section 4: Schedule  
+            //Insert another paragraph.
+            Word.Paragraph oPara4;
+            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            oPara4 = oDoc.Content.Paragraphs.Add(ref oRng);
+            oPara4.Range.Font.Size = 8;
+            oPara4.Range.Text = "--------------------------------------------------------------------------------------------------------------------------------------------------------";
+            oPara4.Range.Font.Bold = 0;
+            
+            oPara4.Range.InsertParagraphAfter();
 
 
 
             Word.Table FinalCheckList;
 
             wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara3.Range.Paragraphs.LineSpacing = 10f;
-
-            FinalCheckList = oDoc.Tables.Add(wrdRng, 18, 3, ref oMissing, ref oMissing);
+            oPara4.Range.Paragraphs.LineSpacing = 10f;
+            FinalCheckList = oDoc.Tables.Add(wrdRng, 3, 4, ref oMissing, ref oMissing);
             FinalCheckList.Range.ParagraphFormat.SpaceAfter = 6;
+            FinalCheckList.Columns[1].SetWidth(oWord.CentimetersToPoints(5f), Word.WdRulerStyle.wdAdjustNone);
             FinalCheckList.AllowAutoFit = true;
 
-            //first.SetWidth(100, Word.WdRulerStyle.wdAdjustFirstColumn);
+            
 
             checklist = 0;
-            for (int r = 1; r <= 18; r++)
+            for (int r = 1; r <= 3; r++)
             {
-                for (int c = 1; c <= 3; c++)
+                for (int c = 1; c <= 4; c++)
                 {
 
-                    FinalCheckList.Cell(r, c).Range.Text = Section_3[checklist];
+                    FinalCheckList.Cell(r, c).Range.Text = Section_4[checklist];
                     checklist++;
                 }
             }
 
-            //Insert another paragraph.
-            Word.Paragraph SignatureAndDate;
-            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            SignatureAndDate = oDoc.Content.Paragraphs.Add(ref oRng);
-            SignatureAndDate.Range.Font.Bold = 0;
-            SignatureAndDate.Range.InsertParagraphAfter();
-            SignatureAndDate.Range.Text = "\n\t\t\t\t\t\t\tProject Manager: " + Section_4[0];
-            SignatureAndDate.Range.InsertAfter("\n\n");
-            SignatureAndDate.Range.InsertAfter("\t\t\t\t\t\t\tCompletion Date: " + Section_4[1]);
 
-            oWord.ActiveDocument.SaveAs2(@"C:\TempAttach\Checklist.docx");
+            //Signature and Date Section
+            //Insert another paragraph.
+            Word.Paragraph SignatureAndDate_Section;
+            oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
+            SignatureAndDate_Section = oDoc.Content.Paragraphs.Add(ref oRng);
+            SignatureAndDate_Section.Range.Font.Bold = 0;
+            SignatureAndDate_Section.Range.InsertParagraphAfter();
+            SignatureAndDate_Section.Range.Text = "\n\t\t\t\t\t\t\tProject Manager: " + SignaturAndDate[0];
+            SignatureAndDate_Section.Range.InsertAfter("\n\n");
+            SignatureAndDate_Section.Range.InsertAfter("\t\t\t\t\t\t\tCompletion Date: " + SignaturAndDate[1]);
+            String filename = @"C:\TempAttach\Checklist_" + Section_2[37].Replace(" ","") + "_" + DateTime.Now.ToString("yyyyMMdd") + ".docx";
+            oWord.ActiveDocument.SaveAs2(filename);//Grabs the Implementation from Post Implementation
             oWord.ActiveDocument.Close();
         }
 
