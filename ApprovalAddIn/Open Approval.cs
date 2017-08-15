@@ -98,227 +98,12 @@ namespace ApprovalAddIn
                         //  String[] ItemValue = lines[i].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
                         String item = lines[i].Substring(0, firstSpace).Trim();
                         String value = lines[i].Substring(firstSpace).Trim();
-
-
-                        if (item.Equals("Status"))
-                        {
-
-                            continue;
-                        }
-
-                        if (item.Equals("User"))
-                        {
-                            txtUser.Text = value;
-                            continue;
-                        }
-                        if (item.Equals("Partner"))
-                        {
-                            txtPartner.Text = value; continue;
-                        }
-                        if (item.Equals("Date"))
-                        {
-                            txtDate.Text = value; continue;
-                        }
-                        if (item.Equals("ChangeManagementRequestNumber"))
-                        {
-                            txtChangeManagemntRequestNumber.Text = value; continue;
-
-                        }
-                        if (item.Equals("UserApprovalofProject"))
-                        {
-                            cbUserApproval.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PartnerApprovalofInitialProject"))
-                        {
-                            cbPartnerApproval.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("Table/ParmUpdate"))
-                        {
-                            cbtableParm.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("Table/ParmName"))
-                        {
-                            txtTableParmNAME.Text = value; continue;
-                        }
-                        if (item.Equals("DevelopmentCompleted"))
-                        {
-                            cbDevelopmentCompleted.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("TestingCompleted"))
-                        {
-                            cbTestingCompleted.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("CodeReview/CheckSignOff"))
-                        {
-                            cbCodeReview.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("CodeReviewBy"))
-                        {
-                            txtCodeReviewBY.Text = value; continue;
-                        }
-                        if (item.Equals("CodeReviewDate"))
-                        {
-                            txtCodeReviewDATE.Text = value; continue;
-                        }
-                        if (item.Equals("KeyUserSignoff"))
-                        {
-                            cbKeyUserSignOff.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PartnerSignoff"))
-                        {
-                            cbPartnerSignOff.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("ImplementationFinalStatus"))
-                        {
-
-                            impFinalStatus = value;
-
-                            if (value.Equals("Installed"))
-                            {
-                                rbInstalledI.Checked = true;
-
-                            }
-                            if (value.Equals("Backed Out"))
-                            {
-                                rbBackedOutI.Checked = true;
-                            }
-                            if (value.Equals("Abandoned"))
-                            {
-                                rbAbandonedI.Checked = true;
-                            }
-                            continue;
-                        }
-                        if (item.Equals("PostImplementationReview"))
-                        {
-
-                            PostImpReview = value;
-
-                            if (value.Equals("Success"))
-                            {
-                                rbSuccessP.Checked = true;
-                            }
-                            if (value.Equals("Backed Out"))
-                            {
-                                rbBackedOutP.Checked = true;
-                            }
-                            if (value.Equals("Abandoned"))
-                            {
-                                rbAbandonedP.Checked = true;
-                            }
-                            continue;
-                        }
-                        if (item.Equals("Envelopes"))
-                        {
-                            cbEnvelopes.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("BusinessProcess"))
-                        {
-                            cbBusinessProcess.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("ServiceAdapters"))
-                        {
-
-                            cbServiceAdapter.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PerlScripts"))
-                        {
-                            cbPerlScripts.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("EmailCodeList"))
-                        {
-                            cbEmailCodeList.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("DocumentMaps"))
-                        {
-
-                            cbDocumentMap.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("DocumentExtractionMap"))
-                        {
-                            cbDocumentExtractionMap.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("XSLTEmailErrorHeader"))
-                        {
-                            cbXSLTEmailErrorHeader.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("MapCodeTables"))
-                        {
-
-                            cbMapCodeTables.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("RAILScsvTable"))
-                        {
-                            cbRAILStable.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("RAILScsvRecord"))
-                        {
-                            cbRAILSrecord.Checked = bool.Parse(value); continue;
-
-
-                        }
-                        if (item.Equals("RAILScsvFilter"))
-                        {
-                            cbRAILSfilter.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("FileStructureinProduction"))
-                        {
-                            cbFileStructureInProduction.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("FTPConnect"))
-                        {
-                            cbFTPconnect.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("TRANSPORTParmFile"))
-                        {
-                            cbTRANSPORTparmfile.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("BusinessProcessSchedule"))
-                        {
-                            cbBusinessProcessSchedule.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("ServiceAdapterSchedule"))
-                        {
-                            cbServiceAdapterSchedule.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("SetPartnerInGISStatsTable"))
-                        {
-                            cbSetPartnerinGISStatsTable.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("ProjectManager"))
-                        {
-                            txtProjectManager.Text = value;
-                        }
-                        if (item.Equals("Title"))
-                        {
-                            txtTitle.Text = value;
-                        }
-                        if (item.Equals("Description"))
-                        {
-                            txtDescription.Text = value;
-                        }
+                        getFormItems(item, value);
 
                     }
                 }
 
                 StringBuilder attachmentInfo = new StringBuilder();
-
-
-
-
-
                 cbtableParm.Enabled = false;
                 btnSave.Enabled = false;
                 cbBusinessProcess.Enabled = false;
@@ -361,28 +146,11 @@ namespace ApprovalAddIn
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
                 btnWordDocUpload.Visible = false;
-
-
-                // txtApprovingManager.Text = mailItem.To;
-
-
-
-
-
             }
-
-
-
-
             //Sends to Project Manager from Approving Manager. Successful Approval
             if (subject.Contains("Approved!"))
             {
-
-
-
                 String body = mailItem.Body;
-
-
                 this.InitialAndUsername = UsernameEmail(mailItem.To);
                 String[] lines = body.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
@@ -392,219 +160,18 @@ namespace ApprovalAddIn
                     int firstSpace = lines[i].IndexOf("\t");
                     if (firstSpace > 0)
                     {
-                        //  String[] ItemValue = lines[i].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                     
                         String item = lines[i].Substring(0, firstSpace).Trim();
                         String value = lines[i].Substring(firstSpace).Trim();
 
-
-                        if (item.Equals("Status"))
-                        {
-
-                            continue;
-                        }
-
-                        if (item.Equals("User"))
-                        {
-                            txtUser.Text = value;
-                            continue;
-                        }
-                        if (item.Equals("Partner"))
-                        {
-                            txtPartner.Text = value; continue;
-                        }
-                        if (item.Equals("Date"))
-                        {
-                            txtDate.Text = value; continue;
-                        }
-                        if (item.Equals("ChangeManagementRequestNumber"))
-                        {
-                            txtChangeManagemntRequestNumber.Text = value; continue;
-
-                        }
-                        if (item.Equals("UserApprovalofProject"))
-                        {
-                            cbUserApproval.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PartnerApprovalofInitialProject"))
-                        {
-                            cbPartnerApproval.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("Table/ParmUpdate"))
-                        {
-                            cbtableParm.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("Table/ParmName"))
-                        {
-                            txtTableParmNAME.Text = value; continue;
-                        }
-                        if (item.Equals("DevelopmentCompleted"))
-                        {
-                            cbDevelopmentCompleted.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("TestingCompleted"))
-                        {
-                            cbTestingCompleted.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("CodeReview/CheckSignOff"))
-                        {
-                            cbCodeReview.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("CodeReviewBy"))
-                        {
-                            txtCodeReviewBY.Text = value; continue;
-                        }
-                        if (item.Equals("CodeReviewDate"))
-                        {
-                            txtCodeReviewDATE.Text = value; continue;
-                        }
-                        if (item.Equals("KeyUserSignoff"))
-                        {
-                            cbKeyUserSignOff.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PartnerSignoff"))
-                        {
-                            cbPartnerSignOff.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("ImplementationFinalStatus"))
-                        {
-
-                            impFinalStatus = value;
-
-                            if (value.Equals("Installed"))
-                            {
-                                rbInstalledI.Checked = true;
-
-                            }
-                            if (value.Equals("Backed Out"))
-                            {
-                                rbBackedOutI.Checked = true;
-                            }
-                            if (value.Equals("Abandoned"))
-                            {
-                                rbAbandonedI.Checked = true;
-                            }
-                            continue;
-                        }
-                        if (item.Equals("PostImplementationReview"))
-                        {
-
-                            PostImpReview = value;
-
-                            if (value.Equals("Success"))
-                            {
-                                rbSuccessP.Checked = true;
-                            }
-                            if (value.Equals("Backed Out"))
-                            {
-                                rbBackedOutP.Checked = true;
-                            }
-                            if (value.Equals("Abandoned"))
-                            {
-                                rbAbandonedP.Checked = true;
-                            }
-                            continue;
-                        }
-                        if (item.Equals("Envelopes"))
-                        {
-                            cbEnvelopes.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("BusinessProcess"))
-                        {
-                            cbBusinessProcess.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("ServiceAdapters"))
-                        {
-
-                            cbServiceAdapter.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PerlScripts"))
-                        {
-                            cbPerlScripts.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("EmailCodeList"))
-                        {
-                            cbEmailCodeList.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("DocumentMaps"))
-                        {
-
-                            cbDocumentMap.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("DocumentExtractionMap"))
-                        {
-                            cbDocumentExtractionMap.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("XSLTEmailErrorHeader"))
-                        {
-                            cbXSLTEmailErrorHeader.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("MapCodeTables"))
-                        {
-
-                            cbMapCodeTables.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("RAILScsvTable"))
-                        {
-                            cbRAILStable.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("RAILScsvRecord"))
-                        {
-                            cbRAILSrecord.Checked = bool.Parse(value); continue;
-
-
-                        }
-                        if (item.Equals("RAILScsvFilter"))
-                        {
-                            cbRAILSfilter.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("FileStructureinProduction"))
-                        {
-                            cbFileStructureInProduction.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("FTPConnect"))
-                        {
-                            cbFTPconnect.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("TRANSPORTParmFile"))
-                        {
-                            cbTRANSPORTparmfile.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("ProjectManager"))
-                        {
-                            txtProjectManager.Text = value;
-                        }
-                        if (item.Equals("Title"))
-                        {
-                            txtTitle.Text = value;
-                        }
-                        if (item.Equals("Description"))
-                        {
-                            txtDescription.Text = value;
-                        }
-
-                        if (item.Equals("SharepointFolderName"))
-                        {
-                            folderName = value;
-                        }
+                        getFormItems(item, value);
+                       
                     }
 
                 }
 
                 rbBackedOutP.Checked = false;
                 rbAbandonedP.Checked = false;
-
-
-
                 cbtableParm.Enabled = false;
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
@@ -648,15 +215,11 @@ namespace ApprovalAddIn
                 rbBackedOutP.Enabled = true;
                 lblCodeReviewBy.Enabled = false;
                 lblCodeReviewDate.Enabled = false;
-                //btnApprove.Visible = false;
-                // txtApprovingManager.Text = mailItem.To;
                 btnWordDocUpload.Visible = true;
                 btnSave.Visible = false;
                 cbCodeReview.Enabled = false;
                 txtCodeReviewBY.Enabled = false;
                 txtCodeReviewDATE.Enabled = false;
-
-
             }
 
 
@@ -665,12 +228,7 @@ namespace ApprovalAddIn
             //Sends to Project Manager from Approving Manager. UnSuccessful Approval
             if (subject.Contains("Not Approved"))
             {
-
-
-
                 String body = mailItem.Body;
-
-
                 String[] lines = body.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
                 for (int i = 0; i < lines.Length && !lines[i].Equals(""); ++i)
@@ -679,215 +237,13 @@ namespace ApprovalAddIn
                     int firstSpace = lines[i].IndexOf("\t");
                     if (firstSpace > 0)
                     {
-                        //  String[] ItemValue = lines[i].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
                         String item = lines[i].Substring(0, firstSpace).Trim();
                         String value = lines[i].Substring(firstSpace).Trim();
 
-
-                        if (item.Equals("Status"))
-                        {
-
-                            continue;
-                        }
-
-                        if (item.Equals("User"))
-                        {
-                            txtUser.Text = value;
-                            continue;
-                        }
-                        if (item.Equals("Partner"))
-                        {
-                            txtPartner.Text = value; continue;
-                        }
-                        if (item.Equals("Date"))
-                        {
-                            txtDate.Text = value; continue;
-                        }
-                        if (item.Equals("ChangeManagementRequestNumber"))
-                        {
-                            txtChangeManagemntRequestNumber.Text = value; continue;
-
-                        }
-                        if (item.Equals("UserApprovalofProject"))
-                        {
-                            cbUserApproval.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PartnerApprovalofInitialProject"))
-                        {
-                            cbPartnerApproval.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("Table/ParmUpdate"))
-                        {
-                            cbtableParm.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("Table/ParmName"))
-                        {
-                            txtTableParmNAME.Text = value; continue;
-                        }
-                        if (item.Equals("DevelopmentCompleted"))
-                        {
-                            cbDevelopmentCompleted.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("TestingCompleted"))
-                        {
-                            cbTestingCompleted.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("CodeReview/CheckSignOff"))
-                        {
-                            cbCodeReview.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("CodeReviewBy"))
-                        {
-                            txtCodeReviewBY.Text = value; continue;
-                        }
-                        if (item.Equals("CodeReviewDate"))
-                        {
-                            txtCodeReviewDATE.Text = value; continue;
-                        }
-                        if (item.Equals("KeyUserSignoff"))
-                        {
-                            cbKeyUserSignOff.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PartnerSignoff"))
-                        {
-                            cbPartnerSignOff.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("ImplementationFinalStatus"))
-                        {
-
-                            impFinalStatus = value;
-
-                            if (value.Equals("Installed"))
-                            {
-                                rbInstalledI.Checked = true;
-
-                            }
-                            if (value.Equals("Backed Out"))
-                            {
-                                rbBackedOutI.Checked = true;
-                            }
-                            if (value.Equals("Abandoned"))
-                            {
-                                rbAbandonedI.Checked = true;
-                            }
-                            continue;
-                        }
-                        if (item.Equals("PostImplementationReview"))
-                        {
-
-                            PostImpReview = value;
-
-                            if (value.Equals("Success"))
-                            {
-                                rbSuccessP.Checked = true;
-                            }
-                            if (value.Equals("Backed Out"))
-                            {
-                                rbBackedOutP.Checked = true;
-                            }
-                            if (value.Equals("Abandoned"))
-                            {
-                                rbAbandonedP.Checked = true;
-                            }
-                            continue;
-                        }
-                        if (item.Equals("Envelopes"))
-                        {
-                            cbEnvelopes.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("BusinessProcess"))
-                        {
-                            cbBusinessProcess.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("ServiceAdapters"))
-                        {
-
-                            cbServiceAdapter.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("PerlScripts"))
-                        {
-                            cbPerlScripts.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("EmailCodeList"))
-                        {
-                            cbEmailCodeList.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("DocumentMaps"))
-                        {
-
-                            cbDocumentMap.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("DocumentExtractionMap"))
-                        {
-                            cbDocumentExtractionMap.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("XSLTEmailErrorHeader"))
-                        {
-                            cbXSLTEmailErrorHeader.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("MapCodeTables"))
-                        {
-
-                            cbMapCodeTables.Checked = bool.Parse(value); continue;
-                        }
-                        if (item.Equals("RAILScsvTable"))
-                        {
-                            cbRAILStable.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("RAILScsvRecord"))
-                        {
-                            cbRAILSrecord.Checked = bool.Parse(value); continue;
-
-
-                        }
-                        if (item.Equals("RAILScsvFilter"))
-                        {
-                            cbRAILSfilter.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("FileStructureinProduction"))
-                        {
-                            cbFileStructureInProduction.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("FTPConnect"))
-                        {
-                            cbFTPconnect.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("TRANSPORTParmFile"))
-                        {
-                            cbTRANSPORTparmfile.Checked = bool.Parse(value); continue;
-
-                        }
-                        if (item.Equals("ProjectManager"))
-                        {
-                            txtProjectManager.Text = value;
-                        }
-                        if (item.Equals("Title"))
-                        {
-                            txtTitle.Text = value;
-                        }
-                        if (item.Equals("Description"))
-                        {
-                            txtDescription.Text = value;
-                        }
-                        
+                        getFormItems(item, value);
 
                     }
-
-
-
-                    // txtApprovingManager.Text = mailItem.To;
                 }
-
-
 
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
@@ -933,8 +289,6 @@ namespace ApprovalAddIn
                 lblCodeReviewDate.Enabled = false;
                 btnSave.Visible = false;
                 btnWordDocUpload.Visible = true;
-
-
             }
 
 
@@ -968,9 +322,6 @@ namespace ApprovalAddIn
         {
 
         }
-
-
-
         public void SendNotApproved(String[] lineTitles, String[] lineAnswers, Outlook.MailItem mailItem)
         {
 
@@ -996,9 +347,6 @@ namespace ApprovalAddIn
 
 
         }
-
-
-
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -1685,7 +1033,206 @@ namespace ApprovalAddIn
             SendNotApproved(lineTitles, lineAnswers, mailItem);
             mailItem.Close(Outlook.OlInspectorClose.olDiscard);
         }
+
+        public void getFormItems(String item,String value)
+        {
+            if (item.Equals("User"))
+            {
+                txtUser.Text = value;
+                
+            }
+            if (item.Equals("Partner"))
+            {
+                txtPartner.Text = value; 
+            }
+            if (item.Equals("Date"))
+            {
+                txtDate.Text = value; 
+            }
+            if (item.Equals("ChangeManagementRequestNumber"))
+            {
+                txtChangeManagemntRequestNumber.Text = value; 
+
+            }
+            if (item.Equals("UserApprovalofProject"))
+            {
+                cbUserApproval.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("PartnerApprovalofInitialProject"))
+            {
+                cbPartnerApproval.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("Table/ParmUpdate"))
+            {
+                cbtableParm.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("Table/ParmName"))
+            {
+                txtTableParmNAME.Text = value; 
+            }
+            if (item.Equals("DevelopmentCompleted"))
+            {
+                cbDevelopmentCompleted.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("TestingCompleted"))
+            {
+                cbTestingCompleted.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("CodeReview/CheckSignOff"))
+            {
+                cbCodeReview.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("CodeReviewBy"))
+            {
+                txtCodeReviewBY.Text = value; 
+            }
+            if (item.Equals("CodeReviewDate"))
+            {
+                txtCodeReviewDATE.Text = value; 
+            }
+            if (item.Equals("KeyUserSignoff"))
+            {
+                cbKeyUserSignOff.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("PartnerSignoff"))
+            {
+                cbPartnerSignOff.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("ImplementationFinalStatus"))
+            {
+
+                impFinalStatus = value;
+
+                if (value.Equals("Installed"))
+                {
+                    rbInstalledI.Checked = true;
+
+                }
+                if (value.Equals("Backed Out"))
+                {
+                    rbBackedOutI.Checked = true;
+                }
+                if (value.Equals("Abandoned"))
+                {
+                    rbAbandonedI.Checked = true;
+                }
+                
+            }
+            if (item.Equals("PostImplementationReview"))
+            {
+
+                PostImpReview = value;
+
+                if (value.Equals("Success"))
+                {
+                    rbSuccessP.Checked = true;
+                }
+                if (value.Equals("Backed Out"))
+                {
+                    rbBackedOutP.Checked = true;
+                }
+                if (value.Equals("Abandoned"))
+                {
+                    rbAbandonedP.Checked = true;
+                }
+                
+            }
+            if (item.Equals("Envelopes"))
+            {
+                cbEnvelopes.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("BusinessProcess"))
+            {
+                cbBusinessProcess.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("ServiceAdapters"))
+            {
+
+                cbServiceAdapter.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("PerlScripts"))
+            {
+                cbPerlScripts.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("EmailCodeList"))
+            {
+                cbEmailCodeList.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("DocumentMaps"))
+            {
+
+                cbDocumentMap.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("DocumentExtractionMap"))
+            {
+                cbDocumentExtractionMap.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("XSLTEmailErrorHeader"))
+            {
+                cbXSLTEmailErrorHeader.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("MapCodeTables"))
+            {
+
+                cbMapCodeTables.Checked = bool.Parse(value); 
+            }
+            if (item.Equals("RAILScsvTable"))
+            {
+                cbRAILStable.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("RAILScsvRecord"))
+            {
+                cbRAILSrecord.Checked = bool.Parse(value); 
+
+
+            }
+            if (item.Equals("RAILScsvFilter"))
+            {
+                cbRAILSfilter.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("FileStructureinProduction"))
+            {
+                cbFileStructureInProduction.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("FTPConnect"))
+            {
+                cbFTPconnect.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("TRANSPORTParmFile"))
+            {
+                cbTRANSPORTparmfile.Checked = bool.Parse(value); 
+
+            }
+            if (item.Equals("ProjectManager"))
+            {
+                txtProjectManager.Text = value;
+            }
+            if (item.Equals("Title"))
+            {
+                txtTitle.Text = value;
+            }
+            if (item.Equals("Description"))
+            {
+                txtDescription.Text = value;
+            }
+
+            if (item.Equals("SharepointFolderName"))
+            {
+                folderName = value;
+            }
+        }
     }
+
+    
 
 
 }

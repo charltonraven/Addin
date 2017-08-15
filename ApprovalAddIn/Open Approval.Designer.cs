@@ -132,10 +132,10 @@
             // 
             this.rbAbandonedI.AutoSize = true;
             this.rbAbandonedI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbAbandonedI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAbandonedI.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAbandonedI.Location = new System.Drawing.Point(205, 19);
             this.rbAbandonedI.Name = "rbAbandonedI";
-            this.rbAbandonedI.Size = new System.Drawing.Size(99, 22);
+            this.rbAbandonedI.Size = new System.Drawing.Size(97, 20);
             this.rbAbandonedI.TabIndex = 2;
             this.rbAbandonedI.TabStop = true;
             this.rbAbandonedI.Text = "Abandoned";
@@ -145,10 +145,10 @@
             // 
             this.rbBackedOutI.AutoSize = true;
             this.rbBackedOutI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbBackedOutI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbBackedOutI.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbBackedOutI.Location = new System.Drawing.Point(97, 19);
             this.rbBackedOutI.Name = "rbBackedOutI";
-            this.rbBackedOutI.Size = new System.Drawing.Size(103, 22);
+            this.rbBackedOutI.Size = new System.Drawing.Size(94, 20);
             this.rbBackedOutI.TabIndex = 1;
             this.rbBackedOutI.TabStop = true;
             this.rbBackedOutI.Text = "Backed Out";
@@ -158,10 +158,10 @@
             // 
             this.rbInstalledI.AutoSize = true;
             this.rbInstalledI.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbInstalledI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbInstalledI.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInstalledI.Location = new System.Drawing.Point(13, 19);
             this.rbInstalledI.Name = "rbInstalledI";
-            this.rbInstalledI.Size = new System.Drawing.Size(78, 22);
+            this.rbInstalledI.Size = new System.Drawing.Size(80, 20);
             this.rbInstalledI.TabIndex = 0;
             this.rbInstalledI.TabStop = true;
             this.rbInstalledI.Text = "Installed";
@@ -171,10 +171,10 @@
             // 
             this.rbAbandonedP.AutoSize = true;
             this.rbAbandonedP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbAbandonedP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAbandonedP.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAbandonedP.Location = new System.Drawing.Point(205, 19);
             this.rbAbandonedP.Name = "rbAbandonedP";
-            this.rbAbandonedP.Size = new System.Drawing.Size(99, 22);
+            this.rbAbandonedP.Size = new System.Drawing.Size(97, 20);
             this.rbAbandonedP.TabIndex = 2;
             this.rbAbandonedP.TabStop = true;
             this.rbAbandonedP.Text = "Abandoned";
@@ -186,10 +186,10 @@
             // 
             this.rbBackedOutP.AutoSize = true;
             this.rbBackedOutP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbBackedOutP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbBackedOutP.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbBackedOutP.Location = new System.Drawing.Point(97, 19);
             this.rbBackedOutP.Name = "rbBackedOutP";
-            this.rbBackedOutP.Size = new System.Drawing.Size(103, 22);
+            this.rbBackedOutP.Size = new System.Drawing.Size(94, 20);
             this.rbBackedOutP.TabIndex = 1;
             this.rbBackedOutP.TabStop = true;
             this.rbBackedOutP.Text = "Backed Out";
@@ -211,10 +211,10 @@
             // 
             this.rbSuccessP.AutoSize = true;
             this.rbSuccessP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbSuccessP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSuccessP.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbSuccessP.Location = new System.Drawing.Point(8, 19);
             this.rbSuccessP.Name = "rbSuccessP";
-            this.rbSuccessP.Size = new System.Drawing.Size(83, 22);
+            this.rbSuccessP.Size = new System.Drawing.Size(73, 20);
             this.rbSuccessP.TabIndex = 0;
             this.rbSuccessP.TabStop = true;
             this.rbSuccessP.Text = "Success";
@@ -234,9 +234,9 @@
             // txtChangeManagemntRequestNumber
             // 
             this.txtChangeManagemntRequestNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChangeManagemntRequestNumber.Location = new System.Drawing.Point(702, 105);
+            this.txtChangeManagemntRequestNumber.Location = new System.Drawing.Point(625, 98);
             this.txtChangeManagemntRequestNumber.Name = "txtChangeManagemntRequestNumber";
-            this.txtChangeManagemntRequestNumber.Size = new System.Drawing.Size(184, 26);
+            this.txtChangeManagemntRequestNumber.Size = new System.Drawing.Size(253, 26);
             this.txtChangeManagemntRequestNumber.TabIndex = 75;
             this.txtChangeManagemntRequestNumber.TextChanged += new System.EventHandler(this.txtChangeManagemntRequestNumber_TextChanged);
             // 
@@ -270,10 +270,10 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(835, 713);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(91, 19);
+            this.label31.Size = new System.Drawing.Size(84, 16);
             this.label31.TabIndex = 99;
             this.label31.Text = "Description:";
             // 
@@ -293,7 +293,7 @@
             this.grpPostReview.Controls.Add(this.rbAbandonedP);
             this.grpPostReview.Controls.Add(this.rbBackedOutP);
             this.grpPostReview.Controls.Add(this.rbSuccessP);
-            this.grpPostReview.Location = new System.Drawing.Point(307, 680);
+            this.grpPostReview.Location = new System.Drawing.Point(307, 651);
             this.grpPostReview.Name = "grpPostReview";
             this.grpPostReview.Size = new System.Drawing.Size(315, 53);
             this.grpPostReview.TabIndex = 97;
@@ -398,140 +398,140 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(67, 692);
+            this.label14.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(71, 669);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(210, 19);
+            this.label14.Size = new System.Drawing.Size(191, 16);
             this.label14.TabIndex = 85;
             this.label14.Text = "Post Implementation Review:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(71, 614);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(206, 19);
+            this.label13.Size = new System.Drawing.Size(188, 16);
             this.label13.TabIndex = 84;
             this.label13.Text = "Implementation Final Status:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(144, 503);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 19);
+            this.label12.Size = new System.Drawing.Size(114, 16);
             this.label12.TabIndex = 83;
             this.label12.Text = "Key User SignOff:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(157, 564);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(117, 19);
+            this.label11.Size = new System.Drawing.Size(104, 16);
             this.label11.TabIndex = 82;
             this.label11.Text = "Partner Signoff:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(63, 451);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(211, 19);
+            this.label10.Size = new System.Drawing.Size(184, 16);
             this.label10.TabIndex = 81;
             this.label10.Text = "Code Review/Check Sign Off:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(81, 344);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(193, 19);
+            this.label9.Size = new System.Drawing.Size(172, 16);
             this.label9.TabIndex = 80;
             this.label9.Text = "Developement Completed:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 392);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(271, 19);
+            this.label8.Size = new System.Drawing.Size(245, 16);
             this.label8.TabIndex = 79;
             this.label8.Text = "Testing Completed (Attached Results):";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(128, 291);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 19);
+            this.label7.Size = new System.Drawing.Size(134, 16);
             this.label7.TabIndex = 78;
             this.label7.Text = "Table/Parm Update:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(29, 244);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(245, 19);
+            this.label6.Size = new System.Drawing.Size(226, 16);
             this.label6.TabIndex = 77;
             this.label6.Text = "Partner Approval Of Initial Project:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(89, 196);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 19);
+            this.label5.Size = new System.Drawing.Size(172, 16);
             this.label5.TabIndex = 76;
             this.label5.Text = "Users Approval of Project:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(388, 112);
+            this.label4.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(357, 111);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(283, 19);
+            this.label4.Size = new System.Drawing.Size(247, 16);
             this.label4.TabIndex = 74;
             this.label4.Text = "Change Management Request Number:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(388, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 19);
+            this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 70;
             this.label3.Text = "Partner:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(748, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 19);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 69;
             this.label2.Text = "Date:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(40, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 19);
+            this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 68;
             this.label1.Text = "User:";
             // 
@@ -539,10 +539,10 @@
             // 
             this.cbXSLTEmailErrorHeader.AutoSize = true;
             this.cbXSLTEmailErrorHeader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbXSLTEmailErrorHeader.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbXSLTEmailErrorHeader.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbXSLTEmailErrorHeader.Location = new System.Drawing.Point(16, 220);
             this.cbXSLTEmailErrorHeader.Name = "cbXSLTEmailErrorHeader";
-            this.cbXSLTEmailErrorHeader.Size = new System.Drawing.Size(195, 23);
+            this.cbXSLTEmailErrorHeader.Size = new System.Drawing.Size(180, 20);
             this.cbXSLTEmailErrorHeader.TabIndex = 116;
             this.cbXSLTEmailErrorHeader.Text = "XSLT Email Error Header";
             this.cbXSLTEmailErrorHeader.UseVisualStyleBackColor = true;
@@ -552,10 +552,10 @@
             // 
             this.cbRAILSrecord.AutoSize = true;
             this.cbRAILSrecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbRAILSrecord.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRAILSrecord.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRAILSrecord.Location = new System.Drawing.Point(16, 308);
             this.cbRAILSrecord.Name = "cbRAILSrecord";
-            this.cbRAILSrecord.Size = new System.Drawing.Size(146, 23);
+            this.cbRAILSrecord.Size = new System.Drawing.Size(137, 20);
             this.cbRAILSrecord.TabIndex = 115;
             this.cbRAILSrecord.Text = "RAILS csv Record";
             this.cbRAILSrecord.UseVisualStyleBackColor = true;
@@ -565,10 +565,10 @@
             // 
             this.cbEmailCodeList.AutoSize = true;
             this.cbEmailCodeList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbEmailCodeList.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmailCodeList.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEmailCodeList.Location = new System.Drawing.Point(16, 133);
             this.cbEmailCodeList.Name = "cbEmailCodeList";
-            this.cbEmailCodeList.Size = new System.Drawing.Size(132, 23);
+            this.cbEmailCodeList.Size = new System.Drawing.Size(120, 20);
             this.cbEmailCodeList.TabIndex = 103;
             this.cbEmailCodeList.Text = "Email Code List";
             this.cbEmailCodeList.UseVisualStyleBackColor = true;
@@ -578,10 +578,10 @@
             // 
             this.cbRAILSfilter.AutoSize = true;
             this.cbRAILSfilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbRAILSfilter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRAILSfilter.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRAILSfilter.Location = new System.Drawing.Point(16, 337);
             this.cbRAILSfilter.Name = "cbRAILSfilter";
-            this.cbRAILSfilter.Size = new System.Drawing.Size(132, 23);
+            this.cbRAILSfilter.Size = new System.Drawing.Size(126, 20);
             this.cbRAILSfilter.TabIndex = 114;
             this.cbRAILSfilter.Text = "RAILS csv Filter";
             this.cbRAILSfilter.UseVisualStyleBackColor = true;
@@ -591,10 +591,10 @@
             // 
             this.cbFileStructureInProduction.AutoSize = true;
             this.cbFileStructureInProduction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbFileStructureInProduction.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFileStructureInProduction.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFileStructureInProduction.Location = new System.Drawing.Point(16, 366);
             this.cbFileStructureInProduction.Name = "cbFileStructureInProduction";
-            this.cbFileStructureInProduction.Size = new System.Drawing.Size(215, 23);
+            this.cbFileStructureInProduction.Size = new System.Drawing.Size(200, 20);
             this.cbFileStructureInProduction.TabIndex = 113;
             this.cbFileStructureInProduction.Text = "File Structure In Production";
             this.cbFileStructureInProduction.UseVisualStyleBackColor = true;
@@ -604,10 +604,10 @@
             // 
             this.cbFTPconnect.AutoSize = true;
             this.cbFTPconnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbFTPconnect.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFTPconnect.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFTPconnect.Location = new System.Drawing.Point(16, 395);
             this.cbFTPconnect.Name = "cbFTPconnect";
-            this.cbFTPconnect.Size = new System.Drawing.Size(112, 23);
+            this.cbFTPconnect.Size = new System.Drawing.Size(103, 20);
             this.cbFTPconnect.TabIndex = 112;
             this.cbFTPconnect.Text = "FTP Connect";
             this.cbFTPconnect.UseVisualStyleBackColor = true;
@@ -617,10 +617,10 @@
             // 
             this.cbTRANSPORTparmfile.AutoSize = true;
             this.cbTRANSPORTparmfile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbTRANSPORTparmfile.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTRANSPORTparmfile.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTRANSPORTparmfile.Location = new System.Drawing.Point(16, 424);
             this.cbTRANSPORTparmfile.Name = "cbTRANSPORTparmfile";
-            this.cbTRANSPORTparmfile.Size = new System.Drawing.Size(183, 23);
+            this.cbTRANSPORTparmfile.Size = new System.Drawing.Size(165, 20);
             this.cbTRANSPORTparmfile.TabIndex = 111;
             this.cbTRANSPORTparmfile.Text = "TRANSPORT Parm File";
             this.cbTRANSPORTparmfile.UseVisualStyleBackColor = true;
@@ -630,10 +630,10 @@
             // 
             this.cbRAILStable.AutoSize = true;
             this.cbRAILStable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbRAILStable.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRAILStable.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRAILStable.Location = new System.Drawing.Point(16, 279);
             this.cbRAILStable.Name = "cbRAILStable";
-            this.cbRAILStable.Size = new System.Drawing.Size(141, 23);
+            this.cbRAILStable.Size = new System.Drawing.Size(132, 20);
             this.cbRAILStable.TabIndex = 110;
             this.cbRAILStable.Text = "RAILS csv Tables";
             this.cbRAILStable.UseVisualStyleBackColor = true;
@@ -643,10 +643,10 @@
             // 
             this.cbMapCodeTables.AutoSize = true;
             this.cbMapCodeTables.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbMapCodeTables.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMapCodeTables.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMapCodeTables.Location = new System.Drawing.Point(16, 250);
             this.cbMapCodeTables.Name = "cbMapCodeTables";
-            this.cbMapCodeTables.Size = new System.Drawing.Size(145, 23);
+            this.cbMapCodeTables.Size = new System.Drawing.Size(129, 20);
             this.cbMapCodeTables.TabIndex = 109;
             this.cbMapCodeTables.Text = "Map Code Tables";
             this.cbMapCodeTables.UseVisualStyleBackColor = true;
@@ -656,10 +656,10 @@
             // 
             this.cbDocumentMap.AutoSize = true;
             this.cbDocumentMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbDocumentMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDocumentMap.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDocumentMap.Location = new System.Drawing.Point(16, 162);
             this.cbDocumentMap.Name = "cbDocumentMap";
-            this.cbDocumentMap.Size = new System.Drawing.Size(140, 23);
+            this.cbDocumentMap.Size = new System.Drawing.Size(125, 20);
             this.cbDocumentMap.TabIndex = 108;
             this.cbDocumentMap.Text = "Document Maps";
             this.cbDocumentMap.UseVisualStyleBackColor = true;
@@ -669,10 +669,10 @@
             // 
             this.cbDocumentExtractionMap.AutoSize = true;
             this.cbDocumentExtractionMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbDocumentExtractionMap.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDocumentExtractionMap.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDocumentExtractionMap.Location = new System.Drawing.Point(16, 191);
             this.cbDocumentExtractionMap.Name = "cbDocumentExtractionMap";
-            this.cbDocumentExtractionMap.Size = new System.Drawing.Size(205, 23);
+            this.cbDocumentExtractionMap.Size = new System.Drawing.Size(188, 20);
             this.cbDocumentExtractionMap.TabIndex = 107;
             this.cbDocumentExtractionMap.Text = "Document Extraction Map";
             this.cbDocumentExtractionMap.UseVisualStyleBackColor = true;
@@ -682,10 +682,10 @@
             // 
             this.cbServiceAdapter.AutoSize = true;
             this.cbServiceAdapter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbServiceAdapter.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbServiceAdapter.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbServiceAdapter.Location = new System.Drawing.Point(16, 75);
             this.cbServiceAdapter.Name = "cbServiceAdapter";
-            this.cbServiceAdapter.Size = new System.Drawing.Size(135, 23);
+            this.cbServiceAdapter.Size = new System.Drawing.Size(125, 20);
             this.cbServiceAdapter.TabIndex = 106;
             this.cbServiceAdapter.Text = "Service Adapter";
             this.cbServiceAdapter.UseVisualStyleBackColor = true;
@@ -695,10 +695,10 @@
             // 
             this.cbBusinessProcess.AutoSize = true;
             this.cbBusinessProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbBusinessProcess.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBusinessProcess.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBusinessProcess.Location = new System.Drawing.Point(16, 46);
             this.cbBusinessProcess.Name = "cbBusinessProcess";
-            this.cbBusinessProcess.Size = new System.Drawing.Size(143, 23);
+            this.cbBusinessProcess.Size = new System.Drawing.Size(129, 20);
             this.cbBusinessProcess.TabIndex = 105;
             this.cbBusinessProcess.Text = "Business Process";
             this.cbBusinessProcess.UseVisualStyleBackColor = true;
@@ -708,10 +708,10 @@
             // 
             this.cbPerlScripts.AutoSize = true;
             this.cbPerlScripts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbPerlScripts.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPerlScripts.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPerlScripts.Location = new System.Drawing.Point(16, 104);
             this.cbPerlScripts.Name = "cbPerlScripts";
-            this.cbPerlScripts.Size = new System.Drawing.Size(104, 23);
+            this.cbPerlScripts.Size = new System.Drawing.Size(96, 20);
             this.cbPerlScripts.TabIndex = 104;
             this.cbPerlScripts.Text = "Perl Scripts";
             this.cbPerlScripts.UseVisualStyleBackColor = true;
@@ -721,10 +721,10 @@
             // 
             this.cbEnvelopes.AutoSize = true;
             this.cbEnvelopes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbEnvelopes.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEnvelopes.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEnvelopes.Location = new System.Drawing.Point(16, 19);
             this.cbEnvelopes.Name = "cbEnvelopes";
-            this.cbEnvelopes.Size = new System.Drawing.Size(96, 23);
+            this.cbEnvelopes.Size = new System.Drawing.Size(89, 20);
             this.cbEnvelopes.TabIndex = 118;
             this.cbEnvelopes.Text = "Envelopes";
             this.cbEnvelopes.UseVisualStyleBackColor = true;
@@ -786,10 +786,10 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(248, 778);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(129, 20);
+            this.label19.Size = new System.Drawing.Size(114, 16);
             this.label19.TabIndex = 124;
             this.label19.Text = "Project Manager:";
             // 
@@ -806,10 +806,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(42, 108);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 20);
+            this.label15.Size = new System.Drawing.Size(40, 16);
             this.label15.TabIndex = 130;
             this.label15.Text = "Title:";
             // 
@@ -873,10 +873,10 @@
             // 
             this.cbSetPartnerinGISStatsTable.AutoSize = true;
             this.cbSetPartnerinGISStatsTable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbSetPartnerinGISStatsTable.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSetPartnerinGISStatsTable.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSetPartnerinGISStatsTable.Location = new System.Drawing.Point(11, 77);
             this.cbSetPartnerinGISStatsTable.Name = "cbSetPartnerinGISStatsTable";
-            this.cbSetPartnerinGISStatsTable.Size = new System.Drawing.Size(227, 23);
+            this.cbSetPartnerinGISStatsTable.Size = new System.Drawing.Size(206, 20);
             this.cbSetPartnerinGISStatsTable.TabIndex = 111;
             this.cbSetPartnerinGISStatsTable.Text = "Set Partner In GIS Stats Table";
             this.cbSetPartnerinGISStatsTable.UseVisualStyleBackColor = true;
@@ -886,10 +886,10 @@
             // 
             this.cbServiceAdapterSchedule.AutoSize = true;
             this.cbServiceAdapterSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbServiceAdapterSchedule.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbServiceAdapterSchedule.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbServiceAdapterSchedule.Location = new System.Drawing.Point(11, 48);
             this.cbServiceAdapterSchedule.Name = "cbServiceAdapterSchedule";
-            this.cbServiceAdapterSchedule.Size = new System.Drawing.Size(202, 23);
+            this.cbServiceAdapterSchedule.Size = new System.Drawing.Size(184, 20);
             this.cbServiceAdapterSchedule.TabIndex = 112;
             this.cbServiceAdapterSchedule.Text = "Service Adatper Schedule";
             this.cbServiceAdapterSchedule.UseVisualStyleBackColor = true;
@@ -899,10 +899,10 @@
             // 
             this.cbBusinessProcessSchedule.AutoSize = true;
             this.cbBusinessProcessSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbBusinessProcessSchedule.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBusinessProcessSchedule.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBusinessProcessSchedule.Location = new System.Drawing.Point(11, 19);
             this.cbBusinessProcessSchedule.Name = "cbBusinessProcessSchedule";
-            this.cbBusinessProcessSchedule.Size = new System.Drawing.Size(210, 23);
+            this.cbBusinessProcessSchedule.Size = new System.Drawing.Size(188, 20);
             this.cbBusinessProcessSchedule.TabIndex = 113;
             this.cbBusinessProcessSchedule.Text = "Business Process Schedule";
             this.cbBusinessProcessSchedule.UseVisualStyleBackColor = true;
