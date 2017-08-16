@@ -193,6 +193,12 @@
     <Compile Include="Open Approval.Designer.cs">
       <DependentUpon>Open Approval.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Password.Designer.cs">
+      <DependentUpon>Popup_Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Open Approval.resx">
       <DependentUpon>Open Approval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Password.resx">
+      <DependentUpon>Popup_Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

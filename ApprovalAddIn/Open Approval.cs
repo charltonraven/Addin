@@ -33,7 +33,7 @@ namespace ApprovalAddIn
         String folderName;
 
         private String[] InitialAndUsername;
-        private String Password;
+       
 
 
         bool mapCodeTables, RAILStable, RAILSrecord, RAILSfilter, fileStructureProd, FTPconnect, TRANSPORTfile;
@@ -104,7 +104,7 @@ namespace ApprovalAddIn
 
                 StringBuilder attachmentInfo = new StringBuilder();
                 cbtableParm.Enabled = false;
-                btnSave.Enabled = false;
+                btnSave.Enabled = true;
                 cbBusinessProcess.Enabled = false;
                 cbDevelopmentCompleted.Enabled = false;
                 cbDocumentExtractionMap.Enabled = false;
@@ -130,7 +130,6 @@ namespace ApprovalAddIn
                 txtDate.Enabled = false;
                 txtDescription.Enabled = false;
                 txtPartner.Enabled = false;
-                txtProjectManager.Enabled = false;
                 txtTableParmNAME.Enabled = false;
                 txtUser.Enabled = false;
                 txtCodeReviewBY.Enabled = false;
@@ -197,7 +196,6 @@ namespace ApprovalAddIn
                 txtDate.Enabled = false;
                 txtDescription.Enabled = false;
                 txtPartner.Enabled = false;
-                txtProjectManager.Enabled = false;
                 txtTableParmNAME.Enabled = false;
                 txtUser.Enabled = false;
                 txtCodeReviewBY.Enabled = false;
@@ -271,7 +269,6 @@ namespace ApprovalAddIn
                 txtDate.Enabled = false;
                 txtDescription.Enabled = false;
                 txtPartner.Enabled = false;
-                txtProjectManager.Enabled = false;
                 txtTableParmNAME.Enabled = false;
                 txtUser.Enabled = false;
                 txtCodeReviewBY.Enabled = false;
@@ -347,12 +344,25 @@ namespace ApprovalAddIn
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+        
+            //Shows Password pop up form
+            Popup_Password pop_password = new Popup_Password("Enter Network Password");
+            pop_password.ShowDialog();
 
+            //Gets Password from pop up form
+            String password = pop_password.Password;
+            
+
+            //Save attachement to folder below. Creates it if it does not exist.
             DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\SharePoint Upload");
-            if (!txtPassword.Text.Equals(""))
+            if (!saveAttatchementsFolder.Exists)
             {
+                saveAttatchementsFolder.Create();
+            }
 
-
+            //Check for empty password
+            if (!password.Equals(""))
+            {
                 Outlook.MailItem mailItem = (Outlook.MailItem)this.OutlookItem;
                 Outlook.Attachments mailAttachments = mailItem.Attachments;
 
@@ -360,17 +370,8 @@ namespace ApprovalAddIn
                 {
                     for (int i = 1; i <= mailAttachments.Count; i++)
                     {
-
-
-
-                        if (!saveAttatchementsFolder.Exists)
-                        {
-                            saveAttatchementsFolder.Create();
-                        }
-
                         String filePath = Path.Combine(saveAttatchementsFolder.FullName, mailAttachments[i].FileName);
                         mailAttachments[i].SaveAsFile(filePath);
-
                     }
                 }
 
@@ -379,7 +380,7 @@ namespace ApprovalAddIn
                 String[] lineTitles = { "User", "Partner", "Date", "Title", "ChangeManagementRequestNumber", "UserApprovalofProject", "PartnerApprovalofInitialProject", "Table/ParmUpdate", "Table/ParmName", "DevelopmentCompleted", "TestingCompleted", "CodeReview/CheckSignOff", "CodeReviewBy", "CodeReviewDate", "KeyUserSignoff", "PartnerSignoff", "ImplementationFinalStatus", "PostImplementationReview", "Envelopes", "BusinessProcess", "ServiceAdapters", "PerlScripts", "EmailCodeList", "DocumentMaps", "DocumentExtractionMap", "XSLTEmailErrorHeader", "MapCodeTables", "RAILScsvTable", "RAILScsvRecord", "RAILScsvFilter", "FileStructureinProduction", "FTPConnect", "TRANSPORTParmFile", "Description", "ProjectManager", "CompletionDate" };
                 String[] lineAnswers = { User, Partner, currentDate, Title, CMRN, UAOP.ToString(), PAOIP.ToString(), tableParm.ToString(), tableParmName, developementCompleted.ToString(), testingCompleted.ToString(), codeReview.ToString(), codeReviewBY, codeReviewDate, keyUserSignOff.ToString(), partnerSignOff.ToString(), impFinalStatus, PostImpReview, Envelopes.ToString(), BP.ToString(), ServiceAdapters.ToString(), perlScripts.ToString(), EmailCodeList.ToString(), docMaps.ToString(), docExtractionMap.ToString(), XSLTEmail.ToString(), mapCodeTables.ToString(), RAILStable.ToString(), RAILSrecord.ToString(), RAILSfilter.ToString(), fileStructureProd.ToString(), FTPconnect.ToString(), TRANSPORTfile.ToString(), Description, ProjectManager, CompletionDate };
 
-                SendApproved(lineTitles, lineAnswers, mailItem, InitialAndUsername, Password);
+                SendApproved(lineTitles, lineAnswers, mailItem, InitialAndUsername, password);
 
 
                 FileInfo[] files = saveAttatchementsFolder.GetFiles();
@@ -404,6 +405,7 @@ namespace ApprovalAddIn
             String Foldername = date + "_" + ModUser + "_" + ModPartner + "_" + ModTitle + "_" + InitialAndUsername[0];
 
             SharepointUpload upload = new SharepointUpload(InitialAndUsername[1], Password, Foldername);
+            upload.UploadToSharepoint();
 
 
 
@@ -434,14 +436,7 @@ namespace ApprovalAddIn
 
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-            if (!txtPassword.Text.Equals(""))
-            {
-                btnSave.Enabled = true;
-                Password = txtPassword.Text;
-            }
-        }
+      
 
         private void btnScreenShot_Click(object sender, EventArgs e)
         {
@@ -489,9 +484,16 @@ namespace ApprovalAddIn
         private void btnWordDocUpload_Click(object sender, EventArgs e)
         {
 
+            //Shows Password pop up form
+            Popup_Password pop_password = new Popup_Password("Enter Network Password");
+            pop_password.ShowDialog();
+
+            //Gets Password from pop up form
+            String password = pop_password.Password;
+
 
             DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\SharePoint Upload");
-            if (!txtPassword.Text.Equals(""))
+            if (!password.Equals(""))
             {
 
 
@@ -537,7 +539,8 @@ namespace ApprovalAddIn
 
                 CreateDocument create = new CreateDocument(Section_1, Section_2, Section_3, Section_4, SignatureAndDate);
 
-                SharepointUpload upLoadWordDoc = new SharepointUpload(InitialAndUsername[1], Password, folderName);
+                SharepointUpload upLoadWordDoc = new SharepointUpload(InitialAndUsername[1], password, folderName);
+                upLoadWordDoc.UploadWordDocToSharepoint();
 
 
 
@@ -554,11 +557,7 @@ namespace ApprovalAddIn
 
         }
 
-        private void txtProjectManager_TextChanged(object sender, EventArgs e)
-        {
-            ProjectManager = txtProjectManager.Text;
-        }
-
+    
         private void txtDescription_TextChanged(object sender, EventArgs e)
         {
             Description = txtDescription.Text;
@@ -674,6 +673,11 @@ namespace ApprovalAddIn
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
             User = txtUser.Text;
+        }
+
+        private void lblProjectManager_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void cbtableParm_CheckedChanged(object sender, EventArgs e)
@@ -1212,7 +1216,9 @@ namespace ApprovalAddIn
             }
             if (item.Equals("ProjectManager"))
             {
-                txtProjectManager.Text = value;
+                
+                lblProjectManager.Text= value;
+                ProjectManager = value;
             }
             if (item.Equals("Title"))
             {
