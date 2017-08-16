@@ -71,7 +71,12 @@ namespace ApprovalAddIn
 
 
             //*************************Upload File to new Folder ********************
-            DirectoryInfo directory = new DirectoryInfo(@"C:\TempAttach");
+            DirectoryInfo directory = new DirectoryInfo(@"C:\SharePoint Upload");
+
+            if (!directory.Exists)
+            {
+                directory.Create();
+            }
             FileInfo[] files = directory.GetFiles();
 
             if (clientContext.HasPendingRequest)
@@ -130,7 +135,7 @@ namespace ApprovalAddIn
 
 
 
-            DirectoryInfo directory = new DirectoryInfo(@"C:\TempAttach");
+            DirectoryInfo directory = new DirectoryInfo(@"C:\SharePoint Upload");
             FileInfo[] files = directory.GetFiles();
 
             if (clientContext.HasPendingRequest)

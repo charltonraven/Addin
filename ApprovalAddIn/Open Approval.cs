@@ -23,7 +23,6 @@ namespace ApprovalAddIn
 
         String User, Partner, CMRN, tableParmName, codeReviewBY, codeReviewDate, impFinalStatus, PostImpReview, ProjectManager, CompletionDate, sendTo, Description, Title;
         String currentDate = DateTime.Today.ToShortDateString();
-        String from = "Charlton.Williams@sonoco.com";
         bool UAOP, PAOIP, tableParm, developementCompleted, testingCompleted, codeReview, keyUserSignOff, partnerSignOff, Envelopes, BP, ServiceAdapters, perlScripts, EmailCodeList, docMaps, docExtractionMap, XSLTEmail;
         bool BusinessProcessSch = true;
         bool ServiceAdapterSch = true;
@@ -268,7 +267,6 @@ namespace ApprovalAddIn
                 cbTRANSPORTparmfile.Enabled = false;
                 cbUserApproval.Enabled = false;
                 cbXSLTEmailErrorHeader.Enabled = false;
-                //txtApprovingManager.Enabled = false;
                 txtChangeManagemntRequestNumber.Enabled = false;
                 txtDate.Enabled = false;
                 txtDescription.Enabled = false;
@@ -350,7 +348,7 @@ namespace ApprovalAddIn
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\TempAttach");
+            DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\SharePoint Upload");
             if (!txtPassword.Text.Equals(""))
             {
 
@@ -492,7 +490,7 @@ namespace ApprovalAddIn
         {
 
 
-            DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\TempAttach");
+            DirectoryInfo saveAttatchementsFolder = new DirectoryInfo(@"C:\SharePoint Upload");
             if (!txtPassword.Text.Equals(""))
             {
 

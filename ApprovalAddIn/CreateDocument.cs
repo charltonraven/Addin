@@ -153,7 +153,7 @@ namespace ApprovalAddIn
             SignatureAndDate_Section.Range.Text = "\n\t\t\t\t\t\t\tProject Manager: " + SignaturAndDate[0];
             SignatureAndDate_Section.Range.InsertAfter("\n\n");
             SignatureAndDate_Section.Range.InsertAfter("\t\t\t\t\t\t\tCompletion Date: " + SignaturAndDate[1]);
-            String filename = @"C:\TempAttach\Checklist_" + Section_2[37].Replace(" ","") + "_" + DateTime.Now.ToString("yyyyMMdd") + ".docx";
+            String filename = @"C:\SharePoint Upload\Checklist_" + Section_2[37].Replace(" ","") + "_" + DateTime.Now.ToString("yyyyMMdd") + ".docx";
             oWord.ActiveDocument.SaveAs2(filename);//Grabs the Implementation from Post Implementation
             oWord.ActiveDocument.Close();
         }

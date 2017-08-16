@@ -37,3 +37,6 @@ C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.GenerateResource.Cache
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.dll
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.pdb
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.SharePoint.Client.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.ResolveComReference.cache

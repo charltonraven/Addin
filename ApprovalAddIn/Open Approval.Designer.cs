@@ -225,7 +225,7 @@
             // txtTableParmNAME
             // 
             this.txtTableParmNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableParmNAME.Location = new System.Drawing.Point(490, 284);
+            this.txtTableParmNAME.Location = new System.Drawing.Point(484, 291);
             this.txtTableParmNAME.Name = "txtTableParmNAME";
             this.txtTableParmNAME.Size = new System.Drawing.Size(182, 26);
             this.txtTableParmNAME.TabIndex = 86;
@@ -305,9 +305,8 @@
             this.cbCodeReview.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbCodeReview.Location = new System.Drawing.Point(320, 453);
             this.cbCodeReview.Name = "cbCodeReview";
-            this.cbCodeReview.Size = new System.Drawing.Size(97, 17);
+            this.cbCodeReview.Size = new System.Drawing.Size(13, 12);
             this.cbCodeReview.TabIndex = 95;
-            this.cbCodeReview.Text = "cbCodeReview";
             this.cbCodeReview.UseVisualStyleBackColor = true;
             this.cbCodeReview.CheckedChanged += new System.EventHandler(this.cbCodeReview_CheckedChanged);
             // 
@@ -317,9 +316,8 @@
             this.cbPartnerApproval.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPartnerApproval.Location = new System.Drawing.Point(319, 246);
             this.cbPartnerApproval.Name = "cbPartnerApproval";
-            this.cbPartnerApproval.Size = new System.Drawing.Size(112, 17);
+            this.cbPartnerApproval.Size = new System.Drawing.Size(13, 12);
             this.cbPartnerApproval.TabIndex = 94;
-            this.cbPartnerApproval.Text = "cbPartnerApproval";
             this.cbPartnerApproval.UseVisualStyleBackColor = true;
             this.cbPartnerApproval.CheckedChanged += new System.EventHandler(this.cbPartnerApproval_CheckedChanged);
             // 
@@ -329,9 +327,8 @@
             this.cbPartnerSignOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbPartnerSignOff.Location = new System.Drawing.Point(320, 569);
             this.cbPartnerSignOff.Name = "cbPartnerSignOff";
-            this.cbPartnerSignOff.Size = new System.Drawing.Size(105, 17);
+            this.cbPartnerSignOff.Size = new System.Drawing.Size(13, 12);
             this.cbPartnerSignOff.TabIndex = 93;
-            this.cbPartnerSignOff.Text = "cbPartnerSignOff";
             this.cbPartnerSignOff.UseVisualStyleBackColor = true;
             this.cbPartnerSignOff.CheckedChanged += new System.EventHandler(this.cbPartnerSignOff_CheckedChanged);
             // 
@@ -341,9 +338,8 @@
             this.cbKeyUserSignOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbKeyUserSignOff.Location = new System.Drawing.Point(320, 516);
             this.cbKeyUserSignOff.Name = "cbKeyUserSignOff";
-            this.cbKeyUserSignOff.Size = new System.Drawing.Size(111, 17);
+            this.cbKeyUserSignOff.Size = new System.Drawing.Size(13, 12);
             this.cbKeyUserSignOff.TabIndex = 92;
-            this.cbKeyUserSignOff.Text = "cbKeyUserSignOff";
             this.cbKeyUserSignOff.UseVisualStyleBackColor = true;
             this.cbKeyUserSignOff.CheckedChanged += new System.EventHandler(this.cbKeyUserSignOff_CheckedChanged);
             // 
@@ -353,9 +349,8 @@
             this.cbDevelopmentCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbDevelopmentCompleted.Location = new System.Drawing.Point(320, 346);
             this.cbDevelopmentCompleted.Name = "cbDevelopmentCompleted";
-            this.cbDevelopmentCompleted.Size = new System.Drawing.Size(149, 17);
+            this.cbDevelopmentCompleted.Size = new System.Drawing.Size(13, 12);
             this.cbDevelopmentCompleted.TabIndex = 91;
-            this.cbDevelopmentCompleted.Text = "cbDevelopmentCompleted";
             this.cbDevelopmentCompleted.UseVisualStyleBackColor = true;
             this.cbDevelopmentCompleted.CheckedChanged += new System.EventHandler(this.cbDevelopmentCompleted_CheckedChanged);
             // 
@@ -365,9 +360,8 @@
             this.cbTestingCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTestingCompleted.Location = new System.Drawing.Point(320, 396);
             this.cbTestingCompleted.Name = "cbTestingCompleted";
-            this.cbTestingCompleted.Size = new System.Drawing.Size(121, 17);
+            this.cbTestingCompleted.Size = new System.Drawing.Size(13, 12);
             this.cbTestingCompleted.TabIndex = 90;
-            this.cbTestingCompleted.Text = "cbTestingCompleted";
             this.cbTestingCompleted.UseVisualStyleBackColor = true;
             this.cbTestingCompleted.CheckedChanged += new System.EventHandler(this.cbTestingCompleted_CheckedChanged);
             // 
@@ -377,9 +371,8 @@
             this.cbtableParm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbtableParm.Location = new System.Drawing.Point(320, 293);
             this.cbtableParm.Name = "cbtableParm";
-            this.cbtableParm.Size = new System.Drawing.Size(83, 17);
+            this.cbtableParm.Size = new System.Drawing.Size(13, 12);
             this.cbtableParm.TabIndex = 89;
-            this.cbtableParm.Text = "cbtableParm";
             this.cbtableParm.UseVisualStyleBackColor = true;
             this.cbtableParm.CheckedChanged += new System.EventHandler(this.cbtableParm_CheckedChanged);
             // 
@@ -389,9 +382,8 @@
             this.cbUserApproval.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbUserApproval.Location = new System.Drawing.Point(320, 198);
             this.cbUserApproval.Name = "cbUserApproval";
-            this.cbUserApproval.Size = new System.Drawing.Size(100, 17);
+            this.cbUserApproval.Size = new System.Drawing.Size(13, 12);
             this.cbUserApproval.TabIndex = 88;
-            this.cbUserApproval.Text = "cbUserApproval";
             this.cbUserApproval.UseVisualStyleBackColor = true;
             this.cbUserApproval.CheckedChanged += new System.EventHandler(this.cbUserApproval_CheckedChanged);
             // 
@@ -734,7 +726,7 @@
             // 
             this.lblTableParmName.AutoSize = true;
             this.lblTableParmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableParmName.Location = new System.Drawing.Point(429, 290);
+            this.lblTableParmName.Location = new System.Drawing.Point(423, 293);
             this.lblTableParmName.Name = "lblTableParmName";
             this.lblTableParmName.Size = new System.Drawing.Size(55, 20);
             this.lblTableParmName.TabIndex = 120;
