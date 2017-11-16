@@ -81,7 +81,7 @@ namespace ApprovalAddIn
             //Insert another paragraph.
             Word.Paragraph oPara3;
             oRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
-            oPara3 = oDoc.Content.Paragraphs.Add(ref oRng);
+            oPara3 = oDoc.Content.Paragraphs.Add(ref oRng); 
             oPara3.Range.Text = " ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
             oPara3.Range.Font.Bold = 0;
             oPara3.Range.Font.Size = 8;

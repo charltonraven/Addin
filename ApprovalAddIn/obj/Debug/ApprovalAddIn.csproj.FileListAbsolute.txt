@@ -16,6 +16,9 @@ C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.Gene
 C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.dll
 C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.pdb
 C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.Open_Approval.resources
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.SharePoint.Client.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.ResolveComReference.cache
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\ApprovalAddIn.dll
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\ApprovalAddIn.pdb
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\bin\Debug\ApprovalAddIn.dll.manifest
@@ -33,11 +36,9 @@ C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.ResolveComReference.cache
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Approval_Initial.resources
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Open_Approval.resources
+C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Popup_Password.resources
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Properties.Resources.resources
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.GenerateResource.Cache
+C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.CoreCompileInputs.cache
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.dll
 C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.pdb
-C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.SharePoint.Client.dll
-C:\Users\raven\GitCraken\Addin\ApprovalAddIn\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
-C:\Users\raven\GitCraken\Addin\ApprovalAddIn\obj\Debug\ApprovalAddIn.csproj.ResolveComReference.cache
-C:\Users\63530\Documents\Visual Studio 2017\Projects\ApprovalAddIn\ApprovalAddIn\obj\Debug\ApprovalAddIn.Popup_Password.resources
